@@ -6,7 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rules\Password;
 
 class RegisterController extends Controller
 {
@@ -17,33 +18,39 @@ class RegisterController extends Controller
 
     public function register(Request $request)
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8|confirmed',
-            'registration' => 'nullable|string|unique:users',
-            'position' => 'nullable|string|max:255',
-            'sector' => 'nullable|string|max:255',
-            'phone' => 'nullable|string|max:20',
+        $this->validator($request->all())->validate();
+
+        $user = $this->create($request->all());
+
+        auth()->login($user);
+
+        return redirect()->route('home')->with('success', 'Bem-vindo à Intranet ZKTeco!');
+    }
+
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'matricula' => ['nullable', 'string', 'max:50'],
+            'cargo' => ['nullable', 'string', 'max:100'],
+            'setor' => ['nullable', 'string', 'max:100'],
+            'telefone' => ['nullable', 'string', 'max:20'],
+            'password' => ['required', 'string', 'confirmed', Password::min(8)],
         ]);
+    }
 
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'registration' => $request->registration,
-            'position' => $request->position,
-            'sector' => $request->sector,
-            'phone' => $request->phone,
-            'is_active' => true,
-            'created_by' => Auth::id(),
+    protected function create(array $data)
+    {
+        return User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'matricula' => $data['matricula'] ?? null,
+            'cargo' => $data['cargo'] ?? null,
+            'setor' => $data['setor'] ?? null,
+            'telefone' => $data['telefone'] ?? null,
+            'password' => Hash::make($data['password']),
+            'role' => 'user', // Define o papel padrão como 'user'
         ]);
-
-        // Atribuir role padrão (exemplo)
-        $user->assignRole('user');
-
-        Auth::login($user);
-
-        return redirect()->route('home')->with('success', 'Cadastro realizado com sucesso!');
     }
 }

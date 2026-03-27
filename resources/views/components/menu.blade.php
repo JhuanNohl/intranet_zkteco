@@ -8,7 +8,8 @@
     <a href="{{ route('comercial') }}" class="menu-link {{ request()->routeIs('comercial') ? 'active' : '' }}">
         <span class="menu-icon">💼</span> Comercial
     </a>
-    <a href="{{ route('departamento-pessoal') }}" class="menu-link {{ request()->routeIs('departamento-pessoal') ? 'active' : '' }}">
+    <a href="{{ route('departamento-pessoal') }}"
+        class="menu-link {{ request()->routeIs('departamento-pessoal') ? 'active' : '' }}">
         <span class="menu-icon">👥</span> Departamento Pessoal
     </a>
     <a href="{{ route('financeiro') }}" class="menu-link {{ request()->routeIs('financeiro') ? 'active' : '' }}">
@@ -19,7 +20,8 @@
     </a>
 
     <div class="menu-section-title">Área Técnica</div>
-    <a href="{{ route('desenvolvimento') }}" class="menu-link {{ request()->routeIs('desenvolvimento') ? 'active' : '' }}">
+    <a href="{{ route('desenvolvimento') }}"
+        class="menu-link {{ request()->routeIs('desenvolvimento') ? 'active' : '' }}">
         <span class="menu-icon">💻</span> Desenvolvimento
     </a>
     <a href="{{ route('suporte') }}" class="menu-link {{ request()->routeIs('suporte') ? 'active' : '' }}">
@@ -46,3 +48,13 @@
         <span class="menu-icon">📦</span> Produtos
     </a>
 </nav>
+
+@auth
+    @if(auth()->user()->hasRole('supervisor') || auth()->user()->hasRole('admin'))
+        <div class="menu-section-title">ADMINISTRAÇÃO</div>
+        <a href="{{ route('comunicados.index') }}" class="menu-link">
+            <div class="menu-icon">📢</div>
+            <span>Gerenciar Comunicados</span>
+        </a>
+    @endif
+@endauth

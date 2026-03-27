@@ -130,11 +130,22 @@
                 <button class="modal-close" onclick="fecharModalComunicados()">&times;</button>
             </div>
             <div class="modal-body" id="listaComunicados">
-                <div class="text-center py-4">
-                    <div class="spinner-border text-success" role="status">
-                        <span class="visually-hidden">Carregando...</span>
+                @if(isset($comunicados) && $comunicados->count() > 0)
+                    @foreach($comunicados as $comunicado)
+                        <div class="comunicado-card">
+                            <div class="comunicado-titulo">{{ $comunicado->titulo }}</div>
+                            <div class="comunicado-conteudo">{{ $comunicado->conteudo }}</div>
+                            <div class="comunicado-meta">
+                                <span class="comunicado-autor">📝 {{ $comunicado->autor ?? 'DP' }}</span>
+                                <span>📅 {{ $comunicado->created_at->format('d/m/Y') }}</span>
+                            </div>
+                        </div>
+                    @endforeach
+                @else
+                    <div class="text-center py-4">
+                        <p class="text-muted">Nenhum comunicado no momento.</p>
                     </div>
-                </div>
+                @endif
             </div>
         </div>
     </div>
@@ -142,89 +153,18 @@
     <script>
         // Função para abrir o modal de comunicados
         function abrirModalComunicados() {
-            console.log('Abrindo modal...'); // Para debug
             const modal = document.getElementById('modalComunicados');
             if (modal) {
                 modal.style.display = 'flex';
-                carregarComunicados();
-            } else {
-                console.error('Modal não encontrado');
             }
         }
 
         // Função para fechar o modal
         function fecharModalComunicados() {
-            console.log('Fechando modal...'); // Para debug
             const modal = document.getElementById('modalComunicados');
             if (modal) {
                 modal.style.display = 'none';
             }
-        }
-
-        // Função para carregar comunicados via AJAX
-        function carregarComunicados() {
-            const container = document.getElementById('listaComunicados');
-            if (!container) return;
-
-            container.innerHTML = `
-            <div class="text-center py-4">
-                <div class="spinner-border text-success" role="status">
-                    <span class="visually-hidden">Carregando...</span>
-                </div>
-            </div>
-        `;
-
-            fetch('/api/comunicados')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Erro na resposta');
-                    }
-                    return response.json();
-                })
-                .then(comunicados => {
-                    // Atualizar contador
-                    const contador = document.getElementById('totalComunicados');
-                    if (contador) {
-                        contador.innerText = comunicados.length;
-                    }
-
-                    if (comunicados.length === 0) {
-                        container.innerHTML = `
-                        <div class="text-center py-4">
-                            <p class="text-muted">Nenhum comunicado no momento.</p>
-                        </div>
-                    `;
-                        return;
-                    }
-
-                    container.innerHTML = comunicados.map(com => `
-                    <div class="comunicado-card">
-                        <div class="comunicado-titulo">${escapeHtml(com.titulo)}</div>
-                        <div class="comunicado-conteudo">${escapeHtml(com.conteudo)}</div>
-                        <div class="comunicado-meta">
-                            <span class="comunicado-autor">📝 ${escapeHtml(com.autor || 'ZKTeco')}</span>
-                            <span>📅 ${new Date(com.created_at).toLocaleDateString('pt-BR')}</span>
-                        </div>
-                    </div>
-                `).join('');
-                })
-                .catch(error => {
-                    console.error('Erro:', error);
-                    container.innerHTML = `
-                    <div class="text-center py-4">
-                        <p class="text-danger">Erro ao carregar comunicados.</p>
-                        <button class="btn btn-sm btn-outline-success mt-2" onclick="carregarComunicados()">Tentar novamente</button>
-                    </div>
-                `;
-                });
-        }
-
-        // Função para escapar HTML (segurança)
-        function escapeHtml(text) {
-            if (!text) return '';
-            const div = document.createElement('div');
-            div.textContent = text;
-            return div.innerHTML;
         }
 
         // Fechar modal ao clicar fora
@@ -241,20 +181,5 @@
                 fecharModalComunicados();
             }
         });
-
-        // Carregar contador de comunicados ao iniciar a página
-        document.addEventListener('DOMContentLoaded', function () {
-            console.log('Página carregada, carregando comunicados...');
-            fetch('/api/comunicados')
-                .then(response => response.json())
-                .then(comunicados => {
-                    const contador = document.getElementById('totalComunicados');
-                    if (contador) {
-                        contador.innerText = comunicados.length;
-                    }
-                })
-                .catch(error => console.error('Erro ao carregar contador:', error));
-        });
     </script>
-
 @endsection

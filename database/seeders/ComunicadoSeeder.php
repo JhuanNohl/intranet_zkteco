@@ -2,33 +2,33 @@
 
 namespace Database\Seeders;
 
-use App\Models\Comunicado;
 use Illuminate\Database\Seeder;
+use App\Models\Comunicado;
 
-class ComunicadoSeeder extends Seeder
+class ComunicadosSeeder extends Seeder
 {
-    public function run(): void
+    public function run()
     {
         Comunicado::create([
-            'titulo' => 'Novo sistema de ponto eletrônico',
-            'conteudo' => 'A partir do próximo mês, teremos um novo sistema de ponto eletrônico. Treinamentos serão realizados na próxima semana.',
+            'titulo' => 'Novo horário de funcionamento',
+            'conteudo' => 'A partir do dia 01/04/2026, o horário de funcionamento será das 8h às 18h.',
             'autor' => 'RH',
             'ativo' => true,
             'ordem' => 1
         ]);
 
         Comunicado::create([
-            'titulo' => 'Feriado do dia do Trabalhador',
-            'conteudo' => 'Informamos que não haverá expediente no dia 1º de maio, em comemoração ao Dia do Trabalhador.',
-            'autor' => 'RH',
+            'titulo' => 'Manutenção programada',
+            'conteudo' => 'O sistema estará indisponível no domingo das 22h às 02h para manutenção.',
+            'autor' => 'TI',
             'ativo' => true,
             'ordem' => 2
         ]);
 
         Comunicado::create([
-            'titulo' => 'Atualização do sistema de controle de acesso',
-            'conteudo' => 'O sistema de controle de acesso será atualizado no sábado. Poderá haver instabilidade entre 10h e 12h.',
-            'autor' => 'TI',
+            'titulo' => 'Novo benefício',
+            'conteudo' => 'A partir deste mês, todos os colaboradores terão direito ao vale alimentação.',
+            'autor' => 'DP',
             'ativo' => true,
             'ordem' => 3
         ]);

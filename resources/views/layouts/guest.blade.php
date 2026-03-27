@@ -1,109 +1,83 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Intranet ZKTeco - @yield('title')</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>@yield('title', 'ZKTeco Intranet')</title>
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Seu CSS personalizado -->
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
     <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
         body {
-            background: linear-gradient(135deg, #005c31 0%, #111111 100%);
+            background: linear-gradient(135deg, #00ff66 0%, #148126 100%);
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
-        .login-card {
-            background: white;
-            border-radius: 24px;
-            padding: 40px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-            max-width: 450px;
-            width: 100%;
-            margin: 20px;
+        .min-vh-100 {
+            min-height: 100vh;
         }
 
-        .login-logo {
-            text-align: center;
-            margin-bottom: 30px;
+        .card {
+            backdrop-filter: blur(10px);
+            background: rgb(255, 255, 255);
         }
 
-        .login-logo img {
-            height: 80px;
-            width: auto;
-            margin-bottom: 15px;
-        }
-
-        .login-logo h2 {
-            color: #005c31;
-            font-weight: 700;
-            font-size: 24px;
-        }
-
-        .btn-login {
-            background: #005c31;
-            border: none;
-            padding: 12px;
-            font-weight: 600;
+        /* Estilo para mensagens de erro */
+        .alert-danger {
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+            color: #721c24;
             border-radius: 12px;
-            transition: all 0.3s ease;
         }
 
-        .btn-login:hover {
-            background: #00bb64;
-            transform: translateY(-2px);
-        }
-
-        .form-control {
+        /* Estilo para mensagens de sucesso */
+        .alert-success {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+            color: #00ff3c;
             border-radius: 12px;
-            padding: 12px;
-            border: 1px solid #e0e0e0;
-        }
-
-        .form-control:focus {
-            border-color: #005c31;
-            box-shadow: 0 0 0 0.2rem rgba(0, 92, 49, 0.25);
-        }
-
-        .form-label {
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 8px;
-        }
-
-        .login-footer {
-            text-align: center;
-            margin-top: 20px;
-            color: #666;
-            font-size: 12px;
-        }
-
-        .login-footer a {
-            color: #005c31;
-            text-decoration: none;
-        }
-
-        .login-footer a:hover {
-            color: #00bb64;
         }
     </style>
+
+    @stack('styles')
 </head>
 
 <body>
+    <div class="container">
+        @if(session('success'))
+            <div class="alert alert-success alert-dismissible fade show position-fixed top-0 start-50 translate-middle-x mt-3"
+                role="alert" style="z-index: 9999; min-width: 300px;">
+                {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        @endif
+
+        @if($errors->any())
+            <div class="alert alert-danger alert-dismissible fade show position-fixed top-0 start-50 translate-middle-x mt-3"
+                role="alert" style="z-index: 9999; min-width: 300px;">
+                <strong>Erro!</strong> Verifique os dados informados.
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        @endif
+    </div>
+
     @yield('content')
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    @stack('scripts')
 </body>
 
 </html>

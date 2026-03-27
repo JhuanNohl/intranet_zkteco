@@ -1,111 +1,203 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+@extends('layouts.guest')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro - ZKTeco Intranet</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
+@section('title', 'Criar Conta')
 
-<body class="bg-gray-100">
-    <div class="min-h-screen flex items-center justify-center">
-        <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-            <div class="text-center mb-8">
-                <img src="{{ asset('images/zkteco-logo.png') }}" alt="ZKTeco" class="h-12 mx-auto mb-4">
-                <h2 class="text-2xl font-bold text-gray-800">Criar Conta</h2>
-                <p class="text-gray-600">Preencha os dados para se cadastrar</p>
+@section('content')
+<div class="container">
+    <div class="row justify-content-center align-items-center min-vh-100">
+        <div class="col-md-6 col-lg-5">
+            <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
+                <div class="card-header bg-white border-0 pt-4 pb-0">
+                    <div class="text-center mb-4">
+                        <img src="{{ asset('img/logo-zkteco.png') }}" alt="ZKTeco" height="80">
+                        <h2 class="h4 mt-3 fw-bold text-success">Criar Conta</h2>
+                        <p class="text-muted">Preencha os dados para se cadastrar</p>
+                    </div>
+                </div>
+                
+                <div class="card-body p-4">
+                    <form method="POST" action="{{ route('register') }}">
+                        @csrf
+                        
+                        <div class="mb-3">
+                            <label for="name" class="form-label fw-semibold">Nome Completo <span class="text-danger">*</span></label>
+                            <input type="text" 
+                                   class="form-control @error('name') is-invalid @enderror" 
+                                   id="name" 
+                                   name="name" 
+                                   value="{{ old('name') }}"
+                                   placeholder="Digite seu nome completo"
+                                   required>
+                            @error('name')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="email" class="form-label fw-semibold">E-mail <span class="text-danger">*</span></label>
+                            <input type="email" 
+                                   class="form-control @error('email') is-invalid @enderror" 
+                                   id="email" 
+                                   name="email" 
+                                   value="{{ old('email') }}"
+                                   placeholder="seu.email@zkteco.com.br"
+                                   required>
+                            @error('email')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="matricula" class="form-label fw-semibold">Matrícula</label>
+                            <input type="text" 
+                                   class="form-control @error('matricula') is-invalid @enderror" 
+                                   id="matricula" 
+                                   name="matricula" 
+                                   value="{{ old('matricula') }}"
+                                   placeholder="Digite sua matrícula">
+                            @error('matricula')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="cargo" class="form-label fw-semibold">Cargo</label>
+                                <input type="text" 
+                                       class="form-control @error('cargo') is-invalid @enderror" 
+                                       id="cargo" 
+                                       name="cargo" 
+                                       value="{{ old('cargo') }}"
+                                       placeholder="Ex: Analista">
+                                @error('cargo')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            
+                            <div class="col-md-6 mb-3">
+                                <label for="setor" class="form-label fw-semibold">Setor</label>
+                                <select class="form-select @error('setor') is-invalid @enderror" 
+                                        id="setor" 
+                                        name="setor">
+                                    <option value="">Selecione o setor</option>
+                                    <option value="Comercial" {{ old('setor') == 'Comercial' ? 'selected' : '' }}>Comercial</option>
+                                    <option value="Departamento Pessoal" {{ old('setor') == 'Departamento Pessoal' ? 'selected' : '' }}>Departamento Pessoal</option>
+                                    <option value="Financeiro" {{ old('setor') == 'Financeiro' ? 'selected' : '' }}>Financeiro</option>
+                                    <option value="Importação" {{ old('setor') == 'Importação' ? 'selected' : '' }}>Importação</option>
+                                    <option value="Desenvolvimento" {{ old('setor') == 'Desenvolvimento' ? 'selected' : '' }}>Desenvolvimento</option>
+                                    <option value="Suporte" {{ old('setor') == 'Suporte' ? 'selected' : '' }}>Suporte</option>
+                                    <option value="TI" {{ old('setor') == 'TI' ? 'selected' : '' }}>TI</option>
+                                    <option value="Expedição" {{ old('setor') == 'Expedição' ? 'selected' : '' }}>Expedição</option>
+                                    <option value="Fábrica" {{ old('setor') == 'Fábrica' ? 'selected' : '' }}>Fábrica</option>
+                                    <option value="Manutenção" {{ old('setor') == 'Manutenção' ? 'selected' : '' }}>Manutenção</option>
+                                </select>
+                                @error('setor')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="telefone" class="form-label fw-semibold">Telefone/Ramal</label>
+                            <input type="text" 
+                                   class="form-control @error('telefone') is-invalid @enderror" 
+                                   id="telefone" 
+                                   name="telefone" 
+                                   value="{{ old('telefone') }}"
+                                   placeholder="(11) 99999-9999">
+                            @error('telefone')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="password" class="form-label fw-semibold">Senha <span class="text-danger">*</span></label>
+                            <input type="password" 
+                                   class="form-control @error('password') is-invalid @enderror" 
+                                   id="password" 
+                                   name="password"
+                                   placeholder="Mínimo 8 caracteres"
+                                   required>
+                            @error('password')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="password_confirmation" class="form-label fw-semibold">Confirmar Senha <span class="text-danger">*</span></label>
+                            <input type="password" 
+                                   class="form-control" 
+                                   id="password_confirmation" 
+                                   name="password_confirmation"
+                                   placeholder="Digite a senha novamente"
+                                   required>
+                        </div>
+                        
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-success btn-lg rounded-3 fw-semibold">
+                                Criar Conta
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="card-footer bg-white border-0 text-center pb-4">
+                    <p class="mb-0 text-muted">
+                        Já tem uma conta? 
+                        <a href="{{ route('login') }}" class="text-success fw-semibold text-decoration-none">Faça login</a>
+                    </p>
+                </div>
             </div>
-
-            @if ($errors->any())
-                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
-                    <ul class="list-disc list-inside">
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
-
-            @if (session('success'))
-                <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
-                    {{ session('success') }}
-                </div>
-            @endif
-
-            <form method="POST" action="{{ route('register') }}">
-                @csrf
-
-                <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2">Nome Completo *</label>
-                    <input type="text" name="name" value="{{ old('name') }}" required
-                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
-                </div>
-
-                <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2">E-mail *</label>
-                    <input type="email" name="email" value="{{ old('email') }}" required
-                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
-                </div>
-
-                <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2">Matrícula</label>
-                    <input type="text" name="registration" value="{{ old('registration') }}"
-                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
-                </div>
-
-                <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2">Cargo</label>
-                    <input type="text" name="position" value="{{ old('position') }}"
-                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
-                </div>
-
-                <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2">Setor</label>
-                    <select name="sector"
-                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
-                        <option value="">Selecione o setor</option>
-                        <option value="Comercial">Comercial</option>
-                        <option value="Departamento Pessoal">Departamento Pessoal</option>
-                        <option value="Financeiro">Financeiro</option>
-                        <option value="Importação">Importação</option>
-                        <option value="Desenvolvimento">Desenvolvimento</option>
-                        <option value="Suporte">Suporte</option>
-                        <option value="Manutenção">Manutenção</option>
-                    </select>
-                </div>
-
-                <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2">Telefone/Ramal</label>
-                    <input type="text" name="phone" value="{{ old('phone') }}"
-                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
-                </div>
-
-                <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2">Senha *</label>
-                    <input type="password" name="password" required
-                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
-                </div>
-
-                <div class="mb-6">
-                    <label class="block text-gray-700 text-sm font-bold mb-2">Confirmar Senha *</label>
-                    <input type="password" name="password_confirmation" required
-                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
-                </div>
-
-                <button type="submit"
-                    class="w-full bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300">
-                    Cadastrar
-                </button>
-
-                <div class="text-center mt-4">
-                    <a href="{{ route('login') }}" class="text-blue-600 hover:text-blue-800 text-sm">
-                        Já possui conta? Faça login
-                    </a>
-                </div>
-            </form>
         </div>
     </div>
-</body>
+</div>
+@endsection
 
-</html>
+@push('styles')
+<style>
+    .card {
+        animation: fadeInUp 0.5s ease;
+    }
+    
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .form-control:focus,
+    .form-select:focus {
+        border-color: #00bb64;
+        box-shadow: 0 0 0 0.2rem rgba(0, 187, 100, 0.25);
+    }
+    
+    .btn-success {
+        background: linear-gradient(135deg, #005c31 0%, #00bb64 100%);
+        border: none;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .btn-success:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 92, 49, 0.3);
+        background: linear-gradient(135deg, #005c31 0%, #00bb64 100%);
+    }
+    
+    .btn-success:active {
+        transform: translateY(0);
+    }
+    
+    .text-success {
+        color: #00bb64 !important;
+    }
+    
+    .text-success:hover {
+        color: #005c31 !important;
+    }
+</style>
+@endpush

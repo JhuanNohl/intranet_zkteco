@@ -1,9 +1,19 @@
 <?php
 
+use App\Http\Controllers\ComunicadoController;
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Auth;
+
+// Rota principal - redireciona baseado na autenticação
+Route::get('/', function () {
+    if (Auth::check()) {
+        return redirect()->route('home');
+    }
+    return redirect()->route('login');
+});
 
 // Rotas públicas (não autenticadas)
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
@@ -11,7 +21,7 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'register']);
 
-// Rotas protegidas (requerem autenticação)
+// Rotas protegidas por autenticação
 Route::middleware(['auth'])->group(function () {
 
     // Logout
@@ -20,15 +30,11 @@ Route::middleware(['auth'])->group(function () {
         return redirect('/login');
     })->name('logout');
 
-    // Home após login
-    Route::get('/home', function () {
-        return view('welcome');
-    })->name('home');
+    // Home após login - USANDO O WELCOME CONTROLLER
+    Route::get('/home', [WelcomeController::class, 'index'])->name('home');
 
-    // Rota principal redireciona para home
-    Route::get('/', function () {
-        return redirect()->route('welcome');
-    });
+    // Rotas de comunicados
+    Route::resource('comunicados', ComunicadoController::class);
 
     // Rotas dos setores
     Route::get('/comercial', function () {
@@ -79,6 +85,3 @@ Route::middleware(['auth'])->group(function () {
         return view('pages.produtos');
     })->name('produtos');
 });
-
-// Se você ainda tem o arquivo auth.php, mantenha ou remova a linha abaixo
-// require __DIR__ . '/auth.php';
