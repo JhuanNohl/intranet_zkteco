@@ -152,7 +152,7 @@ body {
 .birthday-card,
 .news-mini-card {
     background: rgba(255, 255, 255, 0.95);
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 255, 13, 0.05);
     border-radius: var(--radius-xl);
     box-shadow: var(--shadow-soft);
 }
@@ -162,9 +162,9 @@ body {
     position: relative;
     min-height: 340px;
     background:
-        linear-gradient(115deg, rgba(15, 81, 50, 0.94), rgba(17, 17, 17, 0.86)),
+        linear-gradient(115deg, rgba(0, 136, 72, 0.94), rgba(114, 255, 145, 0.658)),
         url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=80') center/cover;
-    color: white;
+    color: rgb(0, 255, 13);
     padding: 38px;
     display: flex;
     flex-direction: column;

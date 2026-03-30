@@ -6,6 +6,18 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\CommercialDocumentController;
+use App\Http\Controllers\CommercialMapController;
+use App\Http\Controllers\PageController;
+
+// Grupo com prefixo 'commercial' e middleware auth
+Route::prefix('commercial')->middleware('auth')->group(function () {
+    // Documentos
+    Route::resource('documents', CommercialDocumentController::class)->names('commercial.documents');
+
+    // Mapa
+    Route::get('map', [CommercialMapController::class, 'index'])->name('commercial.map');
+});
 
 // Rota principal - redireciona baseado na autenticação
 Route::get('/', function () {
@@ -38,7 +50,10 @@ Route::middleware(['auth'])->group(function () {
 
     // Rotas dos setores
     Route::get('/comercial', function () {
-        return view('pages.comercial');
+        $documents = \App\Models\CommercialDocument::with('creator')->orderBy('category')->get();
+        $areas = \App\Models\CommercialMapArea::all();
+        
+        return view('pages.comercial', compact('documents', 'areas'));
     })->name('comercial');
 
     Route::get('/departamento-pessoal', function () {

@@ -19,6 +19,52 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <style>
+        /* Cores personalizadas ZKTeco */
+        :root {
+            --zkteco-green: #28a745;
+            --zkteco-dark-green: #1e7e34;
+            --zkteco-gray: #6c757d;
+        }
+
+        /* Botão principal verde */
+        .btn-zkteco {
+            background-color: var(--zkteco-green);
+            border-color: var(--zkteco-green);
+            color: white;
+        }
+
+        .btn-zkteco:hover {
+            background-color: var(--zkteco-dark-green);
+            border-color: var(--zkteco-dark-green);
+            color: white;
+        }
+
+        /* Botão outline verde */
+        .btn-outline-zkteco {
+            border-color: var(--zkteco-green);
+            color: var(--zkteco-green);
+        }
+
+        .btn-outline-zkteco:hover {
+            background-color: var(--zkteco-green);
+            color: white;
+        }
+
+        /* Links e destaques */
+        .text-zkteco {
+            color: var(--zkteco-green);
+        }
+
+        .bg-zkteco {
+            background-color: var(--zkteco-green);
+        }
+
+        /* Cards com borda verde no hover */
+        .card:hover {
+            border-color: var(--zkteco-green);
+        }
+    </style>
 </head>
 
 <body>

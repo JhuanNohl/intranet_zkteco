@@ -4,7 +4,7 @@
 
 @section('content')
     <section class="hero-card">
-        <div class="badge-soft">● Destaque da semana</div>
+        <div class="badge-soft">● ZKTECO DO BRASIL</div>
         <h1 class="hero-title">Bem-vindo à Intranet da ZKTeco!</h1>
         <p class="hero-subtitle">
             Na ZKTeco, estamos comprometidos em fornecer uma plataforma abrangente e eficiente para a comunicação e
@@ -16,7 +16,6 @@
             <button class="btn btn-light px-4 py-2 rounded-4 fw-bold" onclick="abrirModalComunicados()">
                 Ver comunicados
             </button>
-            <button class="btn btn-outline-light px-4 py-2 rounded-4 fw-bold">Abrir documentos</button>
         </div>
     </section>
 
