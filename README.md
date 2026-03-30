@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -56,3 +57,60 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+=======
+# 🏢 Intranet ZKTeco
+
+Sistema de Intranet Corporativa desenvolvido para a ZKTeco Brasil, centralizando comunicação, gestão de setores e colaboradores em uma plataforma moderna e eficiente.
+
+## 📋 Sobre o Projeto
+
+A Intranet ZKTeco foi desenvolvida para otimizar a comunicação interna e a gestão de informações entre os setores da empresa. O sistema permite:
+
+- 📢 **Comunicados Internos** - Publique e gerencie avisos importantes
+- 👥 **Gestão de Colaboradores** - Cadastro completo de funcionários e visitantes
+- 🎯 **Controle de Acesso** - Permissões granulares por setor e função
+- 📊 **Dashboards Power BI** - Visualização de dados em tempo real
+- 🎂 **Aniversariantes** - Acompanhamento e celebração de datas especiais
+- 📁 **Documentos** - Central de arquivos organizados por setor
+
+## 🚀 Tecnologias Utilizadas
+
+### Backend
+| Tecnologia | Versão | Descrição |
+|------------|--------|-----------|
+| PHP | 8.5+ | Linguagem principal |
+| Laravel | 13.1 | Framework PHP |
+| PostgreSQL | 16+ | Banco de dados relacional |
+| Spatie Permission | ^6.0 | Gerenciamento de permissões |
+
+### Frontend
+| Tecnologia | Descrição |
+|------------|-----------|
+| Blade | Template engine do Laravel |
+| Tailwind CSS | Framework CSS utilitário |
+| JavaScript | Interatividade e funcionalidades dinâmicas |
+
+### Ferramentas de Desenvolvimento
+- **Composer** - Gerenciador de dependências PHP
+- **DBeaver** - Gerenciamento visual do banco de dados
+- **Git** - Controle de versão
+- **VS Code** - IDE principal
+
+## 📦 Pré-requisitos
+
+Antes de iniciar, certifique-se de ter instalado:
+
+- [PHP](https://www.php.net/downloads) >= 8.5
+- [Composer](https://getcomposer.org/download/)
+- [PostgreSQL](https://www.postgresql.org/download/) >= 16
+- [Git](https://git-scm.com/downloads)
+- [DBeaver](https://dbeaver.io/download/) (opcional, para gerenciar o banco)
+
+## 🔧 Instalação e Configuração
+
+### 1. Clone o repositório
+
+```bash
+git clone https://github.com/seu-usuario/intranet-zkteco.git
+cd intranet-zkteco
+>>>>>>> a6f719c0ac9a5383937b822f4e0f22f8d0e8bab9
