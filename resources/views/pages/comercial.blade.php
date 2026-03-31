@@ -151,7 +151,7 @@
             .nav-tabs .nav-link {
                 border: none;
                 font-weight: 500;
-                padding: 0.75rem 1.5rem;
+                padding: auto;
                 color: grey;
                 transition: all 0.3s;
             }

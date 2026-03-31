@@ -7,66 +7,78 @@
         <div class="row justify-content-center align-items-center min-vh-100">
             <div class="col-md-5 col-lg-4">
                 <div class=" card shadow-lg border-0 rounded-4 overflow-hidden">
-                <div class="card-header bg-white border-0 pt-4 pb-0">
-                    <div class="text-center mb-4">
-                        <img src="{{ asset('img/logo-zkteco.png') }}" alt="ZKTeco" height="80">
-                        <h2 class="h4 mt-3 fw-bold text-success">Bem-vindo</h2>
-                        <p class="text-muted">Faça login para acessar a intranet</p>
+                    <div class="card-header bg-white border-0 pt-4 pb-0">
+                        <div class="text-center mb-4">
+                            <img src="{{ asset('img/logo-zkteco.png') }}" alt="ZKTeco" height="80">
+                            <h2 class="h4 mt-3 fw-bold text-success">Bem-vindo</h2>
+                            <p class="text-muted">Faça login para acessar a intranet</p>
+                        </div>
+                    </div>
+
+                    <div class="card-body p-4">
+                        <form method="POST" action="{{ route('login') }}">
+                            @csrf
+
+                            <div class="mb-3">
+                                <label for="email" class="form-label fw-semibold">E-mail</label>
+                                <input type="email" class="form-control @error('email') is-invalid @enderror" id="email"
+                                    name="email" value="{{ old('email') }}" placeholder="seu.email@zkteco.com.br" required
+                                    autofocus> @error('email') <div class="invalid-feedback">{{ $message }}
+                                        </div>
+                                    @enderror
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="password" class="form-label fw-semibold">Senha</label>
+                                <input type="password" class="form-control @error('password') is-invalid @enderror"
+                                    id="password" name="password" placeholder="Digite sua senha" required>
+                                @error('password')
+                                    <div class="invalid-feedback">{{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="remember" name="remember">
+                                <label class="form-check-label text-muted" for="remember">Lembrar-me</label>
+                            </div>
+
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-success btn-lg rounded-3 fw-semibold">
+                                    Entrar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="card-footer bg-white border-0 text-center pb-4">
+                        <p class="mb-0 text-muted">
+                            Não tem uma conta?
+                            <a href="{{ route('register') }}" class="text-success fw-semibold text-decoration-none">
+                                Registre-se
+                            </a>
+                        </p>
                     </div>
                 </div>
-
-                <div class="card-body p-4">
-                    <form method="POST" action="{{ route('login') }}">
-                                @csrf
-
-                                <div class="mb-3">
-                        <label for="email" class="form-label fw-semibold">E-mail</label>
-                        <input type="email" class="form-control @error('email') is-invalid @enderror" id="email"
-                            name="email" value="{{ old('email') }}"                    placeholder="seu.email@zkteco.com.br"
-                            required autofocus>           @error('email') <div class="invalid-feedback">{{ $message }}
-                                </div>
-                            @enderror
             </div>
-
-            <div class="mb-3">
-                <label for="password" class="form-label fw-semibold">Senha</label>
-                <input type="password" class="form-control @error('password') is-invalid @enderror" id="password"
-                    name="password" placeholder="Digite sua senha" required>
-                @error('password')
-                                  <div class="invalid-feedback">{{ $message }}
-                    </div>
-                @enderror
         </div>
-
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="remember" name="remember">
-            <label class="form-check-label text-muted" for="remember">Lembrar-me</label>
-        </div>
-
-        <div class="d-grid gap-2">
-            <button type="submit" class="btn btn-success btn-lg rounded-3 fw-semibold">
-                Entrar
-            </button>
-        </div>
-        </form>
-    </div>
-
-    <div class="card-footer bg-white border-0 text-center pb-4">
-        <p class="mb-0 text-muted">
-            Não tem uma conta?
-            <a href="{{ route('register') }}" class="text-success fw-semibold text-decoration-none">
-                Registre-se
-            </a>
-        </p>
-    </div>
-    </div>
-    </div>
-    </div>
     </div>
 @endsection
 
 @push('styles')
     <style>
+        /* Estilizando o checkbox na cor verde */
+        .form-check-input:checked {
+            background-color: #198754;
+            border-color: #198754;
+        }
+
+        /* Opcional: alterar a cor do foco também para verde */
+        .form-check-input:focus {
+            border-color: #86b7fe;
+            box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
+        }
+
         .card {
             animation: fadeInUp 0.5s ease;
         }
