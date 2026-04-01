@@ -80,24 +80,28 @@
                                 </div>
                             </div>
 
-                            <div class="mb-3" id="fileField">
-                                <label class="form-label fw-bold">Arquivo</label>
-                                <input type="file" name="arquivo"
-                                    class="form-control @error('arquivo') is-invalid @enderror"
-                                    accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png">
+                            <!-- Campo para URL (Link) -->
+                            <div class="mb-3" id="urlField">
+                                <label class="form-label fw-bold">URL do Link *</label>
+                                <input type="url" name="external_url"
+                                    class="form-control @error('external_url') is-invalid @enderror"
+                                    placeholder="https://exemplo.com/documento" value="{{ old('external_url') }}">
                                 <div class="form-text text-muted">
-                                    Formatos permitidos: PDF, DOC, DOCX, XLS, XLSX, JPG, PNG. Tamanho máximo: 2MB
+                                    Insira a URL completa começando com http:// ou https://
                                 </div>
-                                @error('arquivo')
+                                @error('external_url')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
                             </div>
 
-                            <div class="mb-3 d-none" id="fileField">
-                                <label class="form-label fw-bold">Arquivo</label>
+                            <!-- Campo para Arquivo -->
+                            <div class="mb-3" id="fileField">
+                                <label class="form-label fw-bold">Arquivo *</label>
                                 <input type="file" name="file" class="form-control @error('file') is-invalid @enderror"
-                                    accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx">
-                                <small class="text-muted">PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX (max 10MB)</small>
+                                    accept=".pdf,.doc,.docx,.xlsx,.xls,.ppt,.pptx">
+                                <div class="form-text text-muted">
+                                    Formatos permitidos: PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX. Tamanho máximo: 10MB
+                                </div>
                                 @error('file')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
@@ -132,26 +136,29 @@
                     // Modo Link - mostra URL, esconde arquivo
                     urlField.classList.remove('d-none');
                     fileField.classList.add('d-none');
-                    urlInput.required = true;
-                    fileInput.required = false;
+                    if (urlInput) urlInput.required = true;
+                    if (fileInput) fileInput.required = false;
                     // Limpa o campo de arquivo se houver
-                    fileInput.value = '';
+                    if (fileInput) fileInput.value = '';
                 } else {
                     // Modo Arquivo - mostra arquivo, esconde URL
                     urlField.classList.add('d-none');
                     fileField.classList.remove('d-none');
-                    urlInput.required = false;
-                    fileInput.required = true;
+                    if (urlInput) urlInput.required = false;
+                    if (fileInput) fileInput.required = true;
                     // Limpa o campo de URL se houver
-                    urlInput.value = '';
+                    if (urlInput) urlInput.value = '';
                 }
             }
 
-            typeLink.addEventListener('change', toggleFields);
-            typeFile.addEventListener('change', toggleFields);
+            // Adiciona event listeners apenas se os elementos existirem
+            if (typeLink && typeFile) {
+                typeLink.addEventListener('change', toggleFields);
+                typeFile.addEventListener('change', toggleFields);
 
-            // Executar ao carregar para garantir o estado correto
-            toggleFields();
+                // Executar ao carregar para garantir o estado correto
+                toggleFields();
+            }
         });
     </script>
 @endsection
