@@ -6,6 +6,7 @@ use App\Models\CommercialDocument;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Log;
 
 class CommercialDocumentController extends Controller
 {
@@ -18,7 +19,6 @@ class CommercialDocumentController extends Controller
 
     public function create()
     {
-        // Verifica permissão usando Gate
         if (Gate::denies('create', CommercialDocument::class)) {
             abort(403, 'Você não tem permissão para adicionar documentos.');
         }
@@ -28,45 +28,55 @@ class CommercialDocumentController extends Controller
 
     public function store(Request $request)
     {
-        // Verifica permissão
+        Log::info('Store method called', $request->all());
+        
         if (Gate::denies('create', CommercialDocument::class)) {
             abort(403, 'Você não tem permissão para adicionar documentos.');
         }
         
-        $validated = $request->validate([
+        $rules = [
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
             'category' => 'required|string|max:100',
             'type' => 'required|in:file,link',
-            'file' => 'required_if:type,file|file|mimes:pdf,doc,docx,xlsx,xls,ppt,pptx|max:10240',
-            'external_url' => 'required_if:type,link|url|max:255',
-        ]);
-
+        ];
+        
+        if ($request->type === 'file') {
+            $rules['file'] = 'required|file|mimes:pdf,doc,docx,xlsx,xls,ppt,pptx|max:10240';
+        } else {
+            $rules['external_url'] = 'required|url|max:255';
+        }
+        
+        $validated = $request->validate($rules);
+        
         $data = [
             'title' => $validated['title'],
-            'description' => $validated['description'],
+            'description' => $validated['description'] ?? null,
             'category' => $validated['category'],
             'type' => $validated['type'],
             'created_by' => auth()->id(),
+            'updated_by' => null,
         ];
 
         if ($validated['type'] === 'file') {
             $path = $request->file('file')->store('commercial_documents', 'public');
             $data['file_path'] = $path;
+            $data['external_url'] = null;
         } else {
             $data['external_url'] = $validated['external_url'];
+            $data['file_path'] = null;
         }
 
-        CommercialDocument::create($data);
+        $document = CommercialDocument::create($data);
 
-        // Redireciona para a página comercial
         return redirect()->route('comercial')
             ->with('success', 'Documento criado com sucesso.');
     }
 
-    public function edit(CommercialDocument $commercialDocument)
+    public function edit($id)
     {
-        // Verifica permissão para editar este documento específico
+        $commercialDocument = CommercialDocument::findOrFail($id);
+        
         if (Gate::denies('update', $commercialDocument)) {
             abort(403, 'Você não tem permissão para editar este documento.');
         }
@@ -74,63 +84,70 @@ class CommercialDocumentController extends Controller
         return view('commercial.documents.edit', compact('commercialDocument'));
     }
 
-    public function update(Request $request, CommercialDocument $commercialDocument)
+    public function update(Request $request, $id)
     {
-        // Verifica permissão para atualizar este documento específico
+        $commercialDocument = CommercialDocument::findOrFail($id);
+        
+        Log::info('Update method called for ID: ' . $id);
+        
         if (Gate::denies('update', $commercialDocument)) {
             abort(403, 'Você não tem permissão para editar este documento.');
         }
         
-        $validated = $request->validate([
+        $rules = [
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
             'category' => 'required|string|max:100',
             'type' => 'required|in:file,link',
-            'file' => 'nullable|file|mimes:pdf,doc,docx,xlsx,xls,ppt,pptx|max:10240',
-            'external_url' => 'required_if:type,link|url|max:255',
-        ]);
-
+        ];
+        
+        if ($request->type === 'file') {
+            $rules['file'] = 'nullable|file|mimes:pdf,doc,docx,xlsx,xls,ppt,pptx|max:10240';
+        } else {
+            $rules['external_url'] = 'required|url|max:255';
+        }
+        
+        $validated = $request->validate($rules);
+        
         $data = [
             'title' => $validated['title'],
-            'description' => $validated['description'],
+            'description' => $validated['description'] ?? null,
             'category' => $validated['category'],
             'type' => $validated['type'],
             'updated_by' => auth()->id(),
         ];
 
-        // Se for arquivo e foi enviado novo arquivo
         if ($validated['type'] === 'file') {
             if ($request->hasFile('file')) {
-                // Apaga o arquivo antigo se existir
                 if ($commercialDocument->file_path) {
                     Storage::disk('public')->delete($commercialDocument->file_path);
                 }
                 $path = $request->file('file')->store('commercial_documents', 'public');
                 $data['file_path'] = $path;
-                $data['external_url'] = null;
             } else {
                 $data['file_path'] = $commercialDocument->file_path;
-                $data['external_url'] = null;
             }
+            $data['external_url'] = null;
         } else {
             $data['external_url'] = $validated['external_url'];
-            $data['file_path'] = null;
-            // Se havia arquivo antigo, apaga
             if ($commercialDocument->file_path) {
                 Storage::disk('public')->delete($commercialDocument->file_path);
             }
+            $data['file_path'] = null;
         }
 
         $commercialDocument->update($data);
 
-        // Redireciona para a página comercial
         return redirect()->route('comercial')
             ->with('success', 'Documento atualizado com sucesso.');
     }
 
-    public function destroy(CommercialDocument $commercialDocument)
+    public function destroy($id)
     {
-        // Verifica permissão para excluir este documento específico
+        $commercialDocument = CommercialDocument::findOrFail($id);
+        
+        Log::info('Destroy method called for ID: ' . $id);
+        
         if (Gate::denies('delete', $commercialDocument)) {
             abort(403, 'Você não tem permissão para excluir este documento.');
         }
@@ -138,9 +155,9 @@ class CommercialDocumentController extends Controller
         if ($commercialDocument->type === 'file' && $commercialDocument->file_path) {
             Storage::disk('public')->delete($commercialDocument->file_path);
         }
+        
         $commercialDocument->delete();
 
-        // Redireciona para a página comercial
         return redirect()->route('comercial')
             ->with('success', 'Documento removido com sucesso.');
     }

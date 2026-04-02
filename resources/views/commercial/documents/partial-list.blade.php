@@ -54,20 +54,20 @@
                                         </div>
                                         @can('update', $doc)
                                             <div class="ms-3">
-                                                <a href="{{ route('commercial.documents.edit', $doc) }}"
-                                                    class="btn btn-sm btn-outline-success me-1" data-bs-toggle="tooltip"
-                                                    title="Editar documento">
-                                                    <i class="bi bi-pencil"></i>
-                                                </a><i class="bi bi-pencil"></i>
+                                                <!-- Botão EDITAR - Usando URL direta -->
+                                                <a href="/commercial/documents/{{ $doc->id }}/edit" class="btn btn-warning btn-md me-2"
+                                                    data-bs-toggle="tooltip" title="Editar documento" style="min-width: 80px;">
+                                                    <i class="bi bi-pencil-square me-1"></i> Editar
                                                 </a>
-                                                <form action="{{ route('commercial.documents.destroy', $doc) }}" method="POST"
-                                                    class="d-inline">
+
+                                                <!-- Formulário EXCLUIR - Usando URL direta -->
+                                                <form action="/commercial/documents/{{ $doc->id }}" method="POST" class="d-inline-block"
+                                                    onsubmit="return confirm('Tem certeza que deseja excluir o documento \'{{ $doc->title }}\'? Esta ação não pode ser desfeita.');">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-sm btn-outline-danger"
-                                                        onclick="return confirm('Tem certeza que deseja excluir este documento?')"
-                                                        data-bs-toggle="tooltip" title="Excluir documento">
-                                                        <i class="bi bi-trash"></i>
+                                                    <button type="submit" class="btn btn-danger btn-md" data-bs-toggle="tooltip"
+                                                        title="Excluir documento" style="min-width: 80px;">
+                                                        <i class="bi bi-trash me-1"></i> Excluir
                                                     </button>
                                                 </form>
                                             </div>

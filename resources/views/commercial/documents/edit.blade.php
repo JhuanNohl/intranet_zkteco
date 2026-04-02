@@ -1,86 +1,178 @@
 @extends('layouts.app')
 
-@section('title', 'Adicionar Documento Comercial')
+@section('title', 'Editar Documento Comercial')
 
 @section('content')
-    <div class="container">
-        <h1>Editar Documento</h1>
-        <form action="{{ route('commercial.documents.store') }}" method="POST" enctype="multipart/form-data">
-            @csrf
-            <div class="mb-3">
-                <label for="title" class="form-label">Título</label>
-                <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title"
-                    value="{{ old('title') }}" required>
-                @error('title') <div class="invalid-feedback">{{ $message }}</div> @enderror
-            </div>
-            <div class="mb-3">
-                <label for="description" class="form-label">Descrição</label>
-                <textarea class="form-control @error('description') is-invalid @enderror" id="description"
-                    name="description" rows="2">{{ old('description') }}</textarea>
-                @error('description') <div class="invalid-feedback">{{ $message }}</div> @enderror
-            </div>
-            <div class="mb-3">
-                <label for="category" class="form-label">Categoria</label>
-                <input type="text" class="form-control @error('category') is-invalid @enderror" id="category"
-                    name="category" value="{{ old('category') }}" required>
-                <small class="form-text text-muted">Ex: Processos e Fluxos, Formulários, Manuais, Sistemas e Links,
-                    Parceiros e Atendimento</small>
-                @error('category') <div class="invalid-feedback">{{ $message }}</div> @enderror
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Tipo</label>
-                <div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="type" id="typeFile" value="file" {{ old('type') == 'file' ? 'checked' : '' }} required>
-                        <label class="form-check-label" for="typeFile">Arquivo</label>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header bg-warning text-white">
+                        <h4 class="mb-0">
+                            <i class="bi bi-pencil-square me-2"></i>
+                            Editar Documento Comercial
+                        </h4>
                     </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="type" id="typeLink" value="link" {{ old('type') == 'link' ? 'checked' : '' }} required>
-                        <label class="form-check-label" for="typeLink">Link</label>
+                    <div class="card-body">
+                        @if($errors->any())
+                            <div class="alert alert-danger">
+                                <ul class="mb-0">
+                                    @foreach($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+
+                        <!-- Usando URL direta para evitar problemas de rota -->
+                        <form action="/commercial/documents/{{ $commercialDocument->id }}" method="POST"
+                            enctype="multipart/form-data">
+                            @csrf
+                            @method('PUT')
+
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Título *</label>
+                                <input type="text" name="title" class="form-control @error('title') is-invalid @enderror"
+                                    value="{{ old('title', $commercialDocument->title) }}" required>
+                                @error('title')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Descrição</label>
+                                <textarea name="description" class="form-control @error('description') is-invalid @enderror"
+                                    rows="3">{{ old('description', $commercialDocument->description) }}</textarea>
+                                @error('description')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Categoria *</label>
+                                <select name="category" class="form-control @error('category') is-invalid @enderror"
+                                    required>
+                                    <option value="">Selecione</option>
+                                    <option value="Processos e Fluxos" {{ old('category', $commercialDocument->category) == 'Processos e Fluxos' ? 'selected' : '' }}>Processos
+                                        e Fluxos</option>
+                                    <option value="Formulários" {{ old('category', $commercialDocument->category) == 'Formulários' ? 'selected' : '' }}>Formulários
+                                    </option>
+                                    <option value="Manuais" {{ old('category', $commercialDocument->category) == 'Manuais' ? 'selected' : '' }}>Manuais</option>
+                                    <option value="Sistemas e Links" {{ old('category', $commercialDocument->category) == 'Sistemas e Links' ? 'selected' : '' }}>Sistemas e
+                                        Links</option>
+                                    <option value="Parceiros e Atendimento" {{ old('category', $commercialDocument->category) == 'Parceiros e Atendimento' ? 'selected' : '' }}>
+                                        Parceiros e Atendimento</option>
+                                </select>
+                                @error('category')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Tipo *</label>
+                                <div class="form-check">
+                                    <input type="radio" name="type" value="link" id="typeLink" class="form-check-input" {{ old('type', $commercialDocument->type) == 'link' ? 'checked' : '' }}>
+                                    <label for="typeLink" class="form-check-label">
+                                        <i class="bi bi-link-45deg"></i> Link (URL)
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" name="type" value="file" id="typeFile" class="form-check-input" {{ old('type', $commercialDocument->type) == 'file' ? 'checked' : '' }}>
+                                    <label for="typeFile" class="form-check-label">
+                                        <i class="bi bi-file-earmark-pdf"></i> Arquivo
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Campo para URL (Link) -->
+                            <div class="mb-3" id="urlField"
+                                style="{{ $commercialDocument->type == 'link' ? '' : 'display: none;' }}">
+                                <label class="form-label fw-bold">URL do Link *</label>
+                                <input type="url" name="external_url"
+                                    class="form-control @error('external_url') is-invalid @enderror"
+                                    placeholder="https://exemplo.com/documento"
+                                    value="{{ old('external_url', $commercialDocument->external_url) }}">
+                                <div class="form-text text-muted">
+                                    Insira a URL completa começando com http:// ou https://
+                                </div>
+                                @error('external_url')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <!-- Campo para Arquivo -->
+                            <div class="mb-3" id="fileField"
+                                style="{{ $commercialDocument->type == 'file' ? '' : 'display: none;' }}">
+                                <label class="form-label fw-bold">Arquivo</label>
+                                <input type="file" name="file" class="form-control @error('file') is-invalid @enderror"
+                                    accept=".pdf,.doc,.docx,.xlsx,.xls,.ppt,.pptx">
+                                <div class="form-text text-muted">
+                                    Formatos permitidos: PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX. Tamanho máximo: 10MB
+                                    @if($commercialDocument->type == 'file' && $commercialDocument->file_path)
+                                        <br><strong>Arquivo atual:</strong> <a href="{{ $commercialDocument->url }}"
+                                            target="_blank">Visualizar arquivo atual</a>
+                                    @endif
+                                </div>
+                                @error('file')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <div class="d-flex justify-content-between mt-4">
+                                <a href="{{ route('comercial') }}" class="btn btn-secondary">
+                                    <i class="bi bi-arrow-left me-2"></i>Cancelar
+                                </a>
+                                <button type="submit" class="btn btn-warning">
+                                    <i class="bi bi-save me-2"></i>Atualizar Documento
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
-            <div class="mb-3" id="fileInput">
-                <label for="file" class="form-label">Arquivo</label>
-                <input type="file" class="form-control @error('file') is-invalid @enderror" id="file" name="file"
-                    accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx">
-                @error('file') <div class="invalid-feedback">{{ $message }}</div> @enderror
-            </div>
-            <div class="mb-3 d-none" id="linkInput">
-                <label for="external_url" class="form-label">URL</label>
-                <input type="url" class="form-control @error('external_url') is-invalid @enderror" id="external_url"
-                    name="external_url" value="{{ old('external_url') }}">
-                @error('external_url') <div class="invalid-feedback">{{ $message }}</div> @enderror
-            </div>
-            <button type="submit" class="btn btn-success">
-                <i class="bi bi-check-lg me-2"></i>Salvar
-            </button>
-            <a href="{{ route('comercial') }}" class="btn btn-secondary">
-                <i class="bi bi-arrow-left me-2"></i>Cancelar
-            </a>
-        </form>
+        </div>
     </div>
 
-    @push('scripts')
-        <script>
-            document.querySelectorAll('input[name="type"]').forEach(radio => {
-                radio.addEventListener('change', function () {
-                    if (this.value === 'file') {
-                        document.getElementById('fileInput').classList.remove('d-none');
-                        document.getElementById('linkInput').classList.add('d-none');
-                        document.getElementById('file').required = true;
-                        document.getElementById('external_url').required = false;
-                    } else {
-                        document.getElementById('fileInput').classList.add('d-none');
-                        document.getElementById('linkInput').classList.remove('d-none');
-                        document.getElementById('file').required = false;
-                        document.getElementById('external_url').required = true;
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const typeLink = document.getElementById('typeLink');
+            const typeFile = document.getElementById('typeFile');
+            const urlField = document.getElementById('urlField');
+            const fileField = document.getElementById('fileField');
+            const urlInput = document.querySelector('input[name="external_url"]');
+            const fileInput = document.querySelector('input[name="file"]');
+
+            function toggleFields() {
+                if (typeLink.checked) {
+                    urlField.style.display = 'block';
+                    fileField.style.display = 'none';
+                    if (urlInput) {
+                        urlInput.required = true;
+                        urlInput.disabled = false;
                     }
-                });
-            });
-            // Trigger on load if old value exists
-            let selected = document.querySelector('input[name="type"]:checked');
-            if (selected) selected.dispatchEvent(new Event('change'));
-        </script>
-    @endpush
+                    if (fileInput) {
+                        fileInput.required = false;
+                        fileInput.disabled = true;
+                    }
+                } else {
+                    urlField.style.display = 'none';
+                    fileField.style.display = 'block';
+                    if (urlInput) {
+                        urlInput.required = false;
+                        urlInput.disabled = true;
+                    }
+                    if (fileInput) {
+                        fileInput.required = false;
+                        fileInput.disabled = false;
+                    }
+                }
+            }
+
+            if (typeLink && typeFile) {
+                typeLink.addEventListener('change', toggleFields);
+                typeFile.addEventListener('change', toggleFields);
+                toggleFields();
+            }
+        });
+    </script>
 @endsection

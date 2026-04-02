@@ -133,31 +133,30 @@
 
             function toggleFields() {
                 if (typeLink.checked) {
-                    // Modo Link - mostra URL, esconde arquivo
+                    // Modo Link
                     urlField.classList.remove('d-none');
                     fileField.classList.add('d-none');
-                    if (urlInput) urlInput.required = true;
-                    if (fileInput) fileInput.required = false;
-                    // Limpa o campo de arquivo se houver
-                    if (fileInput) fileInput.value = '';
+                    urlInput.required = true;
+                    urlInput.disabled = false;  // Habilita o campo
+                    fileInput.required = false;
+                    fileInput.disabled = true;   // Desabilita o campo arquivo
+                    fileInput.value = '';
                 } else {
-                    // Modo Arquivo - mostra arquivo, esconde URL
+                    // Modo Arquivo
                     urlField.classList.add('d-none');
                     fileField.classList.remove('d-none');
-                    if (urlInput) urlInput.required = false;
-                    if (fileInput) fileInput.required = true;
-                    // Limpa o campo de URL se houver
-                    if (urlInput) urlInput.value = '';
+                    urlInput.required = false;
+                    urlInput.disabled = true;    // Desabilita o campo URL
+                    fileInput.required = true;
+                    fileInput.disabled = false;  // Habilita o campo arquivo
+                    urlInput.value = '';
                 }
             }
 
-            // Adiciona event listeners apenas se os elementos existirem
             if (typeLink && typeFile) {
                 typeLink.addEventListener('change', toggleFields);
                 typeFile.addEventListener('change', toggleFields);
-
-                // Executar ao carregar para garantir o estado correto
-                toggleFields();
+                toggleFields(); // Estado inicial
             }
         });
     </script>
