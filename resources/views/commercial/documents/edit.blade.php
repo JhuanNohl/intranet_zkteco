@@ -7,7 +7,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header bg-warning text-white">
+                    <div class="card-header bg-primary text-white">
                         <h4 class="mb-0">
                             <i class="bi bi-pencil-square me-2"></i>
                             Editar Documento Comercial
@@ -105,9 +105,9 @@
                                 style="{{ $commercialDocument->type == 'file' ? '' : 'display: none;' }}">
                                 <label class="form-label fw-bold">Arquivo</label>
                                 <input type="file" name="file" class="form-control @error('file') is-invalid @enderror"
-                                    accept=".pdf,.doc,.docx,.xlsx,.xls,.ppt,.pptx">
+                                    accept=".pdf,.doc,.docx,.xlsx,.xls,.ppt,.pptx,.html">
                                 <div class="form-text text-muted">
-                                    Formatos permitidos: PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX. Tamanho máximo: 10MB
+                                    Formatos permitidos: PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX e HTML. Tamanho máximo: 10MB
                                     @if($commercialDocument->type == 'file' && $commercialDocument->file_path)
                                         <br><strong>Arquivo atual:</strong> <a href="{{ $commercialDocument->url }}"
                                             target="_blank">Visualizar arquivo atual</a>
@@ -122,8 +122,8 @@
                                 <a href="{{ route('comercial') }}" class="btn btn-secondary">
                                     <i class="bi bi-arrow-left me-2"></i>Cancelar
                                 </a>
-                                <button type="submit" class="btn btn-warning">
-                                    <i class="bi bi-save me-2"></i>Atualizar Documento
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="bi bi-save me-2"></i><span class="color: white">Atualizar Documento</span>
                                 </button>
                             </div>
                         </form>

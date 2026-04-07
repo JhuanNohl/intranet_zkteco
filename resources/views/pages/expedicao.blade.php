@@ -7,7 +7,7 @@
     <div class="row mb-4">
         <div class="col-12">
             <div class="card border-0 bg-gradient-primary text-white"
-                style="background: linear-gradient(135deg, #0c693b 0%, #00ff4c 100%);">
+                style="background: linear-gradient(135deg, #474B4F 0%, #7AC143 100%);">
                 <div class="card-body py-4">
                     <div class="d-flex justify-content-between align-items-center">
                         <div>

@@ -1,7 +1,7 @@
 :root {
-    --brand-green: #005c31;
-    --brand-green-2: #00bb64;
-    --brand-green-3: #d1e7dd;
+    --brand-green: #7AC143;
+    --brand-green-2: #474B4F;
+    --brand-green-3: #649E37;
     --brand-black: #111111;
     --brand-gray: #f5f7f6;
     --brand-white: #ffffff;
@@ -21,7 +21,7 @@
 }
 
 body {
-    background: linear-gradient(180deg, #eef3f0 0%, #f8faf9 100%);
+    background: linear-gradient(180deg, #7AC143 0%, #474B4F 100%);
     color: var(--brand-black);
     min-height: 100vh;
     overflow-x: hidden;
@@ -146,6 +146,16 @@ body {
 }
 
 /* CARDS */
+.card {
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.25) !important;
+}
+
 .hero-card,
 .section-card,
 .info-card,
@@ -162,9 +172,9 @@ body {
     position: relative;
     min-height: 340px;
     background:
-        linear-gradient(115deg, rgba(0, 136, 72, 0.94), rgba(114, 255, 145, 0.658)),
+        linear-gradient(115deg, rgba(0, 87, 46, 0.94), rgba(0, 255, 55, 0.658)),
         url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=80') center/cover;
-    color: rgb(0, 255, 13);
+    color: rgb(0, 175, 44);
     padding: 38px;
     display: flex;
     flex-direction: column;
@@ -499,5 +509,42 @@ footer {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Estilo para links de documentos comerciais */
+.document-link {
+    color: #000000 !important;
+    /* Preto quando não está com mouse */
+    text-decoration: none !important;
+    transition: color 0.2s ease;
+}
+
+.document-link:hover {
+    color: #0d6efd !important;
+    /* Azul do Bootstrap ao passar o mouse */
+    text-decoration: underline !important;
+}
+
+/* Melhorias para o modal de tabela */
+.modal-xl {
+    max-width: 90%;
+}
+
+.modal-body table {
+    font-size: 0.9rem;
+}
+
+.modal-body table th,
+.modal-body table td {
+    white-space: nowrap;
+    padding: 0.75rem;
+}
+
+/* Permite rolagem horizontal em telas pequenas */
+@media (max-width: 768px) {
+    .modal-body table td {
+        white-space: normal;
+        min-width: 150px;
     }
 }

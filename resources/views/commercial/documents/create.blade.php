@@ -98,9 +98,9 @@
                             <div class="mb-3" id="fileField">
                                 <label class="form-label fw-bold">Arquivo *</label>
                                 <input type="file" name="file" class="form-control @error('file') is-invalid @enderror"
-                                    accept=".pdf,.doc,.docx,.xlsx,.xls,.ppt,.pptx">
+                                    accept=".pdf,.doc,.docx,.xlsx,.xls,.ppt,.pptx,.html">
                                 <div class="form-text text-muted">
-                                    Formatos permitidos: PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX. Tamanho máximo: 10MB
+                                    Formatos permitidos: PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX e HTML. Tamanho máximo: 10MB
                                 </div>
                                 @error('file')
                                     <div class="invalid-feedback">{{ $message }}</div>

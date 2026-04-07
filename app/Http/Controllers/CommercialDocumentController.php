@@ -42,7 +42,7 @@ class CommercialDocumentController extends Controller
         ];
         
         if ($request->type === 'file') {
-            $rules['file'] = 'required|file|mimes:pdf,doc,docx,xlsx,xls,ppt,pptx|max:10240';
+            $rules['file'] = 'required|file|mimes:pdf,doc,docx,xlsx,xls,ppt,pptx,html|max:10240';
         } else {
             $rules['external_url'] = 'required|url|max:255';
         }
@@ -102,7 +102,7 @@ class CommercialDocumentController extends Controller
         ];
         
         if ($request->type === 'file') {
-            $rules['file'] = 'nullable|file|mimes:pdf,doc,docx,xlsx,xls,ppt,pptx|max:10240';
+            $rules['file'] = 'nullable|file|mimes:pdf,doc,docx,xlsx,xls,ppt,pptx,html|max:10240';
         } else {
             $rules['external_url'] = 'required|url|max:255';
         }

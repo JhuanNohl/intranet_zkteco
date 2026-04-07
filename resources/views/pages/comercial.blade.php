@@ -8,7 +8,7 @@
         <div class="row mb-4">
             <div class="col-12">
                 <div class="card border-0 bg-gradient-primary text-white"
-                    style="background: linear-gradient(135deg, #0c693b 0%, #00ff4c 100%);">
+                    style="background: linear-gradient(135deg, #474B4F 0%, #7AC143 100%);">
                     <div class="card-body py-4">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
@@ -26,10 +26,10 @@
             </div>
         </div>
 
-        <!-- Stats Cards - Métricas rápidas -->
-        <div class="row mb-4">
+        <!-- Stats Cards - Métricas rápidas centralizadas -->
+        <div class="row mb-4 justify-content-center">
             <div class="col-md-3 mb-3">
-                <div class="card border-0 shadow-sm h-100">
+                <div class="card border-0 shadow-lg h-100">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
@@ -44,22 +44,7 @@
                 </div>
             </div>
             <div class="col-md-3 mb-3">
-                <div class="card border-0 shadow-sm h-100">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div>
-                                <h6 class="text-muted mb-1">Instruções</h6>
-                                <h3 class="mb-0">{{ $documents->groupBy('category')->count() }}</h3>
-                            </div>
-                            <div class="rounded-circle bg-success bg-opacity-10 p-3">
-                                <i class="bi bi-tags-fill text-success fs-4"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-3">
-                <div class="card border-0 shadow-sm h-100">
+                <div class="card border-0 shadow-lg h-100">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
@@ -74,7 +59,7 @@
                 </div>
             </div>
             <div class="col-md-3 mb-3">
-                <div class="card border-0 shadow-sm h-100">
+                <div class="card border-0 shadow-lg h-100">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
