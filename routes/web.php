@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CommercialDocumentController;
 use App\Http\Controllers\CommercialMapController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\IntegracaoController;
 
 // Grupo com prefixo 'commercial' e middleware auth
 Route::prefix('commercial')->middleware('auth')->group(function () {
@@ -47,6 +48,21 @@ Route::middleware(['auth'])->group(function () {
 
     // Rotas de comunicados
     Route::resource('comunicados', ComunicadoController::class);
+
+    // ========== INTEGRAÇÕES (CONTROLE DE ACESSO) ==========
+    // Rotas para o módulo de integrações
+    Route::prefix('integracoes')->name('integracoes.')->group(function () {
+        Route::get('/', [IntegracaoController::class, 'index'])->name('index');
+        Route::get('/matriz', [IntegracaoController::class, 'matriz'])->name('matriz');
+        Route::get('/create', [IntegracaoController::class, 'create'])->name('create');
+        Route::post('/', [IntegracaoController::class, 'store'])->name('store');
+        Route::get('/{equipamento}/edit', [IntegracaoController::class, 'edit'])->name('edit');
+        Route::put('/{equipamento}', [IntegracaoController::class, 'update'])->name('update');
+        Route::delete('/{equipamento}', [IntegracaoController::class, 'destroy'])->name('destroy');
+        Route::put('/celula/{sistema}/{equipamento}', [IntegracaoController::class, 'updateCelula'])->name('celula.update');
+        Route::get('/export', [IntegracaoController::class, 'export'])->name('export');
+    });
+    // ========== FIM INTEGRAÇÕES ==========
 
     // Rotas dos setores
     Route::get('/comercial', function () {
