@@ -111,8 +111,15 @@
                             </table>
                         </div>
 
+                        {{-- PAGINAÇÃO CORRIGIDA --}}
                         <div class="d-flex justify-content-center mt-4">
                             {{ $equipamentos->links() }}
+                        </div>
+
+                        {{-- Informação de resultados --}}
+                        <div class="text-muted small mt-2">
+                            Mostrando {{ $equipamentos->firstItem() }} a {{ $equipamentos->lastItem() }} de
+                            {{ $equipamentos->total() }} resultados
                         </div>
                     @else
                         <div class="text-center py-5">
@@ -132,8 +139,8 @@
 
 @push('scripts')
     <script>
-        // Ativar tooltips do Bootstrap
         document.addEventListener('DOMContentLoaded', function () {
+            // Ativar tooltips do Bootstrap
             var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
             var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
                 return new bootstrap.Tooltip(tooltipTriggerEl);

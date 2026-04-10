@@ -81,9 +81,11 @@
                 <button class="nav-link active" id="documents-tab" data-bs-toggle="tab" data-bs-target="#documents"
                     type="button" role="tab">
                     <i class="bi bi-folder2-open me-2"></i>Documentos
-                    @can('create', App\Models\CommercialDocument::class)
-                        <span class="badge bg-success ms-2">Gerenciar</span>
-                    @endcan
+                    @auth
+                        @if(auth()->user()->hasPermissionTo('gerenciar_documentos'))
+                            <span class="badge bg-success ms-2">Gerenciar</span>
+                        @endif
+                    @endauth
                 </button>
             </li>
             <li class="nav-item" role="presentation">
@@ -98,13 +100,15 @@
             <div class="tab-pane fade show active" id="documents" role="tabpanel">
                 <div class="row">
                     <div class="col-12">
-                        @can('create', App\Models\CommercialDocument::class)
-                            <div class="mb-4 text-end">
-                                <a href="{{ route('commercial.documents.create') }}" class="btn btn-success btn-lg shadow-sm">
-                                    <i class="bi bi-plus-circle me-2"></i>Adicionar Documento
-                                </a>
-                            </div>
-                        @endcan
+                        @auth
+                            @if(auth()->user()->hasPermissionTo('gerenciar_documentos'))
+                                <div class="mb-4 text-end">
+                                    <a href="{{ route('commercial.documents.create') }}" class="btn btn-success btn-lg shadow-sm">
+                                        <i class="bi bi-plus-circle me-2"></i>Adicionar Documento
+                                    </a>
+                                </div>
+                            @endif
+                        @endauth
 
                         @include('commercial.documents.partial-list', ['documents' => $documents])
                     </div>

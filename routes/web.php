@@ -8,19 +8,16 @@ use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CommercialDocumentController;
 use App\Http\Controllers\CommercialMapController;
-use App\Http\Controllers\PageController;
 use App\Http\Controllers\IntegracaoController;
+use App\Http\Controllers\ManutencaoEquipamentoController;
 
 // Grupo com prefixo 'commercial' e middleware auth
 Route::prefix('commercial')->middleware('auth')->group(function () {
-    // Documentos
     Route::resource('documents', CommercialDocumentController::class)->names('commercial.documents');
-
-    // Mapa
     Route::get('map', [CommercialMapController::class, 'index'])->name('commercial.map');
 });
 
-// Rota principal - redireciona baseado na autenticação
+// Rota principal
 Route::get('/', function () {
     if (Auth::check()) {
         return redirect()->route('home');
@@ -28,29 +25,64 @@ Route::get('/', function () {
     return redirect()->route('login');
 });
 
-// Rotas públicas (não autenticadas)
+// Rotas públicas
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'register']);
 
-// Rotas protegidas por autenticação
+// Rotas protegidas
 Route::middleware(['auth'])->group(function () {
 
-    // Logout
     Route::post('/logout', function () {
         Auth::logout();
         return redirect('/login');
     })->name('logout');
 
-    // Home após login - USANDO O WELCOME CONTROLLER
     Route::get('/home', [WelcomeController::class, 'index'])->name('home');
-
-    // Rotas de comunicados
     Route::resource('comunicados', ComunicadoController::class);
 
-    // ========== INTEGRAÇÕES (CONTROLE DE ACESSO) ==========
-    // Rotas para o módulo de integrações
+    // ========== ROTAS DE MANUTENÇÃO ==========
+    Route::prefix('manutencao')->name('manutencao.')->group(function () {
+        // Página principal (rota nomeada como 'index')
+        Route::get('/', [ManutencaoEquipamentoController::class, 'index'])->name('index');
+        
+        // API para AJAX
+        Route::get('/equipamentos/stats', [ManutencaoEquipamentoController::class, 'getStats'])->name('equipamentos.stats');
+        Route::get('/equipamentos/table', [ManutencaoEquipamentoController::class, 'getTableData'])->name('equipamentos.table');
+        
+        // CRUD via AJAX
+        Route::post('/equipamentos', [ManutencaoEquipamentoController::class, 'store'])->name('equipamentos.store');
+        Route::put('/equipamentos/{id}', [ManutencaoEquipamentoController::class, 'update'])->name('equipamentos.update');
+        Route::delete('/equipamentos/{id}', [ManutencaoEquipamentoController::class, 'destroy'])->name('equipamentos.destroy');
+        
+        // Ações especiais
+        Route::put('/equipamentos/{id}/avancar', [ManutencaoEquipamentoController::class, 'avancarEstagio'])->name('equipamentos.avancar');
+        Route::put('/equipamentos/{id}/cancelar', [ManutencaoEquipamentoController::class, 'cancelar'])->name('equipamentos.cancelar');
+        Route::put('/equipamentos/{id}/baixa', [ManutencaoEquipamentoController::class, 'baixa'])->name('equipamentos.baixa');
+    });
+    
+    // ROTA ALIAS para o menu (sem o .index)
+    Route::get('/manutencao', [ManutencaoEquipamentoController::class, 'index'])->name('manutencao');
+    // ========== FIM MANUTENÇÃO ==========
+
+    // ========== ROTAS DE TREINAMENTOS ==========
+    Route::prefix('treinamentos')->name('treinamentos.')->group(function () {
+        Route::get('/', [App\Http\Controllers\TreinamentoController::class, 'index'])->name('index');
+        Route::post('/{id}/concluir', [App\Http\Controllers\TreinamentoController::class, 'concluir'])->name('concluir');
+        Route::post('/{id}/favoritar', [App\Http\Controllers\TreinamentoController::class, 'favoritar'])->name('favoritar');
+        Route::post('/{id}/acessar', [App\Http\Controllers\TreinamentoController::class, 'registrarAcesso'])->name('acessar');
+    });
+
+// Rota principal (SEM o prefixo)
+Route::get('/treinamentos', [App\Http\Controllers\TreinamentoController::class, 'index'])->name('treinamentos');
+// ========== FIM TREINAMENTOS ==========
+
+// Rota alias para o menu
+Route::get('/treinamentos', [App\Http\Controllers\TreinamentoController::class, 'index'])->name('treinamentos');
+// ========== FIM TREINAMENTOS ==========
+
+    // ========== INTEGRAÇÕES ==========
     Route::prefix('integracoes')->name('integracoes.')->group(function () {
         Route::get('/', [IntegracaoController::class, 'index'])->name('index');
         Route::get('/matriz', [IntegracaoController::class, 'matriz'])->name('matriz');
@@ -62,13 +94,11 @@ Route::middleware(['auth'])->group(function () {
         Route::put('/celula/{sistema}/{equipamento}', [IntegracaoController::class, 'updateCelula'])->name('celula.update');
         Route::get('/export', [IntegracaoController::class, 'export'])->name('export');
     });
-    // ========== FIM INTEGRAÇÕES ==========
 
     // Rotas dos setores
     Route::get('/comercial', function () {
         $documents = \App\Models\CommercialDocument::with('creator')->orderBy('category')->get();
         $areas = \App\Models\CommercialMapArea::all();
-        
         return view('pages.comercial', compact('documents', 'areas'));
     })->name('comercial');
 
@@ -96,10 +126,6 @@ Route::middleware(['auth'])->group(function () {
         return view('pages.ti');
     })->name('ti');
 
-    Route::get('/treinamentos', function () {
-        return view('pages.treinamentos');
-    })->name('treinamentos');
-
     Route::get('/expedicao', function () {
         return view('pages.expedicao');
     })->name('expedicao');
@@ -107,10 +133,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/fabrica', function () {
         return view('pages.fabrica');
     })->name('fabrica');
-
-    Route::get('/manutencao', function () {
-        return view('pages.manutencao');
-    })->name('manutencao');
 
     Route::get('/produtos', function () {
         return view('pages.produtos');

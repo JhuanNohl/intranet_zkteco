@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\Comunicado;
 
-class ComunicadosSeeder extends Seeder
+class ComunicadoSeeder extends Seeder
 {
     public function run()
     {
