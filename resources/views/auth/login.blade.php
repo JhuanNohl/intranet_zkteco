@@ -69,13 +69,13 @@
     <style>
         /* Estilizando o checkbox na cor verde */
         .form-check-input:checked {
-            background-color: #198754;
-            border-color: #198754;
+            background-color: #474B4F;
+            border-color: #7AC143;
         }
 
         /* Opcional: alterar a cor do foco também para verde */
         .form-check-input:focus {
-            border-color: #86b7fe;
+            border-color: #7AC143;
             box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
         }
 
@@ -96,12 +96,12 @@
         }
 
         .form-control:focus {
-            border-color: #00bb64;
+            border-color: #649E37;
             box-shadow: 0 0 0 0.2rem rgba(0, 187, 100, 0.25);
         }
 
         .btn-success {
-            background: linear-gradient(135deg, #005c31 0%, #00bb64 100%);
+            background: linear-gradient(135deg, #7AC143 0%, #474B4F 100%);
             border: none;
             transition: transform 0.2s, box-shadow 0.2s;
         }
@@ -109,7 +109,7 @@
         .btn-success:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0, 92, 49, 0.3);
-            background: linear-gradient(135deg, #005c31 0%, #00bb64 100%);
+            background: linear-gradient(135deg, #7AC143 0%, #474B4F 100%);
         }
 
         .btn-success:active {
