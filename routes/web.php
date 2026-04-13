@@ -109,10 +109,6 @@ Route::middleware(['auth'])->group(function () {
         return view('pages.financeiro');
     })->name('financeiro');
 
-    Route::get('/importacao', function () {
-        return view('pages.importacao');
-    })->name('importacao');
-
     Route::get('/desenvolvimento', function () {
         return view('pages.desenvolvimento');
     })->name('desenvolvimento');
@@ -120,10 +116,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/ti', function () {
         return view('pages.ti');
     })->name('ti');
-
-    Route::get('/expedicao', function () {
-        return view('pages.expedicao');
-    })->name('expedicao');
 
     Route::get('/fabrica', function () {
         return view('pages.fabrica');

@@ -41,10 +41,14 @@ class PermissaoSeeder extends Seeder
             'cancelar_rma',
             'dar_baixa_rma',
             
+            // Fábrica
+            'gerenciar_fabrica',
+
             // Treinamentos
             'gerenciar_treinamentos',
             'concluir_treinamentos',
             'favoritar_treinamentos',
+            'criar_treinamentos',
             
             // Comercial
             'gerenciar_documentos',

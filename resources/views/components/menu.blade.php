@@ -15,9 +15,6 @@
     <a href="{{ route('financeiro') }}" class="menu-link {{ request()->routeIs('financeiro') ? 'active' : '' }}">
         <span class="menu-icon">💰</span> Financeiro
     </a>
-    <a href="{{ route('importacao') }}" class="menu-link {{ request()->routeIs('importacao') ? 'active' : '' }}">
-        <span class="menu-icon">✈️</span> Importação
-    </a>
 
     <div class="menu-section-title">Área Técnica</div>
     <a href="{{ route('desenvolvimento') }}"
@@ -35,9 +32,6 @@
     </a>
 
     <div class="menu-section-title">Operacional</div>
-    <a href="{{ route('expedicao') }}" class="menu-link {{ request()->routeIs('expedicao') ? 'active' : '' }}">
-        <span class="menu-icon">🚚</span> Expedição
-    </a>
     <a href="{{ route('fabrica') }}" class="menu-link {{ request()->routeIs('fabrica') ? 'active' : '' }}">
         <span class="menu-icon">🏭</span> Fábrica
     </a>

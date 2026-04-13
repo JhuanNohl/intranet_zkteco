@@ -26,7 +26,6 @@
                         <li><a class="dropdown-item" href="{{ route('departamento-pessoal') }}">Departamento Pessoal</a>
                         </li>
                         <li><a class="dropdown-item" href="{{ route('financeiro') }}">Financeiro</a></li>
-                        <li><a class="dropdown-item" href="{{ route('importacao') }}">Importação</a></li>
                     </ul>
                 </li>
 
@@ -56,9 +55,6 @@
                 <!-- Outros setores (opcional) -->
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('treinamentos') }}">📚 Treinamentos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('expedicao') }}">🚚 Expedição</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('fabrica') }}">🏭 Fábrica</a>

@@ -91,13 +91,13 @@
                     <div class="text-muted small">Abrir setor Financeiro</div>
                 </div>
             </a>
-            <a href="{{ route('expedicao') }}"
+            <a href="{{ route('produtos') }}"
                 class="news-mini-card department-card text-decoration-none text-dark d-block">
-                <div class="news-thumb">Expedição</div>
+                <div class="news-thumb">Produtos</div>
                 <div class="news-body">
                     <div class="news-tag">Última atualização</div>
                     <div class="news-title">Fluxo interno de separação, despacho e acompanhamento logístico</div>
-                    <div class="text-muted small">Abrir setor Expedição</div>
+                    <div class="text-muted small">Abrir setor de Produtos</div>
                 </div>
             </a>
             <a href="{{ route('comercial') }}"
