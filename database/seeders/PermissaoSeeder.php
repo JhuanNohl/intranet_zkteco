@@ -29,6 +29,9 @@ class PermissaoSeeder extends Seeder
             'ver_fabrica',
             'ver_manutencao',
             'ver_produtos',
+
+            //Departamento Pessoal
+            'gerenciar_dp',
             
             // Integrações
             'ver_integracoes',
