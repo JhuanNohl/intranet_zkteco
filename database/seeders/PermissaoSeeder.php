@@ -57,6 +57,9 @@ class PermissaoSeeder extends Seeder
             'gerenciar_documentos',
             'gerenciar_mapa',
             
+            //Suporte
+            'gerenciar_suporte',
+
             // Comunicados
             'ver_comunicados',
             'criar_comunicados',

@@ -85,14 +85,18 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/export', [IntegracaoController::class, 'export'])->name('export');
     });
 
-    // ========== SUPORTE ==========
+    // Rotas do Suporte
     Route::get('/suporte', function () {
         return view('pages.suporte');
     })->name('suporte');
-    
+
     Route::get('/suporte/parametros', function () {
         return view('pages.suporte-parametros');
     })->name('suporte.parametros');
+
+    Route::get('/suporte/licencas', function () {
+        return view('pages.suporte-licencas');
+    })->name('suporte.licencas');
 
     // ========== SETORES ==========
     Route::get('/comercial', function () {

@@ -13,13 +13,13 @@
                             <h1 class="display-6 fw-bold mb-2">
                                 <i class="bi bi-headset me-2"></i>Suporte Técnico
                             </h1>
-                            <p class="mb-0 opacity-75">ZKTeco | ZKNet</p>
+                            <p class="mb-0 opacity-75">ZKTeco | INTRANET</p>
                         </div>
                         <div>
                             <div class="input-group">
                                 <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
                                 <input type="text" id="buscaDocumento" class="form-control"
-                                    placeholder="Pesquisar parâmetros...">
+                                    placeholder="Pesquisar documentos...">
                             </div>
                         </div>
                     </div>
@@ -37,7 +37,7 @@
                         <i class="bi bi-sliders2 fs-1 text-primary"></i>
                     </div>
                     <h5>Parâmetros de Configuração</h5>
-                    <p class="text-muted small">Documentação completa de parâmetros para equipamentos ZKTeco</p>
+                    <p class="text-muted small">Parâmetros ZKTeco</p>
                     <a href="{{ route('suporte.parametros') }}" class="btn btn-primary">
                         <i class="bi bi-eye me-1"></i>Acessar
                     </a>
@@ -48,12 +48,12 @@
             <div class="card h-100 shadow-sm border-0">
                 <div class="card-body text-center">
                     <div class="rounded-circle bg-success bg-opacity-10 p-3 d-inline-block mb-3">
-                        <i class="bi bi-file-text-fill fs-1 text-success"></i>
+                        <i class="bi bi-book-fill fs-1 text-success"></i>
                     </div>
                     <h5>Base de Conhecimento</h5>
-                    <p class="text-muted small">Artigos, tutoriais e guias rápidos</p>
-                    <a href="#" class="btn btn-success disabled">
-                        <i class="bi bi-eye me-1"></i>Em breve
+                    <p class="text-muted small">Base de Conhecimento ZKTeco</p>
+                    <a href="http://base-conhecimento:82/" target="_blank" class="btn btn-success">
+                        <i class="bi bi-box-arrow-up-right me-1"></i>Acessar
                     </a>
                 </div>
             </div>
@@ -64,56 +64,11 @@
                     <div class="rounded-circle bg-warning bg-opacity-10 p-3 d-inline-block mb-3">
                         <i class="bi bi-key-fill fs-1 text-warning"></i>
                     </div>
-                    <h5>Licenças</h5>
-                    <p class="text-muted small">Informações sobre licenciamento ZKBioCVAccess</p>
-                    <a href="#" class="btn btn-warning disabled">
-                        <i class="bi bi-eye me-1"></i>Em breve
+                    <h5>Licenças de Software</h5>
+                    <p class="text-muted small">Instruções sobre licenciamento</p>
+                    <a href="{{ route('suporte.licencas') }}" class="btn btn-warning">
+                        <i class="bi bi-eye me-1"></i>Acessar
                     </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Escala de Almoço -->
-    <div class="row mb-4">
-        <div class="col-12">
-            <div class="card shadow-sm">
-                <div class="card-header bg-white">
-                    <h5 class="mb-0"><i class="bi bi-calendar-week me-2"></i>Escala de Almoço - Time Suporte</h5>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered text-center">
-                            <thead class="table-light">
-                                <tr>
-                                    <th>Horário</th>
-                                    <th>Segunda</th>
-                                    <th>Terça</th>
-                                    <th>Quarta</th>
-                                    <th>Quinta</th>
-                                    <th>Sexta</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="fw-bold">12:00 - 13:00</td>
-                                    <td>Equipe A</td>
-                                    <td>Equipe B</td>
-                                    <td>Equipe C</td>
-                                    <td>Equipe A</td>
-                                    <td>Equipe B</td>
-                                </tr>
-                                <tr>
-                                    <td class="fw-bold">13:00 - 14:00</td>
-                                    <td>Equipe B</td>
-                                    <td>Equipe C</td>
-                                    <td>Equipe A</td>
-                                    <td>Equipe B</td>
-                                    <td>Equipe C</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
                 </div>
             </div>
         </div>
@@ -141,42 +96,47 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="#" class="list-group-item list-group-item-action disabled">
+                        <a href="http://base-conhecimento:82/" target="_blank"
+                            class="list-group-item list-group-item-action">
                             <div class="d-flex align-items-center">
-                                <i class="bi bi-bar-chart-fill text-success fs-4 me-3"></i>
-                                <div>
-                                    <h6 class="mb-1">Indicadores de Suporte</h6>
-                                    <small class="text-muted">Métricas e indicadores do time de suporte</small>
-                                </div>
-                                <div class="ms-auto">
-                                    <span class="badge bg-secondary">Em breve</span>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action disabled">
-                            <div class="d-flex align-items-center">
-                                <i class="bi bi-book-fill text-info fs-4 me-3"></i>
+                                <i class="bi bi-book-fill text-success fs-4 me-3"></i>
                                 <div>
                                     <h6 class="mb-1">Base de Conhecimento</h6>
                                     <small class="text-muted">Artigos e tutoriais técnicos</small>
                                 </div>
                                 <div class="ms-auto">
-                                    <span class="badge bg-secondary">Em breve</span>
+                                    <span class="badge bg-success">Link Externo</span>
                                 </div>
                             </div>
                         </a>
-                        <a href="#" class="list-group-item list-group-item-action disabled">
+                        <a href="{{ route('suporte.licencas') }}" class="list-group-item list-group-item-action">
                             <div class="d-flex align-items-center">
                                 <i class="bi bi-key-fill text-warning fs-4 me-3"></i>
                                 <div>
                                     <h6 class="mb-1">Licenças ZKBioCVAccess</h6>
-                                    <small class="text-muted">Informações sobre licenciamento</small>
+                                    <small class="text-muted">Informações e instruções sobre licenciamento de
+                                        software</small>
                                 </div>
                                 <div class="ms-auto">
-                                    <span class="badge bg-secondary">Em breve</span>
+                                    <span class="badge bg-warning">Documentação</span>
                                 </div>
                             </div>
                         </a>
+                        @can('gerenciar_suporte')
+                            <a href="#" class="list-group-item list-group-item-action"
+                                onclick="alert('Área administrativa - Em desenvolvimento')">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-plus-circle-fill text-primary fs-4 me-3"></i>
+                                    <div>
+                                        <h6 class="mb-1">Adicionar Documento</h6>
+                                        <small class="text-muted">Gerenciar materiais do setor de suporte</small>
+                                    </div>
+                                    <div class="ms-auto">
+                                        <span class="badge bg-secondary">Admin</span>
+                                    </div>
+                                </div>
+                            </a>
+                        @endcan
                     </div>
                 </div>
             </div>
@@ -211,6 +171,17 @@
 
             .card:hover {
                 transform: translateY(-5px);
+            }
+
+            .list-group-item {
+                transition: all 0.2s;
+                border-left: 3px solid transparent;
+            }
+
+            .list-group-item:hover {
+                background-color: #f8f9fa;
+                border-left-color: #7AC143;
+                transform: translateX(5px);
             }
         </style>
     @endpush
