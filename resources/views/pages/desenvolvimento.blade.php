@@ -31,13 +31,13 @@
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-start">
                         <div>
-                            <h5 class="card-title text-primary">
+                            <h5 class="card-title text-success">
                                 <i class="bi bi-grid-3x3-gap-fill me-2"></i>Matriz de Integrações
                             </h5>
                             <p class="card-text text-muted">
                                 Visualize e edite a compatibilidade entre sistemas e equipamentos de controle de acesso.
                             </p>
-                            <a href="{{ route('integracoes.matriz') }}" class="btn btn-primary btn-sm mt-2">
+                            <a href="{{ route('integracoes.matriz') }}" class="btn btn-success btn-sm mt-2">
                                 <i class="bi bi-eye me-1"></i>Acessar Matriz
                             </a>
                         </div>
@@ -78,7 +78,7 @@
         <div class="col-md-4">
             <div class="card shadow-sm border-0">
                 <div class="card-body text-center">
-                    <div class="display-4 fw-bold text-primary">{{ \App\Models\Sistema::count() }}</div>
+                    <div class="display-4 fw-bold text-success">{{ \App\Models\Sistema::count() }}</div>
                     <div class="text-muted">Sistemas Integrados</div>
                     <i class="bi bi-building text-primary opacity-50 mt-2"></i>
                 </div>
@@ -96,7 +96,7 @@
         <div class="col-md-4">
             <div class="card shadow-sm border-0">
                 <div class="card-body text-center">
-                    <div class="display-4 fw-bold text-info">{{ \App\Models\Compatibilidade::count() }}</div>
+                    <div class="display-4 fw-bold text-success">{{ \App\Models\Compatibilidade::count() }}</div>
                     <div class="text-muted">Compatibilidades Registradas</div>
                     <i class="bi bi-link text-info opacity-50 mt-2"></i>
                 </div>

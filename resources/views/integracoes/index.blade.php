@@ -13,7 +13,7 @@
                             <h1 class="display-6 fw-bold mb-2">
                                 <i class="bi bi-hdd-stack-fill me-2"></i>Equipamentos
                             </h1>
-                            <p class="mb-0 opacity-75">Gerencie o catálogo de equipamentos</p>
+                            <p class="mb-0 opacity-75">ZKTeco | INTRANET</p>
                         </div>
                         <div class="text-end">
                             <a href="{{ route('integracoes.create') }}" class="btn btn-light">
@@ -34,7 +34,7 @@
                         <i class="bi bi-list-ul me-2"></i>Lista de Equipamentos
                     </h5>
                     <div>
-                        <a href="{{ route('integracoes.matriz') }}" class="btn btn-outline-primary btn-sm me-2">
+                        <a href="{{ route('integracoes.matriz') }}" class="btn btn-outline-success btn-sm me-2">
                             <i class="bi bi-grid-3x3"></i> Ver Matriz
                         </a>
                         <a href="{{ route('integracoes.export') }}" class="btn btn-outline-success btn-sm">
@@ -90,7 +90,7 @@
                                             </td>
                                             <td class="text-end">
                                                 <a href="{{ route('integracoes.edit', $equipamento) }}"
-                                                    class="btn btn-sm btn-outline-primary me-1" data-bs-toggle="tooltip"
+                                                    class="btn btn-sm btn-outline-success me-1" data-bs-toggle="tooltip"
                                                     title="Editar">
                                                     <i class="bi bi-pencil"></i>
                                                 </a>
@@ -126,7 +126,7 @@
                             <i class="bi bi-inbox display-1 text-muted"></i>
                             <h5 class="text-muted mt-3">Nenhum equipamento cadastrado</h5>
                             <p class="text-muted">Comece adicionando seu primeiro equipamento.</p>
-                            <a href="{{ route('integracoes.create') }}" class="btn btn-primary mt-2">
+                            <a href="{{ route('integracoes.create') }}" class="btn btn-success mt-2">
                                 <i class="bi bi-plus-circle me-1"></i>Novo Equipamento
                             </a>
                         </div>

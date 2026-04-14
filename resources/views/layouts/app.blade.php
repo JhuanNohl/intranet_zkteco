@@ -27,6 +27,38 @@
             --zkteco-gray: #6c757d;
         }
 
+        /* Paginação personalizada - Cores verdes */
+        .pagination .page-link {
+            color: #2e8b57;
+            /* Verde para os números */
+            border-color: #c8e6d9;
+        }
+
+        .pagination .page-link:hover {
+            background-color: #2e8b57;
+            color: white;
+            border-color: #2e8b57;
+        }
+
+        .pagination .page-item.active .page-link {
+            background-color: #2e8b57;
+            border-color: #2e8b57;
+            color: white;
+        }
+
+        .pagination .page-item.disabled .page-link {
+            color: #a0c4a8;
+            background-color: #f8f9fa;
+            border-color: #e9ecef;
+        }
+
+        /* Texto "Showing X to Y of Z results" */
+        .dataTables_info,
+        .pagination-info,
+        .text-muted small {
+            color: #2e8b57 !important;
+        }
+
         /* Botão principal verde */
         .btn-zkteco {
             background-color: var(--zkteco-green);

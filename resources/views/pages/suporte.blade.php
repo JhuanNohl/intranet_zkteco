@@ -33,12 +33,12 @@
         <div class="col-md-4 mb-3">
             <div class="card h-100 shadow-sm border-0">
                 <div class="card-body text-center">
-                    <div class="rounded-circle bg-primary bg-opacity-10 p-3 d-inline-block mb-3">
-                        <i class="bi bi-sliders2 fs-1 text-primary"></i>
+                    <div class="rounded-circle bg-success bg-opacity-10 p-3 d-inline-block mb-3">
+                        <i class="bi bi-sliders2 fs-1 text-success"></i>
                     </div>
                     <h5>Parâmetros de Configuração</h5>
                     <p class="text-muted small">Parâmetros ZKTeco</p>
-                    <a href="{{ route('suporte.parametros') }}" class="btn btn-primary">
+                    <a href="{{ route('suporte.parametros') }}" class="btn btn-success">
                         <i class="bi bi-eye me-1"></i>Acessar
                     </a>
                 </div>
@@ -61,12 +61,12 @@
         <div class="col-md-4 mb-3">
             <div class="card h-100 shadow-sm border-0">
                 <div class="card-body text-center">
-                    <div class="rounded-circle bg-warning bg-opacity-10 p-3 d-inline-block mb-3">
-                        <i class="bi bi-key-fill fs-1 text-warning"></i>
+                    <div class="rounded-circle bg-success bg-opacity-10 p-3 d-inline-block mb-3">
+                        <i class="bi bi-key-fill fs-1 text-success"></i>
                     </div>
                     <h5>Licenças de Software</h5>
                     <p class="text-muted small">Instruções sobre licenciamento</p>
-                    <a href="{{ route('suporte.licencas') }}" class="btn btn-warning">
+                    <a href="{{ route('suporte.licencas') }}" class="btn btn-success">
                         <i class="bi bi-eye me-1"></i>Acessar
                     </a>
                 </div>
@@ -85,14 +85,14 @@
                     <div class="list-group">
                         <a href="{{ route('suporte.parametros') }}" class="list-group-item list-group-item-action">
                             <div class="d-flex align-items-center">
-                                <i class="bi bi-sliders2 text-primary fs-4 me-3"></i>
+                                <i class="bi bi-sliders2 text-success fs-4 me-3"></i>
                                 <div>
                                     <h6 class="mb-1">Parâmetros para Equipamentos ZKTeco</h6>
                                     <small class="text-muted">Configurações para dispositivos standalone e Linux
                                         embarcado</small>
                                 </div>
                                 <div class="ms-auto">
-                                    <span class="badge bg-primary">Documentação</span>
+                                    <span class="badge bg-success">Documentação</span>
                                 </div>
                             </div>
                         </a>
@@ -111,14 +111,14 @@
                         </a>
                         <a href="{{ route('suporte.licencas') }}" class="list-group-item list-group-item-action">
                             <div class="d-flex align-items-center">
-                                <i class="bi bi-key-fill text-warning fs-4 me-3"></i>
+                                <i class="bi bi-key-fill text-success fs-4 me-3"></i>
                                 <div>
                                     <h6 class="mb-1">Licenças ZKBioCVAccess</h6>
                                     <small class="text-muted">Informações e instruções sobre licenciamento de
                                         software</small>
                                 </div>
                                 <div class="ms-auto">
-                                    <span class="badge bg-warning">Documentação</span>
+                                    <span class="badge bg-success">Documentação</span>
                                 </div>
                             </div>
                         </a>
@@ -126,7 +126,7 @@
                             <a href="#" class="list-group-item list-group-item-action"
                                 onclick="alert('Área administrativa - Em desenvolvimento')">
                                 <div class="d-flex align-items-center">
-                                    <i class="bi bi-plus-circle-fill text-primary fs-4 me-3"></i>
+                                    <i class="bi bi-plus-circle-fill text-success fs-4 me-3"></i>
                                     <div>
                                         <h6 class="mb-1">Adicionar Documento</h6>
                                         <small class="text-muted">Gerenciar materiais do setor de suporte</small>

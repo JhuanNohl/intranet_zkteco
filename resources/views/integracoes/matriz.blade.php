@@ -63,7 +63,7 @@
                                 @forelse($equipamentos as $equipamento)
                                     <tr>
                                         <td class="bg-light fw-bold align-middle">
-                                            <i class="bi bi-hdd me-2 text-primary"></i>
+                                            <i class="bi bi-hdd me-2 text-success"></i>
                                             {{ $equipamento->modelo }}
                                         </td>
                                         @foreach($sistemas as $sistema)
@@ -86,7 +86,7 @@
                                         <td colspan="{{ $sistemas->count() + 1 }}" class="text-center py-5">
                                             <i class="bi bi-inbox display-1 text-muted"></i>
                                             <h5 class="text-muted mt-3">Nenhum equipamento cadastrado</h5>
-                                            <a href="{{ route('integracoes.create') }}" class="btn btn-primary mt-2">
+                                            <a href="{{ route('integracoes.create') }}" class="btn btn-success mt-2">
                                                 <i class="bi bi-plus-circle me-1"></i>Cadastrar Primeiro Equipamento
                                             </a>
                                         </td>
@@ -113,7 +113,7 @@
                             <small class="text-muted">Célula com compatibilidade registrada</small>
                         </div>
                         <div class="d-flex align-items-center">
-                            <i class="bi bi-pencil-square text-primary me-2"></i>
+                            <i class="bi bi-pencil-square text-success me-2"></i>
                             <small class="text-muted">Digite para editar - salvamento automático</small>
                         </div>
                     </div>
