@@ -25,46 +25,30 @@
     <div class="row mb-4">
         <div class="col-md-6">
             <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-start">
-                        <div>
-                            <h5 class="card-title text-success">
-                                <i class="bi bi-grid-3x3-gap-fill me-2"></i>Matriz de Integrações
-                            </h5>
-                            <p class="card-text text-muted">
-                                Compatibilidade entre sistemas e equipamentos.
-                            </p>
-                            <a href="{{ route('integracoes.matriz') }}" class="btn btn-success btn-sm mt-2">
-                                <i class="bi bi-eye me-1"></i>Acessar Matriz
-                            </a>
-                        </div>
-                        <div class="bg-primary bg-opacity-10 rounded p-3">
-                            <i class="bi bi-grid-3x3-gap-fill fs-1 text-primary"></i>
-                        </div>
-                    </div>
+                <div class="card-body text-center py-4">
+                    <i class="bi bi-grid-3x3-gap-fill fs-1 text-success mb-3"></i>
+                    <h5 class="card-title text-success">Matriz de Integrações</h5>
+                    <p class="card-text text-muted">
+                        Compatibilidade entre sistemas e equipamentos.
+                    </p>
+                    <a href="{{ route('integracoes.matriz') }}" class="btn btn-success btn-sm mt-2">
+                        <i class="bi bi-eye me-1"></i>Acessar Matriz
+                    </a>
                 </div>
             </div>
         </div>
 
         <div class="col-md-6">
             <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-start">
-                        <div>
-                            <h5 class="card-title text-success">
-                                <i class="bi bi-hdd-stack-fill me-2"></i>Equipamentos
-                            </h5>
-                            <p class="card-text text-muted">
-                                Equipamentos e suas compatibilidades com sistemas.
-                            </p>
-                            <a href="{{ route('integracoes.index') }}" class="btn btn-success btn-sm mt-2">
-                                <i class="bi bi-gear me-1"></i>Gerenciar
-                            </a>
-                        </div>
-                        <div class="bg-success bg-opacity-10 rounded p-3">
-                            <i class="bi bi-hdd-stack-fill fs-1 text-success"></i>
-                        </div>
-                    </div>
+                <div class="card-body text-center py-4">
+                    <i class="bi bi-hdd-stack-fill fs-1 text-success mb-3"></i>
+                    <h5 class="card-title text-success">Equipamentos</h5>
+                    <p class="card-text text-muted">
+                        Equipamentos e suas compatibilidades com sistemas.
+                    </p>
+                    <a href="{{ route('integracoes.index') }}" class="btn btn-success btn-sm mt-2">
+                        <i class="bi bi-gear me-1"></i>Gerenciar
+                    </a>
                 </div>
             </div>
         </div>
@@ -168,4 +152,18 @@
             </div>
         </div>
     </div>
+
+    @push('styles')
+        <style>
+            /* Efeito de elevação do card no hover */
+            .card {
+                transition: transform 0.2s, box-shadow 0.2s;
+            }
+
+            .card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+            }
+        </style>
+    @endpush
 @endsection

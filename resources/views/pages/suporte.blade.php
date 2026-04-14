@@ -15,58 +15,51 @@
                             </h1>
                             <p class="mb-0 opacity-75">ZKTeco | Suporte Técnico</p>
                         </div>
-                        <div>
-                            <div class="input-group">
-                                <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
-                                <input type="text" id="buscaDocumento" class="form-control"
-                                    placeholder="Pesquisar documentos...">
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Cards de Acesso Rápido -->
+    <!-- Cards de Acesso Rápido (simplificados) -->
     <div class="row mb-4">
         <div class="col-md-4 mb-3">
-            <div class="card h-100 shadow-sm border-0">
-                <div class="card-body text-center">
-                    <div class="rounded-circle bg-success bg-opacity-10 p-3 d-inline-block mb-3">
-                        <i class="bi bi-sliders2 fs-1 text-success"></i>
-                    </div>
-                    <h5>Parâmetros de Configuração</h5>
-                    <p class="text-muted small">Parâmetros ZKTeco</p>
-                    <a href="{{ route('suporte.parametros') }}" class="btn btn-success">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center py-4">
+                    <i class="bi bi-sliders2 fs-1 text-primary mb-3"></i>
+                    <h5 class="card-title text-success">Parâmetros StandAlone</h5>
+                    <p class="card-text text-muted">
+                        Parâmetros StandAlone ZKTeco
+                    </p>
+                    <a href="{{ route('suporte.parametros') }}" class="btn btn-success btn-sm mt-2">
                         <i class="bi bi-eye me-1"></i>Acessar
                     </a>
                 </div>
             </div>
         </div>
         <div class="col-md-4 mb-3">
-            <div class="card h-100 shadow-sm border-0">
-                <div class="card-body text-center">
-                    <div class="rounded-circle bg-success bg-opacity-10 p-3 d-inline-block mb-3">
-                        <i class="bi bi-book-fill fs-1 text-success"></i>
-                    </div>
-                    <h5>Base de Conhecimento</h5>
-                    <p class="text-muted small">Base de Conhecimento ZKTeco</p>
-                    <a href="http://base-conhecimento:82/" target="_blank" class="btn btn-success">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center py-4">
+                    <i class="bi bi-book-fill fs-1 text-success mb-3"></i>
+                    <h5 class="card-title text-success">Base de Conhecimento</h5>
+                    <p class="card-text text-muted">
+                        Artigos, tutoriais e guias rápidos
+                    </p>
+                    <a href="http://base-conhecimento:82/" target="_blank" class="btn btn-success btn-sm mt-2">
                         <i class="bi bi-box-arrow-up-right me-1"></i>Acessar
                     </a>
                 </div>
             </div>
         </div>
         <div class="col-md-4 mb-3">
-            <div class="card h-100 shadow-sm border-0">
-                <div class="card-body text-center">
-                    <div class="rounded-circle bg-success bg-opacity-10 p-3 d-inline-block mb-3">
-                        <i class="bi bi-key-fill fs-1 text-success"></i>
-                    </div>
-                    <h5>Licenças de Software</h5>
-                    <p class="text-muted small">Instruções sobre licenciamento</p>
-                    <a href="{{ route('suporte.licencas') }}" class="btn btn-success">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center py-4">
+                    <i class="bi bi-key-fill fs-1 text-warning mb-3"></i>
+                    <h5 class="card-title text-success">Licenças de Software</h5>
+                    <p class="card-text text-muted">
+                        Licenciamento de Software ZKTeco
+                    </p>
+                    <a href="{{ route('suporte.licencas') }}" class="btn btn-success btn-sm mt-2">
                         <i class="bi bi-eye me-1"></i>Acessar
                     </a>
                 </div>
@@ -74,90 +67,94 @@
         </div>
     </div>
 
-    <!-- Materiais e Informações -->
-    <div class="row">
+    <!-- Ferramentas Úteis do Suporte -->
+    <div class="row mt-4">
         <div class="col-12">
             <div class="card shadow-sm">
                 <div class="card-header bg-white">
-                    <h5 class="mb-0"><i class="bi bi-folder-fill me-2"></i>Materiais e Informações</h5>
+                    <h5 class="mb-0"><i class="bi bi-tools me-2"></i>Ferramentas do Suporte</h5>
                 </div>
                 <div class="card-body">
                     <div class="list-group">
-                        <a href="{{ route('suporte.parametros') }}" class="list-group-item list-group-item-action">
-                            <div class="d-flex align-items-center">
-                                <i class="bi bi-sliders2 text-success fs-4 me-3"></i>
-                                <div>
-                                    <h6 class="mb-1">Parâmetros para Equipamentos ZKTeco</h6>
-                                    <small class="text-muted">Configurações para dispositivos standalone e Linux
-                                        embarcado</small>
-                                </div>
-                                <div class="ms-auto">
-                                    <span class="badge bg-success">Documentação</span>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="http://base-conhecimento:82/" target="_blank"
+                        <!-- Blip Desk -->
+                        <a href="https://zkteco.desk.blip.ai/" target="_blank"
                             class="list-group-item list-group-item-action">
                             <div class="d-flex align-items-center">
-                                <i class="bi bi-book-fill text-success fs-4 me-3"></i>
+                                <i class="bi bi-chat-dots-fill text-success fs-4 me-3"></i>
                                 <div>
-                                    <h6 class="mb-1">Base de Conhecimento</h6>
-                                    <small class="text-muted">Artigos e tutoriais técnicos</small>
+                                    <h6 class="mb-1">Blip Desk</h6>
+                                    <small class="text-muted">Atendimento e suporte ao cliente</small>
                                 </div>
                                 <div class="ms-auto">
                                     <span class="badge bg-success">Link Externo</span>
                                 </div>
                             </div>
                         </a>
-                        <a href="{{ route('suporte.licencas') }}" class="list-group-item list-group-item-action">
+
+                        <!-- TeamViewer -->
+                        <a href="https://www.teamviewer.com/pt-br/download/windows/" target="_blank"
+                            class="list-group-item list-group-item-action">
                             <div class="d-flex align-items-center">
-                                <i class="bi bi-key-fill text-success fs-4 me-3"></i>
+                                <i class="bi bi-display text-success fs-4 me-3"></i>
                                 <div>
-                                    <h6 class="mb-1">Licenças ZKBioCVAccess</h6>
-                                    <small class="text-muted">Informações e instruções sobre licenciamento de
-                                        software</small>
+                                    <h6 class="mb-1">TeamViewer</h6>
+                                    <small class="text-muted">Download para acesso remoto</small>
                                 </div>
                                 <div class="ms-auto">
-                                    <span class="badge bg-success">Documentação</span>
+                                    <span class="badge bg-success">Link Externo</span>
                                 </div>
                             </div>
                         </a>
-                        @can('gerenciar_suporte')
-                            <a href="#" class="list-group-item list-group-item-action"
-                                onclick="alert('Área administrativa - Em desenvolvimento')">
-                                <div class="d-flex align-items-center">
-                                    <i class="bi bi-plus-circle-fill text-success fs-4 me-3"></i>
-                                    <div>
-                                        <h6 class="mb-1">Adicionar Documento</h6>
-                                        <small class="text-muted">Gerenciar materiais do setor de suporte</small>
-                                    </div>
-                                    <div class="ms-auto">
-                                        <span class="badge bg-secondary">Admin</span>
-                                    </div>
+
+                        <!-- Trello -->
+                        <a href="https://trello.com/b/ndbqxpCe/suporte-tecnico" target="_blank"
+                            class="list-group-item list-group-item-action">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-kanban text-success fs-4 me-3"></i>
+                                <div>
+                                    <h6 class="mb-1">Trello - Suporte Técnico</h6>
+                                    <small class="text-muted">Organização de tarefas e demandas</small>
                                 </div>
-                            </a>
-                        @endcan
+                                <div class="ms-auto">
+                                    <span class="badge bg-success">Link Externo</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Licenças ZKTeco (Portal 1) -->
+                        <a href="https://lic.zkteco.com/loginController.do?login" target="_blank"
+                            class="list-group-item list-group-item-action">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-key-fill text-success fs-4 me-3"></i>
+                                <div>
+                                    <h6 class="mb-1">Portal de Licenças ZKTeco</h6>
+                                    <small class="text-muted">Gerenciamento de licenças de software</small>
+                                </div>
+                                <div class="ms-auto">
+                                    <span class="badge bg-success">Link Externo</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Licenças ZKTeco (Portal 2 - SG) -->
+                        <a href="https://sglic.zkteco.com/admin/go/login" target="_blank"
+                            class="list-group-item list-group-item-action">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-shield-lock-fill text-success fs-4 me-3"></i>
+                                <div>
+                                    <h6 class="mb-1">Portal de Licenças ZKTeco (SG)</h6>
+                                    <small class="text-muted">Sistema de gestão de licenças</small>
+                                </div>
+                                <div class="ms-auto">
+                                    <span class="badge bg-success">Link Externo</span>
+                                </div>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    @push('scripts')
-        <script>
-            document.getElementById('buscaDocumento').addEventListener('input', function () {
-                const termo = this.value.toLowerCase();
-                document.querySelectorAll('.list-group-item').forEach(item => {
-                    const texto = item.innerText.toLowerCase();
-                    if (texto.includes(termo)) {
-                        item.style.display = '';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-        </script>
-    @endpush
 
     @push('styles')
         <style>
@@ -166,11 +163,12 @@
             }
 
             .card {
-                transition: transform 0.2s;
+                transition: transform 0.2s, box-shadow 0.2s;
             }
 
             .card:hover {
                 transform: translateY(-5px);
+                box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
             }
 
             .list-group-item {

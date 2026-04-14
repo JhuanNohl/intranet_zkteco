@@ -26,26 +26,6 @@
         </div>
     </div>
 
-    <!-- Busca -->
-    <div class="row mb-4">
-        <div class="col-12">
-            <div class="card shadow-sm">
-                <div class="card-body">
-                    <div class="input-group">
-                        <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
-                        <input type="text" id="buscaParametro" class="form-control" placeholder="Buscar parâmetro...">
-                        <button class="btn btn-outline-secondary" type="button" onclick="limparBusca()">
-                            <i class="bi bi-x-circle"></i> Limpar
-                        </button>
-                    </div>
-                    <div class="mt-2">
-                        <small class="text-muted">Dica: Clique no parâmetro para copiar</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Conteúdo dos Parâmetros -->
     <div class="row" id="conteudoParametros">
         <!-- CARTÕES -->

@@ -13,7 +13,7 @@
                             <h1 class="display-6 fw-bold mb-2">
                                 <i class="bi bi-grid-3x3-gap-fill me-2"></i>Matriz de Integrações
                             </h1>
-                            <p class="mb-0 opacity-75">ZKTeco | INTRANET</p>
+                            <p class="mb-0 opacity-75">ZKTeco | Integrações</p>
                         </div>
                         <div class="d-flex gap-2">
                             <a href="{{ route('desenvolvimento') }}" class="btn btn-light">
