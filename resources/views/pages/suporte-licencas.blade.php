@@ -11,9 +11,9 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
                             <h1 class="display-6 fw-bold mb-2">
-                                <i class="bi bi-key-fill me-2"></i>Licenças de Software
+                                <i class="bi bi-key-fill me-2"></i>Suporte Técnico
                             </h1>
-                            <p class="mb-0 opacity-75">ZKTeco | Suporte Técnico</p>
+                            <p class="mb-0 opacity-75">ZKTeco | Licenças</p>
                         </div>
                         <div>
                             <a href="{{ route('suporte') }}" class="btn btn-light">

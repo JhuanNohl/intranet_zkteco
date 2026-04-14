@@ -15,7 +15,10 @@
                             </h1>
                             <p class="mb-0 opacity-75">ZKTeco | INTRANET</p>
                         </div>
-                        <div class="text-end">
+                        <div class="d-flex gap-2">
+                            <a href="{{ route('desenvolvimento') }}" class="btn btn-light">
+                                <i class="bi bi-arrow-left me-2"></i>Voltar ao Desenvolvimento
+                            </a>
                             <a href="{{ route('integracoes.create') }}" class="btn btn-light">
                                 <i class="bi bi-plus-circle me-1"></i>Novo Equipamento
                             </a>

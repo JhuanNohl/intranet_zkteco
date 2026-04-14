@@ -15,7 +15,7 @@
                             </h1>
                             <p class="mb-0 opacity-75">ZKTeco | INTRANET</p>
                         </div>
-                        <div>
+                        <div class="gap-2 d-flex">
                             <button type="button" class="btn btn-light" data-bs-toggle="modal"
                                 data-bs-target="#modalNovoEquipamento">
                                 <i class="bi bi-plus-circle me-2"></i>Novo RMA

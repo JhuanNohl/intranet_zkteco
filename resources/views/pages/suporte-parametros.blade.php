@@ -11,9 +11,9 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
                             <h1 class="display-6 fw-bold mb-2">
-                                <i class="bi bi-sliders2 me-2"></i>Parâmetros de Configuração
+                                <i class="bi bi-sliders2 me-2"></i>Suporte Técnico
                             </h1>
-                            <p class="mb-0 opacity-75">Equipamentos Standalone e Linux Embarcado | ZKTeco</p>
+                            <p class="mb-0 opacity-75">ZKTeco | Parâmetros</p>
                         </div>
                         <div>
                             <a href="{{ route('suporte') }}" class="btn btn-light">
@@ -51,7 +51,7 @@
         <!-- CARTÕES -->
         <div class="col-12 mb-4">
             <div class="card shadow-sm">
-                <div class="card-header bg-primary text-white">
+                <div class="card-header bg-success text-white">
                     <h5 class="mb-0"><i class="bi bi-credit-card me-2"></i>Configuração de Cartões</h5>
                 </div>
                 <div class="card-body">
@@ -154,7 +154,7 @@
         <!-- COMUNICAÇÃO E REDE -->
         <div class="col-12 mb-4">
             <div class="card shadow-sm">
-                <div class="card-header bg-info text-white">
+                <div class="card-header bg-success text-white">
                     <h5 class="mb-0"><i class="bi bi-wifi me-2"></i>Comunicação e Rede</h5>
                 </div>
                 <div class="card-body">
@@ -203,7 +203,7 @@
         <!-- MODOS DE OPERAÇÃO -->
         <div class="col-12 mb-4">
             <div class="card shadow-sm">
-                <div class="card-header bg-warning text-white">
+                <div class="card-header bg-success text-white">
                     <h5 class="mb-0"><i class="bi bi-gear me-2"></i>Modos de Operação</h5>
                 </div>
                 <div class="card-body">
@@ -252,7 +252,7 @@
         <!-- BIOMETRIA -->
         <div class="col-12 mb-4">
             <div class="card shadow-sm">
-                <div class="card-header bg-danger text-white">
+                <div class="card-header bg-success text-white">
                     <h5 class="mb-0"><i class="bi bi-fingerprint me-2"></i>Biometria</h5>
                 </div>
                 <div class="card-body">
@@ -301,7 +301,7 @@
         <!-- SEGURANÇA -->
         <div class="col-12 mb-4">
             <div class="card shadow-sm">
-                <div class="card-header bg-dark text-white">
+                <div class="card-header bg-success text-white">
                     <h5 class="mb-0"><i class="bi bi-shield-lock me-2"></i>Segurança e Alarmes</h5>
                 </div>
                 <div class="card-body">
@@ -345,7 +345,7 @@
         <!-- VIDEO E SIP -->
         <div class="col-12 mb-4">
             <div class="card shadow-sm">
-                <div class="card-header bg-secondary text-white">
+                <div class="card-header bg-success text-white">
                     <h5 class="mb-0"><i class="bi bi-camera-video me-2"></i>Vídeo e SIP</h5>
                 </div>
                 <div class="card-body">
@@ -389,7 +389,7 @@
         <!-- USB E PERIFÉRICOS -->
         <div class="col-12 mb-4">
             <div class="card shadow-sm">
-                <div class="card-header bg-primary text-white">
+                <div class="card-header bg-success text-white">
                     <h5 class="mb-0"><i class="bi bi-usb me-2"></i>USB e Periféricos</h5>
                 </div>
                 <div class="card-body">

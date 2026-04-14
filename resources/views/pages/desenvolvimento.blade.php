@@ -13,10 +13,7 @@
                             <h1 class="display-6 fw-bold mb-2">
                                 <i class="bi bi-briefcase-fill me-2"></i>Desenvolvimento
                             </h1>
-                            <p class="mb-0 opacity-75">ZKTeco | INTRANET</p>
-                        </div>
-                        <div class="text-end">
-                            <i class="bi bi-graph-up display-1 opacity-50"></i>
+                            <p class="mb-0 opacity-75">ZKTeco | Desenvolvimento</p>
                         </div>
                     </div>
                 </div>
@@ -35,7 +32,7 @@
                                 <i class="bi bi-grid-3x3-gap-fill me-2"></i>Matriz de Integrações
                             </h5>
                             <p class="card-text text-muted">
-                                Visualize e edite a compatibilidade entre sistemas e equipamentos de controle de acesso.
+                                Compatibilidade entre sistemas e equipamentos.
                             </p>
                             <a href="{{ route('integracoes.matriz') }}" class="btn btn-success btn-sm mt-2">
                                 <i class="bi bi-eye me-1"></i>Acessar Matriz
@@ -58,7 +55,7 @@
                                 <i class="bi bi-hdd-stack-fill me-2"></i>Equipamentos
                             </h5>
                             <p class="card-text text-muted">
-                                Gerencie o catálogo de equipamentos e suas compatibilidades com sistemas.
+                                Equipamentos e suas compatibilidades com sistemas.
                             </p>
                             <a href="{{ route('integracoes.index') }}" class="btn btn-success btn-sm mt-2">
                                 <i class="bi bi-gear me-1"></i>Gerenciar

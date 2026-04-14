@@ -13,9 +13,12 @@
                             <h1 class="display-6 fw-bold mb-2">
                                 <i class="bi bi-grid-3x3-gap-fill me-2"></i>Matriz de Integrações
                             </h1>
-                            <p class="mb-0 opacity-75">Compatibilidade entre sistemas e equipamentos</p>
+                            <p class="mb-0 opacity-75">ZKTeco | INTRANET</p>
                         </div>
-                        <div class="text-end">
+                        <div class="d-flex gap-2">
+                            <a href="{{ route('desenvolvimento') }}" class="btn btn-light">
+                                <i class="bi bi-arrow-left me-2"></i>Voltar ao Desenvolvimento
+                            </a>
                             <a href="{{ route('integracoes.index') }}" class="btn btn-light me-2">
                                 <i class="bi bi-hdd-stack me-1"></i>Equipamentos
                             </a>
@@ -37,7 +40,7 @@
                         <h5 class="mb-0">
                             <i class="bi bi-table me-2"></i>Matriz de Compatibilidade
                         </h5>
-                        <span class="badge bg-info">
+                        <span class="badge bg-success">
                             <i class="bi bi-info-circle me-1"></i>
                             Clique nas células para editar
                         </span>
@@ -67,18 +70,18 @@
                                             {{ $equipamento->modelo }}
                                         </td>
                                         @foreach($sistemas as $sistema)
-                                                                        @php
-                                                                            $observacao = $matriz[$sistema->id][$equipamento->id] ?? '';
-                                                                            $compExists = isset($matriz[$sistema->id][$equipamento->id]);
-                                                                        @endphp
-                                             <td
-                                                                            class="text-center align-middle p-1 {{ $compExists ? 'bg-success bg-opacity-10' : '' }}">
-                                                                            <input type="text"
-                                                                                class="form-control form-control-sm text-center border-0 bg-transparent celula-matriz"
-                                                                                style="min-width: 120px;" data-sistema="{{ $sistema->id }}"
-                                                                                data-equipamento="{{ $equipamento->id }}" value="{{ $observacao }}"
-                                                                                placeholder="{{ $compExists ? '' : '-' }}">
-                                                                        </td>
+                                            @php
+                                                $observacao = $matriz[$sistema->id][$equipamento->id] ?? '';
+                                                $compExists = isset($matriz[$sistema->id][$equipamento->id]);
+                                            @endphp
+                                            <td
+                                                class="text-center align-middle p-1 {{ $compExists ? 'bg-success bg-opacity-10' : '' }}">
+                                                <input type="text"
+                                                    class="form-control form-control-sm text-center border-0 bg-transparent celula-matriz"
+                                                    style="min-width: 120px;" data-sistema="{{ $sistema->id }}"
+                                                    data-equipamento="{{ $equipamento->id }}" value="{{ $observacao }}"
+                                                    placeholder="{{ $compExists ? '' : '-' }}">
+                                            </td>
                                         @endforeach
                                     </tr>
                                 @empty

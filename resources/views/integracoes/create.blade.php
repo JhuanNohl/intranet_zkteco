@@ -15,6 +15,11 @@
                             </h1>
                             <p class="mb-0 opacity-75">Cadastre um novo equipamento no sistema</p>
                         </div>
+                        <div>
+                            <a href="{{ route('desenvolvimento') }}" class="btn btn-light">
+                                <i class="bi bi-arrow-left me-2"></i>Voltar ao Desenvolvimento
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

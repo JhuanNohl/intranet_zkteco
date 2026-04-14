@@ -17,6 +17,11 @@
                                 <i class="bi bi-hdd me-1"></i>{{ $equipamento->modelo }}
                             </p>
                         </div>
+                        <div>
+                            <a href="{{ route('desenvolvimento') }}" class="btn btn-light">
+                                <i class="bi bi-arrow-left me-2"></i>Voltar ao Desenvolvimento
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
