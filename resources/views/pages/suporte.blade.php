@@ -26,7 +26,7 @@
         <div class="col-md-4 mb-3">
             <div class="card h-100 shadow-sm">
                 <div class="card-body text-center py-4">
-                    <i class="bi bi-sliders2 fs-1 text-primary mb-3"></i>
+                    <i class="bi bi-sliders2 fs-1 text-success mb-3"></i>
                     <h5 class="card-title text-success">Parâmetros StandAlone</h5>
                     <p class="card-text text-muted">
                         Parâmetros StandAlone ZKTeco
@@ -54,7 +54,7 @@
         <div class="col-md-4 mb-3">
             <div class="card h-100 shadow-sm">
                 <div class="card-body text-center py-4">
-                    <i class="bi bi-key-fill fs-1 text-warning mb-3"></i>
+                    <i class="bi bi-key-fill fs-1 text-success mb-3"></i>
                     <h5 class="card-title text-success">Licenças de Software</h5>
                     <p class="card-text text-muted">
                         Licenciamento de Software ZKTeco
