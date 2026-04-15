@@ -12,14 +12,14 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home') }}">🏠 Home</a>
+                    <a class="nav-link" href="{{ route('home') }}">Home</a>
                 </li>
 
                 <!-- CORPORATIVO Dropdown -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="corporativoDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        🏢 CORPORATIVO
+                        CORPORATIVO
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="corporativoDropdown">
                         <li><a class="dropdown-item" href="{{ route('comercial') }}">Comercial</a></li>
@@ -33,16 +33,16 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle active" href="#" id="tecnicaDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        🔧 ÁREA TÉCNICA
+                        ÁREA TÉCNICA
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="tecnicaDropdown">
                         <li><a class="dropdown-item" href="{{ route('desenvolvimento') }}">Desenvolvimento</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item ps-4" href="{{ route('integracoes.matriz') }}">📊 Matriz de
+                        <li><a class="dropdown-item ps-4" href="{{ route('integracoes.matriz') }}">Matriz de
                                 Integrações</a></li>
-                        <li><a class="dropdown-item ps-4" href="{{ route('integracoes.index') }}">📟 Equipamentos</a>
+                        <li><a class="dropdown-item ps-4" href="{{ route('integracoes.index') }}">Equipamentos</a>
                         </li>
                         <li>
                             <hr class="dropdown-divider">
@@ -54,16 +54,16 @@
 
                 <!-- Outros setores (opcional) -->
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('treinamentos') }}">📚 Treinamentos</a>
+                    <a class="nav-link" href="{{ route('treinamentos') }}">Treinamentos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('fabrica') }}">🏭 Fábrica</a>
+                    <a class="nav-link" href="{{ route('fabrica') }}">Fábrica</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('manutencao') }}">🔧 Manutenção</a>
+                    <a class="nav-link" href="{{ route('manutencao') }}">Manutenção</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('produtos') }}">📦 Produtos</a>
+                    <a class="nav-link" href="{{ route('produtos') }}">Produtos</a>
                 </li>
             </ul>
 

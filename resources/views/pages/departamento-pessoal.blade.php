@@ -33,8 +33,8 @@
         <div class="col-md-4 mb-3">
             <div class="card h-100 shadow-sm border-0">
                 <div class="card-body text-center">
-                    <div class="rounded-circle bg-primary bg-opacity-10 p-3 d-inline-block mb-3">
-                        <i class="bi bi-calendar-event fs-1 text-primary"></i>
+                    <div class="rounded-circle bg-success bg-opacity-10 p-3 d-inline-block mb-3">
+                        <i class="bi bi-calendar-event fs-1 text-success"></i>
                     </div>
                     <h5>Comunicados e Avisos</h5>
                     <p class="text-muted small">Fique por dentro das novidades</p>
@@ -93,13 +93,13 @@
                             <div class="card border-0 shadow-sm h-100">
                                 <div class="card-header bg-white">
                                     <h6 class="mb-0">
-                                        <i class="bi bi-mortarboard-fill text-primary me-2"></i>
+                                        <i class="bi bi-mortarboard-fill text-success me-2"></i>
                                         Graduação
                                     </h6>
                                 </div>
                                 <div class="card-body">
                                     <div class="d-flex align-items-center mb-3">
-                                        <i class="bi bi-building fs-2 text-primary me-3"></i>
+                                        <i class="bi bi-building fs-2 text-success me-3"></i>
                                         <div>
                                             <h6 class="mb-1">ANHANGUERA</h6>
                                             <p class="text-muted small mb-0">
@@ -108,7 +108,7 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <button class="btn btn-sm btn-outline-primary btn-copiar-contato"
+                                    <button class="btn btn-sm btn-outline-success btn-copiar-contato"
                                         data-contato="Renato Campos - (31) 98299-7393">
                                         <i class="bi bi-copy"></i> Copiar Contato
                                     </button>
