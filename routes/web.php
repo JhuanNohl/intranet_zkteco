@@ -11,6 +11,7 @@ use App\Http\Controllers\CommercialMapController;
 use App\Http\Controllers\IntegracaoController;
 use App\Http\Controllers\ManutencaoEquipamentoController;
 use App\Http\Controllers\TreinamentoController;
+use App\Http\Controllers\RHController; // Adicionado - Controller do RH
 
 // ========== GRUPO COMERCIAL ==========
 Route::prefix('commercial')->middleware('auth')->group(function () {
@@ -46,6 +47,22 @@ Route::middleware(['auth'])->group(function () {
     
     // Comunicados
     Route::resource('comunicados', ComunicadoController::class);
+
+    // ========== RH / DEPARTAMENTO PESSOAL ==========
+    Route::prefix('rh')->name('rh.')->group(function () {
+        // Página principal de Gestão de Pessoas
+        Route::get('/', [RHController::class, 'index'])->name('index');
+        
+        // CIPA
+        Route::get('/cipa', [RHController::class, 'cipa'])->name('cipa');
+        
+        // Sindicato
+        Route::get('/sindicato', [RHController::class, 'sindicato'])->name('sindicato');
+    });
+    
+    // Alias para compatibilidade com rota antiga
+    Route::get('/gestao-pessoas', [RHController::class, 'index'])->name('gestao-pessoas');
+    Route::get('/departamento-pessoal', [RHController::class, 'index'])->name('departamento-pessoal');
 
     // ========== MANUTENÇÃO ==========
     Route::prefix('manutencao')->name('manutencao.')->group(function () {
@@ -104,10 +121,6 @@ Route::middleware(['auth'])->group(function () {
         $areas = \App\Models\CommercialMapArea::all();
         return view('pages.comercial', compact('documents', 'areas'));
     })->name('comercial');
-
-    Route::get('/departamento-pessoal', function () {
-        return view('pages.departamento-pessoal');
-    })->name('departamento-pessoal');
 
     Route::get('/financeiro', function () {
         return view('pages.financeiro');
