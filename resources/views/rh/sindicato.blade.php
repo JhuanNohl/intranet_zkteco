@@ -38,19 +38,7 @@
                 </div>
                 <div class="card-body">
                     <div class="list-group list-group-flush">
-                        <a href="{{ asset('storage/doc_rh/sindicato/Convencao-Coletiva-2023-2024.pdf') }}"
-                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
-                            target="_blank" rel="noopener noreferrer">
-                            <span>
-                                <i class="bi bi-file-pdf text-danger me-2"></i>
-                                CONVENÇÃO COLETIVA 2023/2024
-                            </span>
-                            <span class="badge bg-danger bg-opacity-10 text-danger">
-                                <i class="bi bi-file-pdf-fill me-1"></i>PDF
-                            </span>
-                        </a>
-
-                        <a href="{{ asset('storage/doc_rh/sindicato/Convencao-Coletiva-2024-2025.pdf') }}"
+                        <a href="{{ asset('storage/doc_rh/CONVENCAO-COLETIVA-TRABALHO.pdf') }}"
                             class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
                             target="_blank" rel="noopener noreferrer">
                             <span>
@@ -80,8 +68,8 @@
             <div class="card shadow-sm border-0 h-100">
                 <div class="card-header bg-white border-0 pt-4">
                     <div class="d-flex align-items-center">
-                        <div class="rounded-circle bg-warning bg-opacity-10 p-2 me-3">
-                            <i class="bi bi-megaphone-fill fs-4 text-warning"></i>
+                        <div class="rounded-circle bg-success bg-opacity-10 p-2 me-3">
+                            <i class="bi bi-megaphone-fill fs-4 text-success"></i>
                         </div>
                         <h4 class="mb-0 fw-bold">Editais de Convocação</h4>
                     </div>
@@ -89,7 +77,7 @@
                 </div>
                 <div class="card-body">
                     <div class="list-group list-group-flush">
-                        <a href="{{ asset('storage/doc_rh/sindicato/Edital-Convocacao-METAVESP-2024.pdf') }}"
+                        <a href="{{ asset('storage/doc_rh/EDITAL-DE-CONVOCACAO-CCT.pdf') }}"
                             class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
                             target="_blank" rel="noopener noreferrer">
                             <span>
@@ -101,36 +89,36 @@
                             </span>
                         </a>
 
-                        <a href="{{ asset('storage/doc_rh/sindicato/Edital-Convocacao-METAVESP-2025.pdf') }}"
+                        <a href="{{ asset('storage/doc_rh/EDITAL-DE-CONVOCACAO-PRESTACAO-DE-CONTAS-2024-2025.pdf') }}"
                             class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
                             target="_blank" rel="noopener noreferrer">
                             <span>
                                 <i class="bi bi-file-pdf text-danger me-2"></i>
-                                2025 - Edital de Convocação METAVESP
+                                Edital de Convocação Assembleia Geral - METAVESP
                             </span>
                             <span class="badge bg-danger bg-opacity-10 text-danger">
                                 <i class="bi bi-file-pdf-fill me-1"></i>PDF
                             </span>
                         </a>
 
-                        <a href="{{ asset('storage/doc_rh/sindicato/Edital-Convocacao-METAVESP-2025-1.pdf') }}"
+                        <a href="{{ asset('storage/doc_rh/EDITAL-DE-CONVOCACAO2025.pdf') }}"
                             class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
                             target="_blank" rel="noopener noreferrer">
                             <span>
                                 <i class="bi bi-file-pdf text-danger me-2"></i>
-                                2025.1 - Edital Convocação METAVESP
+                                2025 - Edital Convocação - METAVESP
                             </span>
                             <span class="badge bg-danger bg-opacity-10 text-danger">
                                 <i class="bi bi-file-pdf-fill me-1"></i>PDF
                             </span>
                         </a>
 
-                        <a href="{{ asset('storage/doc_rh/sindicato/Edital-Convocacao-METAVESP-2025-2.pdf') }}"
+                        <a href="{{ asset('storage/doc_rh/EDITAL-DE-CONVOCACAO-CCT.pdf') }}"
                             class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
                             target="_blank" rel="noopener noreferrer">
                             <span>
                                 <i class="bi bi-file-pdf text-danger me-2"></i>
-                                2025.2 - Edital Convocação METAVESP
+                                2024/2025 - Edital Convocação CCT - METAVESP
                             </span>
                             <span class="badge bg-danger bg-opacity-10 text-danger">
                                 <i class="bi bi-file-pdf-fill me-1"></i>PDF
