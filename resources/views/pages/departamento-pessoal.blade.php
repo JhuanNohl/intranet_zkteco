@@ -11,16 +11,9 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
                             <h1 class="display-6 fw-bold mb-2">
-                                <i class="bi bi-people-fill me-2"></i>Gestão de Pessoas
+                                <i class="bi bi-people-fill me-2"></i>Departamento Pessoal
                             </h1>
                             <p class="mb-0 opacity-75">ZKTeco | INTRANET</p>
-                        </div>
-                        <div>
-                            <div class="input-group">
-                                <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
-                                <input type="text" id="buscaDocumento" class="form-control"
-                                    placeholder="Pesquisar documentos...">
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -38,7 +31,7 @@
                     </div>
                     <h5>Comunicados e Avisos</h5>
                     <p class="text-muted small">Fique por dentro das novidades</p>
-                    <a href="{{ route('comunicados.index') }}" class="btn btn-outline-primary btn-sm">
+                    <a href="{{ route('comunicados.index') }}" class="btn btn-outline-success btn-sm">
                         <i class="bi bi-eye me-1"></i> Ver todos
                     </a>
                 </div>
@@ -61,12 +54,12 @@
         <div class="col-md-4 mb-3">
             <div class="card h-100 shadow-sm border-0">
                 <div class="card-body text-center">
-                    <div class="rounded-circle bg-warning bg-opacity-10 p-3 d-inline-block mb-3">
-                        <i class="bi bi-bank fs-1 text-warning"></i>
+                    <div class="rounded-circle bg-success bg-opacity-10 p-3 d-inline-block mb-3">
+                        <i class="bi bi-bank fs-1 text-success"></i>
                     </div>
                     <h5>Sindicato</h5>
                     <p class="text-muted small">Convenções e acordos coletivos</p>
-                    <a href="#" class="btn btn-outline-warning btn-sm disabled">
+                    <a href="#" class="btn btn-outline-success btn-sm disabled">
                         <i class="bi bi-eye me-1"></i> Em breve
                     </a>
                 </div>
@@ -80,8 +73,8 @@
             <div class="card shadow-sm border-0">
                 <div class="card-header bg-white border-0 pt-4">
                     <div class="d-flex align-items-center">
-                        <div class="rounded-circle bg-info bg-opacity-10 p-2 me-3">
-                            <i class="bi bi-mortarboard-fill fs-4 text-info"></i>
+                        <div class="rounded-circle bg-success bg-opacity-10 p-2 me-3">
+                            <i class="bi bi-mortarboard-fill fs-4 text-success"></i>
                         </div>
                         <h4 class="mb-0 fw-bold">Parcerias Educacionais</h4>
                     </div>
@@ -138,7 +131,7 @@
                                     </div>
                                     <div>
                                         <div class="d-flex align-items-center mb-2">
-                                            <i class="bi bi-building fs-5 text-info me-2"></i>
+                                            <i class="bi bi-building fs-5 text-success me-2"></i>
                                             <strong>CCEA</strong>
                                         </div>
                                         <p class="text-muted small mb-1">
@@ -165,8 +158,8 @@
             <div class="card shadow-sm border-0">
                 <div class="card-header bg-white border-0 pt-4">
                     <div class="d-flex align-items-center">
-                        <div class="rounded-circle bg-danger bg-opacity-10 p-2 me-3">
-                            <i class="bi bi-file-text-fill fs-4 text-danger"></i>
+                        <div class="rounded-circle bg-success bg-opacity-10 p-2 me-3">
+                            <i class="bi bi-file-text-fill fs-4 text-success"></i>
                         </div>
                         <h4 class="mb-0 fw-bold">Políticas e Orientações</h4>
                     </div>

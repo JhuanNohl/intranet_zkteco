@@ -36,8 +36,8 @@
                                 <h6 class="text-muted mb-1">Documentos</h6>
                                 <h3 class="mb-0">{{ $documents->count() }}</h3>
                             </div>
-                            <div class="rounded-circle bg-primary bg-opacity-10 p-3">
-                                <i class="bi bi-file-text-fill text-primary fs-4"></i>
+                            <div class="rounded-circle bg-success bg-opacity-10 p-3">
+                                <i class="bi bi-file-text-fill text-success fs-4"></i>
                             </div>
                         </div>
                     </div>
@@ -51,8 +51,8 @@
                                 <h6 class="text-muted mb-1">Regiões Atendidas</h6>
                                 <h3 class="mb-0">{{ $areas->count() }}</h3>
                             </div>
-                            <div class="rounded-circle bg-info bg-opacity-10 p-3">
-                                <i class="bi bi-map-fill text-info fs-4"></i>
+                            <div class="rounded-circle bg-success bg-opacity-10 p-3">
+                                <i class="bi bi-map-fill text-success fs-4"></i>
                             </div>
                         </div>
                     </div>
@@ -66,8 +66,8 @@
                                 <h6 class="text-muted mb-1">Consultores</h6>
                                 <h3 class="mb-0">{{ $areas->unique('consultant')->count() }}</h3>
                             </div>
-                            <div class="rounded-circle bg-warning bg-opacity-10 p-3">
-                                <i class="bi bi-people-fill text-warning fs-4"></i>
+                            <div class="rounded-circle bg-success bg-opacity-10 p-3">
+                                <i class="bi bi-people-fill text-success fs-4"></i>
                             </div>
                         </div>
                     </div>

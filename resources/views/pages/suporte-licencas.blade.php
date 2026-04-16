@@ -33,7 +33,7 @@
             <div class="card h-100 shadow-sm border-0">
                 <div class="card-header bg-white">
                     <h5 class="mb-0">
-                        <i class="bi bi-window-stack text-primary me-2"></i>
+                        <i class="bi bi-shield-lock-fill text-primary me-2"></i>
                         ZKBio CVAccess
                     </h5>
                 </div>

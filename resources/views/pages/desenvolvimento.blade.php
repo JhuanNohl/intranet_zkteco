@@ -11,7 +11,7 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
                             <h1 class="display-6 fw-bold mb-2">
-                                <i class="bi bi-briefcase-fill me-2"></i>Desenvolvimento
+                                <i class="bi bi-code-slash me-2"></i>Desenvolvimento
                             </h1>
                             <p class="mb-0 opacity-75">ZKTeco | INTRANET</p>
                         </div>
