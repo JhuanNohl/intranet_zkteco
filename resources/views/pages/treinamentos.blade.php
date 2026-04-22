@@ -28,24 +28,24 @@
             <div class="card-body">
                 <div class="d-flex flex-wrap gap-2 justify-content-between align-items-center">
                     <div class="d-flex flex-wrap gap-2">
-                        <button class="btn btn-sm btn-outline-primary btn-categoria active" data-categoria="todos">
+                        <button class="btn btn-sm btn-outline-success btn-categoria active" data-categoria="todos">
                             <i class="bi bi-grid-3x3-gap-fill"></i> Todos
                         </button>
-                        <button class="btn btn-sm btn-outline-info btn-categoria" data-categoria="tecnico">
+                        <button class="btn btn-sm btn-outline-success btn-categoria" data-categoria="tecnico">
                             <i class="bi bi-gear-fill"></i> Técnico
                         </button>
                         <button class="btn btn-sm btn-outline-success btn-categoria" data-categoria="comercial">
                             <i class="bi bi-graph-up"></i> Comercial
                         </button>
-                        <button class="btn btn-sm btn-outline-warning btn-categoria" data-categoria="gestao">
+                        <button class="btn btn-sm btn-outline-success btn-categoria" data-categoria="gestao">
                             <i class="bi bi-people-fill"></i> Gestão
                         </button>
-                        <button class="btn btn-sm btn-outline-danger btn-categoria" data-categoria="redes">
+                        <button class="btn btn-sm btn-outline-success btn-categoria" data-categoria="redes">
                             <i class="bi bi-wifi"></i> Redes
                         </button>
                     </div>
                     <div>
-                        <button id="btnFavoritos" class="btn btn-sm btn-outline-warning">
+                        <button id="btnFavoritos" class="btn btn-sm btn-outline-success">
                             <i class="bi bi-star-fill"></i> Favoritos
                         </button>
                     </div>
@@ -66,9 +66,9 @@
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-start mb-3">
                     <div class="icone-tipo">
-                        <i class="bi bi-{{ $item->icone }} fs-1 text-primary"></i>
+                        <i class="bi bi-{{ $item->icone }} fs-1 text-success"></i>
                     </div>
-                    <button class="btn btn-sm btn-favorito {{ $item->favorito ? 'btn-warning' : 'btn-outline-secondary' }}" 
+                    <button class="btn btn-sm btn-favorito {{ $item->favorito ? 'btn-success' : 'btn-outline-success' }}" 
                             data-id="{{ $item->id }}">
                         <i class="bi bi-star{{ $item->favorito ? '-fill' : '' }}"></i>
                     </button>
@@ -179,13 +179,13 @@ document.querySelectorAll('.btn-favorito').forEach(btn => {
         .then(response => response.json())
         .then(data => {
             if (data.favorito) {
-                this.classList.remove('btn-outline-secondary');
-                this.classList.add('btn-warning');
+                this.classList.remove('btn-outline-success');
+                this.classList.add('btn-success');
                 this.querySelector('i').classList.add('bi-star-fill');
                 this.querySelector('i').classList.remove('bi-star');
             } else {
-                this.classList.remove('btn-warning');
-                this.classList.add('btn-outline-secondary');
+                this.classList.remove('btn-success');
+                this.classList.add('btn-outline-success');
                 this.querySelector('i').classList.remove('bi-star-fill');
                 this.querySelector('i').classList.add('bi-star');
             }

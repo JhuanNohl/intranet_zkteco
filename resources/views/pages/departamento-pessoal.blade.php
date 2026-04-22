@@ -477,7 +477,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Fechar</button>
                 </div>
             </div>
         </div>
@@ -594,7 +594,7 @@
     @can('gerenciar_dp')
         <div class="row mt-4">
             <div class="col-12 text-center">
-                <button class="btn btn-outline-secondary btn-sm" onclick="alert('Área administrativa - Em desenvolvimento')">
+                <button class="btn btn-outline-success btn-sm" onclick="alert('Área administrativa - Em desenvolvimento')">
                     <i class="bi bi-gear"></i> Gerenciar Documentos
                 </button>
             </div>

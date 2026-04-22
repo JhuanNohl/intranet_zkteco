@@ -34,22 +34,22 @@
             <div class="card shadow-sm">
                 <div class="card-body">
                     <div class="d-flex flex-wrap gap-2">
-                        <button class="btn btn-sm btn-outline-primary btn-categoria active" data-categoria="todos">
+                        <button class="btn btn-sm btn-outline-success btn-categoria active" data-categoria="todos">
                             <i class="bi bi-grid-3x3-gap-fill"></i> Todos
                         </button>
-                        <button class="btn btn-sm btn-outline-info btn-categoria" data-categoria="faces">
+                        <button class="btn btn-sm btn-outline-success btn-categoria" data-categoria="faces">
                             <i class="bi bi-person-badge"></i> FACES
                         </button>
                         <button class="btn btn-sm btn-outline-success btn-categoria" data-categoria="cftv">
                             <i class="bi bi-camera-video"></i> CFTV
                         </button>
-                        <button class="btn btn-sm btn-outline-warning btn-categoria" data-categoria="documentos">
+                        <button class="btn btn-sm btn-outline-success btn-categoria" data-categoria="documentos">
                             <i class="bi bi-file-text"></i> Documentos
                         </button>
-                        <button class="btn btn-sm btn-outline-danger btn-categoria" data-categoria="redes">
+                        <button class="btn btn-sm btn-outline-success btn-categoria" data-categoria="redes">
                             <i class="bi bi-hdd-network"></i> Pastas Rede
                         </button>
-                        <button class="btn btn-sm btn-outline-secondary btn-categoria" data-categoria="anatel">
+                        <button class="btn btn-sm btn-outline-success btn-categoria" data-categoria="anatel">
                             <i class="bi bi-shield-check"></i> ANATEL
                         </button>
                     </div>
@@ -64,8 +64,8 @@
             <div class="card shadow-sm border-0">
                 <div class="card-header bg-white border-0 pt-4">
                     <div class="d-flex align-items-center">
-                        <div class="rounded-circle bg-primary bg-opacity-10 p-2 me-3">
-                            <i class="bi bi-person-badge fs-4 text-primary"></i>
+                        <div class="rounded-circle bg-success bg-opacity-10 p-2 me-3">
+                            <i class="bi bi-person-badge fs-4 text-success"></i>
                         </div>
                         <h4 class="mb-0 fw-bold">FACES - Terminais Biométricos</h4>
                     </div>
@@ -75,10 +75,10 @@
                         <div class="col-md-4">
                             <div class="card h-100 border shadow-sm">
                                 <div class="card-body">
-                                    <i class="bi bi-file-text-fill text-primary fs-2"></i>
+                                    <i class="bi bi-file-text-fill text-success fs-2"></i>
                                     <h6 class="mt-2">Especificações Técnicas</h6>
                                     <p class="text-muted small">Terminais FACES - Dados técnicos completos</p>
-                                    <a href="#" class="btn btn-sm btn-outline-primary disabled">
+                                    <a href="#" class="btn btn-sm btn-outline-success disabled">
                                         <i class="bi bi-download"></i> Em breve
                                     </a>
                                 </div>
@@ -99,10 +99,10 @@
                         <div class="col-md-4">
                             <div class="card h-100 border shadow-sm">
                                 <div class="card-body">
-                                    <i class="bi bi-star-fill text-warning fs-2"></i>
+                                    <i class="bi bi-star-fill text-success fs-2"></i>
                                     <h6 class="mt-2">Recursos e Funcionalidades</h6>
                                     <p class="text-muted small">Mercado Brasileiro - Diferenciais e recursos</p>
-                                    <a href="#" class="btn btn-sm btn-outline-warning disabled">
+                                    <a href="#" class="btn btn-sm btn-outline-success disabled">
                                         <i class="bi bi-download"></i> Em breve
                                     </a>
                                 </div>
@@ -131,10 +131,10 @@
                         <div class="col-md-6">
                             <div class="card border shadow-sm">
                                 <div class="card-body">
-                                    <i class="bi bi-table text-info fs-2"></i>
+                                    <i class="bi bi-table text-success fs-2"></i>
                                     <h6 class="mt-2">Planilha para Escolha de Produtos</h6>
                                     <p class="text-muted small">Selecione produtos por características técnicas</p>
-                                    <a href="#" class="btn btn-sm btn-outline-info disabled">
+                                    <a href="#" class="btn btn-sm btn-outline-success disabled">
                                         <i class="bi bi-download"></i> Em breve
                                     </a>
                                 </div>
@@ -143,10 +143,10 @@
                         <div class="col-md-6">
                             <div class="card border shadow-sm">
                                 <div class="card-body">
-                                    <i class="bi bi-printer text-secondary fs-2"></i>
+                                    <i class="bi bi-printer text-success fs-2"></i>
                                     <h6 class="mt-2">Manual Impresso</h6>
                                     <p class="text-muted small">Para colocar dentro da caixa dos produtos</p>
-                                    <a href="#" class="btn btn-sm btn-outline-secondary disabled">
+                                    <a href="#" class="btn btn-sm btn-outline-success disabled">
                                         <i class="bi bi-download"></i> Em breve
                                     </a>
                                 </div>
@@ -164,8 +164,8 @@
             <div class="card shadow-sm border-0">
                 <div class="card-header bg-white border-0 pt-4">
                     <div class="d-flex align-items-center">
-                        <div class="rounded-circle bg-danger bg-opacity-10 p-2 me-3">
-                            <i class="bi bi-shield-check fs-4 text-danger"></i>
+                        <div class="rounded-circle bg-success bg-opacity-10 p-2 me-3">
+                            <i class="bi bi-shield-check fs-4 text-success"></i>
                         </div>
                         <h4 class="mb-0 fw-bold">Homologações ANATEL</h4>
                     </div>
@@ -173,8 +173,8 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="alert alert-info">
-                                <i class="bi bi-info-circle-fill me-2"></i>
+                            <div class="alert alert-success">
+                                <i class="bi bi-success-circle-fill me-2"></i>
                                 Produtos e módulos homologados pela ANATEL
                             </div>
                             <div class="list-group">
@@ -182,14 +182,14 @@
                                     <div class="d-flex justify-content-between align-items-center">
                                         <span><i class="bi bi-check-circle-fill text-success me-2"></i> Certificados
                                             ANATEL</span>
-                                        <span class="badge bg-secondary">Em breve</span>
+                                        <span class="badge bg-success">Em breve</span>
                                     </div>
                                 </a>
                                 <a href="#" class="list-group-item list-group-item-action disabled">
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <span><i class="bi bi-file-pdf-fill text-danger me-2"></i> Declarações de
+                                        <span><i class="bi bi-file-pdf-fill text-success me-2"></i> Declarações de
                                             Conformidade</span>
-                                        <span class="badge bg-secondary">Em breve</span>
+                                        <span class="badge bg-success">Em breve</span>
                                     </div>
                                 </a>
                             </div>
@@ -206,8 +206,8 @@
             <div class="card shadow-sm border-0">
                 <div class="card-header bg-white border-0 pt-4">
                     <div class="d-flex align-items-center">
-                        <div class="rounded-circle bg-warning bg-opacity-10 p-2 me-3">
-                            <i class="bi bi-hdd-network fs-4 text-warning"></i>
+                        <div class="rounded-circle bg-success bg-opacity-10 p-2 me-3">
+                            <i class="bi bi-hdd-network fs-4 text-success"></i>
                         </div>
                         <h4 class="mb-0 fw-bold">Pastas de Rede</h4>
                     </div>
@@ -217,10 +217,10 @@
                         <div class="col-md-6">
                             <div class="card border shadow-sm">
                                 <div class="card-body">
-                                    <i class="bi bi-folder-fill text-warning fs-2"></i>
+                                    <i class="bi bi-folder-fill text-success fs-2"></i>
                                     <h6 class="mt-2">Termo de Referência</h6>
                                     <p class="text-muted small">Z:\Produtos\Termo de Referencia</p>
-                                    <button class="btn btn-sm btn-outline-warning btn-copiar-caminho"
+                                    <button class="btn btn-sm btn-outline-success btn-copiar-caminho"
                                         data-caminho="Z:\\Produtos\\Termo de Referencia">
                                         <i class="bi bi-copy"></i> Copiar Caminho
                                     </button>
@@ -230,10 +230,10 @@
                         <div class="col-md-6">
                             <div class="card border shadow-sm">
                                 <div class="card-body">
-                                    <i class="bi bi-building fs-2 text-primary"></i>
+                                    <i class="bi bi-building fs-2 text-success"></i>
                                     <h6 class="mt-2">DWG Desenhos (AutoCAD)</h6>
                                     <p class="text-muted small">Z:\Documentos ZKTeco\06. Produtos\13. Documentos\DWG</p>
-                                    <button class="btn btn-sm btn-outline-primary btn-copiar-caminho"
+                                    <button class="btn btn-sm btn-outline-success btn-copiar-caminho"
                                         data-caminho="Z:\\Documentos ZKTeco\\06. Produtos\\13. Documentos\\DWG">
                                         <i class="bi bi-copy"></i> Copiar Caminho
                                     </button>
@@ -252,8 +252,8 @@
             <div class="card shadow-sm border-0">
                 <div class="card-header bg-white border-0 pt-4">
                     <div class="d-flex align-items-center">
-                        <div class="rounded-circle bg-info bg-opacity-10 p-2 me-3">
-                            <i class="bi bi-folder-fill fs-4 text-info"></i>
+                        <div class="rounded-circle bg-success bg-opacity-10 p-2 me-3">
+                            <i class="bi bi-folder-fill fs-4 text-success"></i>
                         </div>
                         <h4 class="mb-0 fw-bold">Documentos Gerais</h4>
                     </div>
@@ -263,17 +263,17 @@
                         <a href="#" class="list-group-item list-group-item-action disabled">
                             <i class="bi bi-file-earmark-text me-2"></i>
                             Catálogo de Produtos
-                            <span class="badge bg-secondary float-end">Em breve</span>
+                            <span class="badge bg-success float-end">Em breve</span>
                         </a>
                         <a href="#" class="list-group-item list-group-item-action disabled">
-                            <i class="bi bi-file-earmark-pdf me-2 text-danger"></i>
+                            <i class="bi bi-file-earmark-pdf me-2 text-success"></i>
                             Fichas Técnicas
-                            <span class="badge bg-secondary float-end">Em breve</span>
+                            <span class="badge bg-success float-end">Em breve</span>
                         </a>
                         <a href="#" class="list-group-item list-group-item-action disabled">
                             <i class="bi bi-file-earmark-excel me-2 text-success"></i>
                             Matriz de Compatibilidade
-                            <span class="badge bg-secondary float-end">Em breve</span>
+                            <span class="badge bg-success float-end">Em breve</span>
                         </a>
                     </div>
                 </div>
@@ -285,7 +285,7 @@
     @can('gerenciar_produtos')
         <div class="row mt-4">
             <div class="col-12 text-center">
-                <button class="btn btn-outline-secondary btn-sm" onclick="alert('Área administrativa - Em desenvolvimento')">
+                <button class="btn btn-outline-success btn-sm" onclick="alert('Área administrativa - Em desenvolvimento')">
                     <i class="bi bi-gear"></i> Gerenciar Documentos
                 </button>
             </div>

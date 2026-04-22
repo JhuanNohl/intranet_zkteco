@@ -29,8 +29,8 @@
         <div class="col-md-3 mb-3">
             <div class="card border-0 shadow-sm h-100">
                 <div class="card-body text-center">
-                    <div class="rounded-circle bg-primary bg-opacity-10 p-3 d-inline-block mb-3">
-                        <i class="bi bi-box-seam fs-1 text-primary"></i>
+                    <div class="rounded-circle bg-success bg-opacity-10 p-3 d-inline-block mb-3">
+                        <i class="bi bi-box-seam fs-1 text-success"></i>
                     </div>
                     <h3 class="mb-0">1.234</h3>
                     <p class="text-muted small mb-0">Produtos em Estoque</p>
@@ -51,8 +51,8 @@
         <div class="col-md-3 mb-3">
             <div class="card border-0 shadow-sm h-100">
                 <div class="card-body text-center">
-                    <div class="rounded-circle bg-warning bg-opacity-10 p-3 d-inline-block mb-3">
-                        <i class="bi bi-calendar-check fs-1 text-warning"></i>
+                    <div class="rounded-circle bg-success bg-opacity-10 p-3 d-inline-block mb-3">
+                        <i class="bi bi-calendar-check fs-1 text-success"></i>
                     </div>
                     <h3 class="mb-0">98%</h3>
                     <p class="text-muted small mb-0">OKL - Nível de Serviço</p>
@@ -62,8 +62,8 @@
         <div class="col-md-3 mb-3">
             <div class="card border-0 shadow-sm h-100">
                 <div class="card-body text-center">
-                    <div class="rounded-circle bg-info bg-opacity-10 p-3 d-inline-block mb-3">
-                        <i class="bi bi-people fs-1 text-info"></i>
+                    <div class="rounded-circle bg-success bg-opacity-10 p-3 d-inline-block mb-3">
+                        <i class="bi bi-people fs-1 text-success"></i>
                     </div>
                     <h3 class="mb-0">42</h3>
                     <p class="text-muted small mb-0">Colaboradores</p>
@@ -102,7 +102,7 @@
                     <div class="card shadow-sm">
                         <div class="card-header bg-white">
                             <h5 class="mb-0">
-                                <i class="bi bi-gear-fill me-2 text-primary"></i>
+                                <i class="bi bi-gear-fill me-2 text-success"></i>
                                 Macroprocesso Industrial - ZKTeco Brasil
                             </h5>
                         </div>
@@ -111,27 +111,27 @@
                             <div class="row g-3 mb-5">
                                 <div class="col-md-3">
                                     <div class="text-center p-3 border rounded bg-light">
-                                        <i class="bi bi-graph-up fs-1 text-primary"></i>
+                                        <i class="bi bi-graph-up fs-1 text-success"></i>
                                         <h6 class="mt-2">Previsão de Demanda</h6>
                                         <small class="text-muted">Planejamento de estoques e compras</small>
                                     </div>
                                 </div>
                                 <div class="col-md-1 text-center">
-                                    <i class="bi bi-arrow-right-circle-fill fs-2 text-secondary"></i>
+                                    <i class="bi bi-arrow-right-circle-fill fs-2 text-success"></i>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="text-center p-3 border rounded bg-light">
-                                        <i class="bi bi-box-seam fs-1 text-primary"></i>
+                                        <i class="bi bi-box-seam fs-1 text-success"></i>
                                         <h6 class="mt-2">Recebimento</h6>
                                         <small class="text-muted">Conferência e armazenagem</small>
                                     </div>
                                 </div>
                                 <div class="col-md-1 text-center">
-                                    <i class="bi bi-arrow-right-circle-fill fs-2 text-secondary"></i>
+                                    <i class="bi bi-arrow-right-circle-fill fs-2 text-success"></i>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="text-center p-3 border rounded bg-light">
-                                        <i class="bi bi-calculator fs-1 text-primary"></i>
+                                        <i class="bi bi-calculator fs-1 text-success"></i>
                                         <h6 class="mt-2">Processamento de Pedidos</h6>
                                         <small class="text-muted">PCP e sequenciamento</small>
                                     </div>
@@ -141,27 +141,27 @@
                             <div class="row g-3 mb-5">
                                 <div class="col-md-3">
                                     <div class="text-center p-3 border rounded bg-light">
-                                        <i class="bi bi-tools fs-1 text-primary"></i>
+                                        <i class="bi bi-tools fs-1 text-success"></i>
                                         <h6 class="mt-2">Produção e Testes</h6>
                                         <small class="text-muted">Manufatura e qualidade</small>
                                     </div>
                                 </div>
                                 <div class="col-md-1 text-center">
-                                    <i class="bi bi-arrow-right-circle-fill fs-2 text-secondary"></i>
+                                    <i class="bi bi-arrow-right-circle-fill fs-2 text-success"></i>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="text-center p-3 border rounded bg-light">
-                                        <i class="bi bi-clipboard-check fs-1 text-primary"></i>
+                                        <i class="bi bi-clipboard-check fs-1 text-success"></i>
                                         <h6 class="mt-2">Conferência</h6>
                                         <small class="text-muted">Embalagem e NF</small>
                                     </div>
                                 </div>
                                 <div class="col-md-1 text-center">
-                                    <i class="bi bi-arrow-right-circle-fill fs-2 text-secondary"></i>
+                                    <i class="bi bi-arrow-right-circle-fill fs-2 text-success"></i>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="text-center p-3 border rounded bg-light">
-                                        <i class="bi bi-truck fs-1 text-primary"></i>
+                                        <i class="bi bi-truck fs-1 text-success"></i>
                                         <h6 class="mt-2">Transporte e Entrega</h6>
                                         <small class="text-muted">CIF / FOB</small>
                                     </div>
@@ -171,33 +171,33 @@
                             <!-- Grupos de Produtos -->
                             <div class="mt-4">
                                 <h6 class="fw-bold mb-3">
-                                    <i class="bi bi-tags me-2 text-primary"></i>
+                                    <i class="bi bi-tags me-2 text-success"></i>
                                     Grupos de Produtos Industrializados
                                 </h6>
                                 <div class="row g-2">
                                     <div class="col-md-3">
-                                        <span class="badge bg-primary p-2 w-100 mb-1">1.01 - Controle de Acesso</span>
+                                        <span class="badge bg-dark p-2 w-100 mb-1">1.01 - Controle de Acesso</span>
                                     </div>
                                     <div class="col-md-3">
-                                        <span class="badge bg-success p-2 w-100 mb-1">1.02 - Ponto e Frequência</span>
+                                        <span class="badge bg-dark p-2 w-100 mb-1">1.02 - Ponto e Frequência</span>
                                     </div>
                                     <div class="col-md-3">
-                                        <span class="badge bg-info p-2 w-100 mb-1">1.03 - Catraca/Cancela</span>
+                                        <span class="badge bg-dark p-2 w-100 mb-1">1.03 - Catraca/Cancela</span>
                                     </div>
                                     <div class="col-md-3">
-                                        <span class="badge bg-warning p-2 w-100 mb-1">1.04 - Smart Locks</span>
+                                        <span class="badge bg-dark p-2 w-100 mb-1">1.04 - Smart Locks</span>
                                     </div>
                                     <div class="col-md-3">
-                                        <span class="badge bg-secondary p-2 w-100 mb-1">1.05 - Linha GreenLabel</span>
+                                        <span class="badge bg-dark p-2 w-100 mb-1">1.05 - Linha GreenLabel</span>
                                     </div>
                                     <div class="col-md-3">
-                                        <span class="badge bg-danger p-2 w-100 mb-1">1.06 - Linha Híbrida</span>
+                                        <span class="badge bg-dark p-2 w-100 mb-1">1.06 - Linha Híbrida</span>
                                     </div>
                                     <div class="col-md-3">
                                         <span class="badge bg-dark p-2 w-100 mb-1">1.07 - Inspeção de Segurança</span>
                                     </div>
                                     <div class="col-md-3">
-                                        <span class="badge bg-primary p-2 w-100 mb-1">1.08 - Controladoras</span>
+                                        <span class="badge bg-dark p-2 w-100 mb-1">1.08 - Controladoras</span>
                                     </div>
                                 </div>
                             </div>
@@ -205,7 +205,7 @@
                             <!-- Botão para visualizar PDF -->
                             <div class="mt-4 text-center">
                                 @can('gerenciar_fabrica')
-                                    <a href="#" class="btn btn-outline-primary btn-sm">
+                                    <a href="#" class="btn btn-outline-success btn-sm">
                                         <i class="bi bi-pencil"></i> Editar Processo
                                     </a>
                                 @endcan
@@ -247,18 +247,18 @@
                     <div class="card shadow-sm h-100">
                         <div class="card-header bg-white">
                             <h5 class="mb-0">
-                                <i class="bi bi-file-earmark-pdf-fill text-danger me-2"></i>
+                                <i class="bi bi-file-earmark-pdf-fill text-success me-2"></i>
                                 Macroprocesso Industrial
                             </h5>
                         </div>
                         <div class="card-body text-center">
-                            <i class="bi bi-file-earmark-pdf display-1 text-danger"></i>
+                            <i class="bi bi-file-earmark-pdf display-1 text-success"></i>
                             <p class="mt-3">Documento completo do processo industrial ZKTeco Brasil</p>
-                            <a href="#" class="btn btn-danger">
+                            <a href="#" class="btn btn-success">
                                 <i class="bi bi-download me-1"></i> Baixar PDF
                             </a>
                             @can('gerenciar_fabrica')
-                                <button class="btn btn-outline-secondary btn-sm ms-2"
+                                <button class="btn btn-outline-success btn-sm ms-2"
                                     onclick="alert('Upload de arquivo - Em desenvolvimento')">
                                     <i class="bi bi-upload"></i> Atualizar
                                 </button>
@@ -270,7 +270,7 @@
                     <div class="card shadow-sm h-100">
                         <div class="card-header bg-white">
                             <h5 class="mb-0">
-                                <i class="bi bi-file-text-fill text-primary me-2"></i>
+                                <i class="bi bi-file-text-fill text-success me-2"></i>
                                 Procedimentos Operacionais
                             </h5>
                         </div>
@@ -279,22 +279,22 @@
                                 <a href="#" class="list-group-item list-group-item-action disabled">
                                     <i class="bi bi-check-circle-fill text-success me-2"></i>
                                     POP - Recebimento de Materiais
-                                    <span class="badge bg-secondary float-end">Em breve</span>
+                                    <span class="badge bg-success float-end">Em breve</span>
                                 </a>
                                 <a href="#" class="list-group-item list-group-item-action disabled">
                                     <i class="bi bi-check-circle-fill text-success me-2"></i>
                                     POP - Armazenagem
-                                    <span class="badge bg-secondary float-end">Em breve</span>
+                                    <span class="badge bg-success float-end">Em breve</span>
                                 </a>
                                 <a href="#" class="list-group-item list-group-item-action disabled">
                                     <i class="bi bi-check-circle-fill text-success me-2"></i>
                                     POP - Controle de Qualidade
-                                    <span class="badge bg-secondary float-end">Em breve</span>
+                                    <span class="badge bg-success float-end">Em breve</span>
                                 </a>
                                 <a href="#" class="list-group-item list-group-item-action disabled">
                                     <i class="bi bi-check-circle-fill text-success me-2"></i>
                                     POP - Expedição
-                                    <span class="badge bg-secondary float-end">Em breve</span>
+                                    <span class="badge bg-success float-end">Em breve</span>
                                 </a>
                             </div>
                         </div>

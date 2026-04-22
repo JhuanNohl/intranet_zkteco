@@ -30,7 +30,7 @@
     <!-- Cards de Estatísticas -->
     <div class="row mb-4">
         <div class="col-md-3">
-            <div class="card bg-primary text-white shadow-sm">
+            <div class="card bg-success text-white shadow-sm">
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
                         <div>
@@ -43,7 +43,7 @@
             </div>
         </div>
         <div class="col-md-3">
-            <div class="card bg-warning text-white shadow-sm">
+            <div class="card bg-success text-white shadow-sm">
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
                         <div>
@@ -69,7 +69,7 @@
             </div>
         </div>
         <div class="col-md-3">
-            <div class="card bg-danger text-white shadow-sm">
+            <div class="card bg-success text-white shadow-sm">
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
                         <div>
@@ -92,13 +92,13 @@
                     <div class="d-flex justify-content-between align-items-center flex-wrap">
                         @php
                             $statusList = [
-                                ['codigo' => 'abertura', 'nome' => '📋 Abertura RMA', 'cor' => 'secondary'],
-                                ['codigo' => 'recebimento', 'nome' => '📦 Recebimento', 'cor' => 'info'],
-                                ['codigo' => 'analise', 'nome' => '🔍 Análise', 'cor' => 'primary'],
-                                ['codigo' => 'orcamento', 'nome' => '💰 Orçamento', 'cor' => 'warning'],
-                                ['codigo' => 'pagamento', 'nome' => '💳 Pagamento', 'cor' => 'dark'],
-                                ['codigo' => 'manutencao', 'nome' => '🔧 Manutenção', 'cor' => 'secondary'],
-                                ['codigo' => 'concluido', 'nome' => '✅ Concluído', 'cor' => 'success'],
+                                ['codigo' => 'abertura', 'nome' => 'Abertura RMA', 'cor' => 'success'],
+                                ['codigo' => 'recebimento', 'nome' => 'Recebimento', 'cor' => 'success'],
+                                ['codigo' => 'analise', 'nome' => 'Análise', 'cor' => 'success'],
+                                ['codigo' => 'orcamento', 'nome' => 'Orçamento', 'cor' => 'success'],
+                                ['codigo' => 'pagamento', 'nome' => 'Pagamento', 'cor' => 'success'],
+                                ['codigo' => 'manutencao', 'nome' => 'Manutenção', 'cor' => 'success'],
+                                ['codigo' => 'concluido', 'nome' => 'Concluído', 'cor' => 'success'],
                             ];
                         @endphp
                         @foreach($statusList as $status)
@@ -141,21 +141,21 @@
                             <tbody id="listaEquipamentos">
                                 @forelse($equipamentos as $item)
                                                     <tr data-id="{{ $item->id }}" data-status="{{ $item->status }}">
-                                                        <td><span class="badge bg-secondary">{{ $item->rma }}</span></td>
+                                                        <td><span class="badge bg-success">{{ $item->rma }}</span></td>
                                                         <td>{{ $item->cliente }}</td>
                                                         <td>{{ $item->equipamento }}</td>
                                                         <td>{{ $item->modelo }}</td>
                                                         <td>
                                                             @php
                                                                 $statusCores = [
-                                                                    'abertura' => 'secondary',
-                                                                    'recebimento' => 'info',
-                                                                    'analise' => 'primary',
-                                                                    'orcamento' => 'warning',
-                                                                    'pagamento' => 'dark',
-                                                                    'manutencao' => 'secondary',
+                                                                    'abertura' => 'success',
+                                                                    'recebimento' => 'success',
+                                                                    'analise' => 'success',
+                                                                    'orcamento' => 'success',
+                                                                    'pagamento' => 'success',
+                                                                    'manutencao' => 'success',
                                                                     'concluido' => 'success',
-                                                                    'cancelado' => 'danger',
+                                                                    'cancelado' => 'success',
                                                                 ];
                                                                 $statusNomes = [
                                                                     'abertura' => 'Abertura RMA',
@@ -169,18 +169,18 @@
                                                                 ];
                                                             @endphp
                                      <span
-                                                                class="badge status-badge bg-{{ $statusCores[$item->status] ?? 'secondary' }}">
+                                                                class="badge status-badge bg-{{ $statusCores[$item->status] ?? 'success' }}">
                                                                 {{ $statusNomes[$item->status] ?? $item->status }}
                                                             </span>
                                                         </td>
                                                         <td>{{ \Carbon\Carbon::parse($item->data_entrada)->format('d/m/Y') }}</td>
                                                         <td>
                                                             <div class="btn-group btn-group-sm">
-                                                                <button class="btn btn-outline-primary btn-avancar" data-id="{{ $item->id }}"
+                                                                <button class="btn btn-outline-success btn-avancar" data-id="{{ $item->id }}"
                                                                     data-status="{{ $item->status }}">
                                                                     <i class="bi bi-arrow-right"></i> Avançar
                                                                 </button>
-                                                                <button class="btn btn-outline-danger btn-cancelar" data-id="{{ $item->id }}">
+                                                                <button class="btn btn-outline-success btn-cancelar" data-id="{{ $item->id }}">
                                                                     <i class="bi bi-x-circle"></i>
                                                                 </button>
                                                             </div>
@@ -191,7 +191,7 @@
                                         <td colspan="7" class="text-center py-4 text-muted">
                                             <i class="bi bi-inbox fs-1"></i>
                                             <p class="mb-0">Nenhum equipamento registrado</p>
-                                            <button class="btn btn-sm btn-primary mt-2" data-bs-toggle="modal"
+                                            <button class="btn btn-sm btn-success mt-2" data-bs-toggle="modal"
                                                 data-bs-target="#modalNovoEquipamento">
                                                 <i class="bi bi-plus-circle"></i> Adicionar primeiro equipamento
                                             </button>
@@ -253,7 +253,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cancelar</button>
                         <button type="submit" class="btn btn-success">Salvar RMA</button>
                     </div>
                 </form>
@@ -265,7 +265,7 @@
     <div class="modal fade" id="modalAvancarEstagio" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header bg-primary text-white">
+                <div class="modal-header bg-success text-white">
                     <h5 class="modal-title">
                         <i class="bi bi-arrow-right-circle me-2"></i>Avançar Estágio
                     </h5>
@@ -298,8 +298,8 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                        <button type="submit" class="btn btn-primary">Avançar</button>
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Fechar</button>
+                        <button type="submit" class="btn btn-success">Avançar</button>
                     </div>
                 </form>
             </div>
@@ -310,14 +310,14 @@
         <script>
             // Mapeamento de status
             const statusMap = {
-                'abertura': { nome: 'Abertura RMA', cor: 'secondary', ordem: 1 },
-                'recebimento': { nome: 'Recebimento', cor: 'info', ordem: 2 },
-                'analise': { nome: 'Em Análise', cor: 'primary', ordem: 3 },
-                'orcamento': { nome: 'Orçamento Enviado', cor: 'warning', ordem: 4 },
-                'pagamento': { nome: 'Aguardando Pagamento', cor: 'dark', ordem: 5 },
-                'manutencao': { nome: 'Em Manutenção', cor: 'secondary', ordem: 6 },
+                'abertura': { nome: 'Abertura RMA', cor: 'success', ordem: 1 },
+                'recebimento': { nome: 'Recebimento', cor: 'success', ordem: 2 },
+                'analise': { nome: 'Em Análise', cor: 'success', ordem: 3 },
+                'orcamento': { nome: 'Orçamento Enviado', cor: 'success', ordem: 4 },
+                'pagamento': { nome: 'Aguardando Pagamento', cor: 'success', ordem: 5 },
+                'manutencao': { nome: 'Em Manutenção', cor: 'success', ordem: 6 },
                 'concluido': { nome: 'Concluído', cor: 'success', ordem: 7 },
-                'cancelado': { nome: 'Cancelado', cor: 'danger', ordem: 8 }
+                'cancelado': { nome: 'Cancelado', cor: 'success', ordem: 8 }
             };
 
             // Função para atualizar estatísticas
@@ -345,7 +345,7 @@
                                             <td colspan="7" class="text-center py-4 text-muted">
                                                 <i class="bi bi-inbox fs-1"></i>
                                                 <p class="mb-0">Nenhum equipamento registrado</p>
-                                                <button class="btn btn-sm btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#modalNovoEquipamento">
+                                                <button class="btn btn-sm btn-success mt-2" data-bs-toggle="modal" data-bs-target="#modalNovoEquipamento">
                                                     <i class="bi bi-plus-circle"></i> Adicionar primeiro equipamento
                                                 </button>
                                             </td>
@@ -354,18 +354,18 @@
                         } else {
                             tbody.innerHTML = data.map(item => `
                                         <tr data-id="${item.id}" data-status="${item.status}">
-                                            <td><span class="badge bg-secondary">${escapeHtml(item.rma)}</span></td>
+                                            <td><span class="badge bg-success">${escapeHtml(item.rma)}</span></td>
                                             <td>${escapeHtml(item.cliente)}</td>
                                             <td>${escapeHtml(item.equipamento)}</td>
                                             <td>${escapeHtml(item.modelo)}</td>
-                                            <td><span class="badge status-badge bg-${statusMap[item.status]?.cor || 'secondary'}">${statusMap[item.status]?.nome || item.status}</span></td>
+                                            <td><span class="badge status-badge bg-${statusMap[item.status]?.cor || 'success'}">${statusMap[item.status]?.nome || item.status}</span></td>
                                             <td>${item.data_entrada}</td>
                                             <td>
                                                 <div class="btn-group btn-group-sm">
-                                                    <button class="btn btn-outline-primary btn-avancar" data-id="${item.id}" data-status="${item.status}">
+                                                    <button class="btn btn-outline-success btn-avancar" data-id="${item.id}" data-status="${item.status}">
                                                         <i class="bi bi-arrow-right"></i> Avançar
                                                     </button>
-                                                    <button class="btn btn-outline-danger btn-cancelar" data-id="${item.id}">
+                                                    <button class="btn btn-outline-success btn-cancelar" data-id="${item.id}">
                                                         <i class="bi bi-x-circle"></i>
                                                     </button>
                                                 </div>
@@ -408,12 +408,12 @@
                 select.innerHTML = '<option value="">Selecione...</option>';
 
                 const opcoes = [
-                    { value: 'recebimento', label: '📦 Recebimento', show: statusAtual === 'abertura' },
-                    { value: 'analise', label: '🔍 Análise Técnica', show: statusAtual === 'recebimento' },
-                    { value: 'orcamento', label: '💰 Orçamento', show: statusAtual === 'analise' },
-                    { value: 'pagamento', label: '💳 Aguardar Pagamento', show: statusAtual === 'orcamento' },
-                    { value: 'manutencao', label: '🔧 Em Manutenção', show: statusAtual === 'pagamento' },
-                    { value: 'concluido', label: '✅ Concluído', show: statusAtual === 'manutencao' }
+                    { value: 'recebimento', label: 'Recebimento', show: statusAtual === 'abertura' },
+                    { value: 'analise', label: 'Análise Técnica', show: statusAtual === 'recebimento' },
+                    { value: 'orcamento', label: 'Orçamento', show: statusAtual === 'analise' },
+                    { value: 'pagamento', label: 'Aguardar Pagamento', show: statusAtual === 'orcamento' },
+                    { value: 'manutencao', label: 'Em Manutenção', show: statusAtual === 'pagamento' },
+                    { value: 'concluido', label: 'Concluído', show: statusAtual === 'manutencao' }
                 ];
 
                 opcoes.forEach(op => {
