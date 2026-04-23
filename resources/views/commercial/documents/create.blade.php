@@ -108,7 +108,7 @@
                             </div>
 
                             <div class="d-flex justify-content-between mt-4">
-                                <a href="{{ route('comercial') }}" class="btn btn-secondary">
+                                <a href="{{ route('comercial') }}" class="btn btn-success">
                                     <i class="bi bi-arrow-left me-2"></i>Cancelar
                                 </a>
                                 <button type="submit" class="btn btn-success">

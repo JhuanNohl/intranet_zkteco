@@ -117,7 +117,7 @@ Route::middleware(['auth'])->group(function () {
 
     // ========== SETORES ==========
     Route::get('/comercial', function () {
-        $documents = \App\Models\CommercialDocument::with('user')->orderBy('category')->get();
+        $documents = \App\Models\CommercialDocument::with('creator')->orderBy('category')->get();
         $areas = \App\Models\CommercialMapArea::all();
         return view('pages.comercial', compact('documents', 'areas'));
     })->name('comercial');

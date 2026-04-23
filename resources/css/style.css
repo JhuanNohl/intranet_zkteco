@@ -521,7 +521,7 @@ footer {
 }
 
 .document-link:hover {
-    color: #0d6efd !important;
+    color: #48ff00 !important;
     /* Azul do Bootstrap ao passar o mouse */
     text-decoration: underline !important;
 }

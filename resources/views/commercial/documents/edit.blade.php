@@ -7,7 +7,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header bg-primary text-white">
+                    <div class="card-header bg-success text-white">
                         <h4 class="mb-0">
                             <i class="bi bi-pencil-square me-2"></i>
                             Editar Documento Comercial
@@ -119,10 +119,10 @@
                             </div>
 
                             <div class="d-flex justify-content-between mt-4">
-                                <a href="{{ route('comercial') }}" class="btn btn-secondary">
+                                <a href="{{ route('comercial') }}" class="btn btn-success">
                                     <i class="bi bi-arrow-left me-2"></i>Cancelar
                                 </a>
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-success">
                                     <i class="bi bi-save me-2"></i><span class="color: white">Atualizar Documento</span>
                                 </button>
                             </div>

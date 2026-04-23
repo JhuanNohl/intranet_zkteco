@@ -55,8 +55,8 @@
                     <i class="bi bi-map-fill text-success me-2"></i>Mapa de Atendimento
                 </h4>
             </div>
-            <div class="card-body">
-                <div id="map" style="height: 500px; border-radius: 8px;"></div>
+            <div class="card-body d-flex justify-content-center align-items-center">
+                <img src="{{ asset('img/mapa-consultores.png') }}" alt="Mapa de Consultores por Região" class="img-fluid" style="max-height: 500px; object-fit: contain;">
             </div>
         </div>
     </div>
@@ -65,11 +65,6 @@
 @push('styles')
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <style>
-        #map {
-            height: 500px;
-            border-radius: 8px;
-        }
-
         .accordion-button:not(.collapsed) {
             background-color: #e7f1ff;
             color: #7AC143;
@@ -80,49 +75,4 @@
             border-color: rgba(0, 0, 0, .125);
         }
     </style>
-@endpush
-
-@push('scripts')
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script>
-        // Inicializar mapa centrado no Brasil
-        var map = L.map('map').setView([-15.793889, -47.882778], 4);
-
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; CartoDB',
-            subdomains: 'abcd',
-            maxZoom: 19
-        }).addTo(map);
-
-        // Coordenadas aproximadas por região
-        var regionCoordinates = {
-            'Norte': [-3.41684, -60.02578],
-            'Nordeste': [-5.79448, -35.21100],
-            'Sudeste (MG)': [-19.915, -43.934],
-            'Sudeste (RJ e ES)': [-22.9068, -43.1729],
-            'Sudeste (SP)': [-23.5505, -46.6333],
-            'Sul': [-30.0346, -51.2177],
-            'Centro Oeste': [-15.7939, -47.8828]
-        };
-
-        var areas = @json($areas);
-
-        areas.forEach(function (area) {
-            var coords = regionCoordinates[area.region] || [-15.7939, -47.8828];
-
-            // Criar marcador personalizado
-            var marker = L.marker(coords).addTo(map);
-
-            // Popup com informações
-            var popupContent = `
-                <div class="text-center">
-                    <strong class="text-success">${area.region}</strong><br>
-                    <i class="bi bi-person"></i> <strong>Consultor:</strong> ${area.consultant}<br>
-                    ${area.states ? `<i class="bi bi-geo"></i> <strong>Estados:</strong> ${area.states}` : ''}
-                </div>
-            `;
-
-            marker.bindPopup(popupContent);
-        });
-    </script>
 @endpush

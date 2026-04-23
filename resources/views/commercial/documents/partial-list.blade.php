@@ -5,7 +5,7 @@
 @if($documents->isEmpty())
     <div class="text-center py-5">
         <div class="mb-4">
-            <i class="bi bi-folder-x display-1 text-muted"></i>
+            <i class="bi bi-folder-x display-1 text-success"></i>
         </div>
         <h4 class="text-muted">Nenhum documento cadastrado</h4>
         @can('create', App\Models\CommercialDocument::class)
@@ -22,11 +22,11 @@
                 <div class="card border-0 shadow-sm h-100">
                     <div class="card-header bg-white border-0 pt-4 pb-0">
                         <div class="d-flex align-items-center">
-                            <div class="rounded-circle bg-primary bg-opacity-10 p-2 me-3">
-                                <i class="bi bi-folder-fill text-primary"></i>
+                            <div class="rounded-circle bg-success bg-opacity-10 p-2 me-3">
+                                <i class="bi bi-folder-fill text-success"></i>
                             </div>
                             <h4 class="mb-0 fw-bold">{{ $category }}</h4>
-                            <span class="badge bg-secondary ms-2">{{ $docs->count() }}</span>
+                            <span class="badge bg-success ms-2">{{ $docs->count() }}</span>
                         </div>
                     </div>
                     <div class="card-body pt-3">
@@ -39,7 +39,7 @@
                                                 @php
                                                     // Determinar ícone baseado na extensão do arquivo
                                                     $icon = 'bi-file-earmark-text-fill';
-                                                    $iconColor = 'text-secondary';
+                                                    $iconColor = 'text-success';
                                                     $isTableView = false;
 
                                                     if ($doc->type === 'file' && $doc->file_path) {
@@ -73,11 +73,11 @@
                                                             case 'html':
                                                             case 'htm':
                                                                 $icon = 'bi-table';
-                                                                $iconColor = 'text-info';
+                                                                $iconColor = 'text-secondary';
                                                                 break;
                                                             default:
                                                                 $icon = 'bi-file-earmark-fill';
-                                                                $iconColor = 'text-secondary';
+                                                                $iconColor = 'text-success';
                                                         }
                                                     } elseif ($doc->type === 'link') {
                                                         $icon = 'bi-link-45deg';
@@ -107,12 +107,12 @@
                                                 @endif
 
                                                 @if($doc->type === 'link')
-                                                    <span class="badge bg-info ms-2">Link</span>
+                                                    <span class="badge bg-success ms-2">Link</span>
                                                 @else
                                                     @php
                                                         $extension = strtolower(pathinfo($doc->file_path, PATHINFO_EXTENSION));
                                                         $badgeText = 'Documento';
-                                                        $badgeColor = 'bg-secondary';
+                                                        $badgeColor = 'bg-success';
 
                                                         switch ($extension) {
                                                             case 'pdf':
@@ -151,9 +151,9 @@
                                         @can('update', $doc)
                                             <div class="ms-3">
                                                 <!-- Botão EDITAR - Usando URL direta -->
-                                                <a href="/commercial/documents/{{ $doc->id }}/edit" class="btn btn-primary"
+                                                <a href="/commercial/documents/{{ $doc->id }}/edit" class="btn btn-default btn-md"
                                                     data-bs-toggle="tooltip" title="Editar documento" style="min-width: 80px;">
-                                                    <i class="bi bi-pencil-square me-1"></i><span class="text-white">Editar</span>
+                                                    <i class="bi bi-pencil-square me-1"></i><span class="text-dark">Editar</span>
                                                 </a>
 
                                                 <!-- Formulário EXCLUIR - Usando URL direta -->
@@ -226,7 +226,7 @@
                                                     @endif
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">
                                                         <i class="bi bi-x-circle me-1"></i>Fechar
                                                     </button>
                                                     <button type="button" class="btn btn-success"
