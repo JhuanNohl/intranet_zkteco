@@ -280,12 +280,6 @@
                             <label class="form-label">Próximo Estágio</label>
                             <select name="status" id="novoStatus" class="form-control" required>
                                 <option value="">Selecione...</option>
-                                <option value="recebimento">📦 Recebimento</option>
-                                <option value="analise">🔍 Análise Técnica</option>
-                                <option value="orcamento">💰 Orçamento</option>
-                                <option value="pagamento">💳 Aguardar Pagamento</option>
-                                <option value="manutencao">🔧 Em Manutenção</option>
-                                <option value="concluido">✅ Concluído</option>
                             </select>
                         </div>
                         <div class="mb-3 d-none" id="campoValor">
@@ -308,16 +302,16 @@
 
     @push('scripts')
         <script>
-            // Mapeamento de status
+            // Mapeamento de status com nomes completos (como na migration)
             const statusMap = {
-                'abertura': { nome: 'Abertura RMA', cor: 'success', ordem: 1 },
-                'recebimento': { nome: 'Recebimento', cor: 'success', ordem: 2 },
-                'analise': { nome: 'Em Análise', cor: 'success', ordem: 3 },
-                'orcamento': { nome: 'Orçamento Enviado', cor: 'success', ordem: 4 },
-                'pagamento': { nome: 'Aguardando Pagamento', cor: 'success', ordem: 5 },
-                'manutencao': { nome: 'Em Manutenção', cor: 'success', ordem: 6 },
+                'aguardando_recebimento': { nome: 'Aguardando Recebimento', cor: 'warning', ordem: 1 },
+                'em_analise': { nome: 'Em Análise', cor: 'info', ordem: 2 },
+                'em_garantia': { nome: 'Em Garantia', cor: 'info', ordem: 3 },
+                'orcamento_enviado': { nome: 'Orçamento Enviado', cor: 'warning', ordem: 4 },
+                'aguardando_pagamento': { nome: 'Aguardando Pagamento', cor: 'warning', ordem: 5 },
+                'em_manutencao': { nome: 'Em Manutenção', cor: 'info', ordem: 6 },
                 'concluido': { nome: 'Concluído', cor: 'success', ordem: 7 },
-                'cancelado': { nome: 'Cancelado', cor: 'success', ordem: 8 }
+                'cancelado': { nome: 'Cancelado', cor: 'danger', ordem: 8 }
             };
 
             // Função para atualizar estatísticas
@@ -407,22 +401,43 @@
                 const select = document.getElementById('novoStatus');
                 select.innerHTML = '<option value="">Selecione...</option>';
 
-                const opcoes = [
-                    { value: 'recebimento', label: 'Recebimento', show: statusAtual === 'abertura' },
-                    { value: 'analise', label: 'Análise Técnica', show: statusAtual === 'recebimento' },
-                    { value: 'orcamento', label: 'Orçamento', show: statusAtual === 'analise' },
-                    { value: 'pagamento', label: 'Aguardar Pagamento', show: statusAtual === 'orcamento' },
-                    { value: 'manutencao', label: 'Em Manutenção', show: statusAtual === 'pagamento' },
-                    { value: 'concluido', label: 'Concluído', show: statusAtual === 'manutencao' }
-                ];
+                // Fluxo de status: qual próximo status é válido baseado no status atual
+                const fluxoStatus = {
+                    'aguardando_recebimento': [
+                        { value: 'recebimento', label: '📦 Recebimento', show: true },
+                        { value: 'cancelado', label: '❌ Cancelar', show: true }
+                    ],
+                    'em_analise': [
+                        { value: 'garantia', label: '🔐 Em Garantia', show: true },
+                        { value: 'orcamento', label: '💰 Orçamento', show: true },
+                        { value: 'cancelado', label: '❌ Cancelar', show: true }
+                    ],
+                    'em_garantia': [
+                        { value: 'concluido', label: '✅ Concluído', show: true },
+                        { value: 'cancelado', label: '❌ Cancelar', show: true }
+                    ],
+                    'orcamento_enviado': [
+                        { value: 'pagamento', label: '💳 Aguardar Pagamento', show: true },
+                        { value: 'cancelado', label: '❌ Cancelar', show: true }
+                    ],
+                    'aguardando_pagamento': [
+                        { value: 'manutencao', label: '🔧 Em Manutenção', show: true },
+                        { value: 'cancelado', label: '❌ Cancelar', show: true }
+                    ],
+                    'em_manutencao': [
+                        { value: 'concluido', label: '✅ Concluído', show: true },
+                        { value: 'cancelado', label: '❌ Cancelar', show: true }
+                    ],
+                    'concluido': [],
+                    'cancelado': []
+                };
 
+                const opcoes = fluxoStatus[statusAtual] || [];
                 opcoes.forEach(op => {
-                    if (op.show) {
-                        const option = document.createElement('option');
-                        option.value = op.value;
-                        option.textContent = op.label;
-                        select.appendChild(option);
-                    }
+                    const option = document.createElement('option');
+                    option.value = op.value;
+                    option.textContent = op.label;
+                    select.appendChild(option);
                 });
 
                 document.getElementById('campoValor').classList.add('d-none');
