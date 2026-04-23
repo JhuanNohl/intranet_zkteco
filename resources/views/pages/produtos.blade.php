@@ -21,36 +21,6 @@
         </div>
     </div>
 
-    <!-- Categorias -->
-    <div class="row mb-4">
-        <div class="col-12">
-            <div class="card shadow-sm">
-                <div class="card-body">
-                    <div class="d-flex flex-wrap gap-2">
-                        <button class="btn btn-sm btn-outline-success btn-categoria active" data-categoria="todos">
-                            <i class="bi bi-grid-3x3-gap-fill"></i> Todos
-                        </button>
-                        <button class="btn btn-sm btn-outline-success btn-categoria" data-categoria="faces">
-                            <i class="bi bi-person-badge"></i> FACES
-                        </button>
-                        <button class="btn btn-sm btn-outline-success btn-categoria" data-categoria="cftv">
-                            <i class="bi bi-camera-video"></i> CFTV
-                        </button>
-                        <button class="btn btn-sm btn-outline-success btn-categoria" data-categoria="documentos">
-                            <i class="bi bi-file-text"></i> Documentos
-                        </button>
-                        <button class="btn btn-sm btn-outline-success btn-categoria" data-categoria="redes">
-                            <i class="bi bi-hdd-network"></i> Pastas Rede
-                        </button>
-                        <button class="btn btn-sm btn-outline-success btn-categoria" data-categoria="anatel">
-                            <i class="bi bi-shield-check"></i> ANATEL
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Documentos FACES -->
     <div class="row mb-4 categoria-group" data-categoria="faces">
         <div class="col-12">
@@ -71,20 +41,9 @@
                                     <i class="bi bi-file-text-fill text-success fs-2"></i>
                                     <h6 class="mt-2">Especificações Técnicas</h6>
                                     <p class="text-muted small">Terminais FACES - Dados técnicos completos</p>
-                                    <a href="#" class="btn btn-sm btn-outline-success disabled">
-                                        <i class="bi bi-download"></i> Em breve
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card h-100 border shadow-sm">
-                                <div class="card-body">
-                                    <i class="bi bi-sliders2 text-success fs-2"></i>
-                                    <h6 class="mt-2">Lista de Parâmetros</h6>
-                                    <p class="text-muted small">Configurações e comandos para terminais FACES</p>
-                                    <a href="#" class="btn btn-sm btn-outline-success disabled">
-                                        <i class="bi bi-download"></i> Em breve
+                                    <a href="{{ asset('downloads/Especificações-Faciais.xlsx') }}"
+                                        class="btn btn-sm btn-outline-success" download>
+                                        <i class="bi bi-download"></i> Baixar
                                     </a>
                                 </div>
                             </div>
@@ -95,8 +54,9 @@
                                     <i class="bi bi-star-fill text-success fs-2"></i>
                                     <h6 class="mt-2">Recursos e Funcionalidades</h6>
                                     <p class="text-muted small">Mercado Brasileiro - Diferenciais e recursos</p>
-                                    <a href="#" class="btn btn-sm btn-outline-success disabled">
-                                        <i class="bi bi-download"></i> Em breve
+                                    <a href="{{ asset('downloads/Faciais-Funcionalidades.xlsx') }}"
+                                        class="btn btn-sm btn-outline-success" download>
+                                        <i class="bi bi-download"></i> Baixar
                                     </a>
                                 </div>
                             </div>
@@ -127,8 +87,9 @@
                                     <i class="bi bi-table text-success fs-2"></i>
                                     <h6 class="mt-2">Planilha para Escolha de Produtos</h6>
                                     <p class="text-muted small">Selecione produtos por características técnicas</p>
-                                    <a href="#" class="btn btn-sm btn-outline-success disabled">
-                                        <i class="bi bi-download"></i> Em breve
+                                    <a href="{{ asset('downloads/Produtos-CFTV-ZKTeco.xlsx') }}"
+                                        class="btn btn-sm btn-outline-success" download>
+                                        <i class="bi bi-download"></i> Baixar
                                     </a>
                                 </div>
                             </div>
@@ -299,24 +260,6 @@
                     } else {
                         card.style.display = 'none';
                     }
-                });
-            });
-
-            // Filtro por categoria
-            document.querySelectorAll('.btn-categoria').forEach(btn => {
-                btn.addEventListener('click', function () {
-                    const categoria = this.dataset.categoria;
-
-                    document.querySelectorAll('.btn-categoria').forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-
-                    document.querySelectorAll('.categoria-group').forEach(group => {
-                        if (categoria === 'todos') {
-                            group.style.display = '';
-                        } else {
-                            group.style.display = group.dataset.categoria === categoria ? '' : 'none';
-                        }
-                    });
                 });
             });
 
