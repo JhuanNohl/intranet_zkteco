@@ -18,8 +18,8 @@
                             </p>
                         </div>
                         <div>
-                            <a href="{{ route('desenvolvimento') }}" class="btn btn-light">
-                                <i class="bi bi-arrow-left me-2"></i>Voltar ao Desenvolvimento
+                            <a href="{{ route('desenvolvimento') }}" class="btn btn-outline-light">
+                                <i class="bi bi-arrow-left me-2"></i>Voltar
                             </a>
                         </div>
                     </div>

@@ -33,7 +33,7 @@
 
     <div class="menu-section-title">Operacional</div>
     <a href="{{ route('fabrica') }}" class="menu-link {{ request()->routeIs('fabrica') ? 'active' : '' }}">
-        <span class="bi bi-building-factory menu-icon"></span> Fábrica
+        <span class="bi bi-building-fill menu-icon"></span> Fábrica
     </a>
     <a href="{{ route('manutencao') }}" class="menu-link {{ request()->routeIs('manutencao') ? 'active' : '' }}">
         <span class="bi bi-tools menu-icon"></span> Manutenção

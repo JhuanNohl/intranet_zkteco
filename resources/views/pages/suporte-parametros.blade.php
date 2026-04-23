@@ -16,8 +16,8 @@
                             <p class="mb-0 opacity-75">ZKTeco | Parâmetros</p>
                         </div>
                         <div>
-                            <a href="{{ route('suporte') }}" class="btn btn-light">
-                                <i class="bi bi-arrow-left me-2"></i>Voltar ao Suporte
+                            <a href="{{ route('suporte') }}" class="btn btn-outline-light">
+                                <i class="bi bi-arrow-left me-2"></i>Voltar
                             </a>
                         </div>
                     </div>

@@ -17,9 +17,6 @@
                                 </h1>
                                 <p class="mb-0 opacity-75">ZKTeco | INTRANET</p>
                             </div>
-                            <div class="text-end">
-                                <i class="bi bi-graph-up display-1 opacity-50"></i>
-                            </div>
                         </div>
                     </div>
                 </div>

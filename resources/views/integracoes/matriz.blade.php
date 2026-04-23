@@ -16,13 +16,13 @@
                             <p class="mb-0 opacity-75">ZKTeco | Matriz de Integrações</p>
                         </div>
                         <div class="d-flex gap-2">
-                            <a href="{{ route('desenvolvimento') }}" class="btn btn-light">
-                                <i class="bi bi-arrow-left me-2"></i>Voltar ao Desenvolvimento
+                            <a href="{{ route('desenvolvimento') }}" class="btn btn-outline-light">
+                                <i class="bi bi-arrow-left me-2"></i>Voltar
                             </a>
-                            <a href="{{ route('integracoes.index') }}" class="btn btn-light me-2">
+                            <a href="{{ route('integracoes.index') }}" class="btn btn-outline-light me-2">
                                 <i class="bi bi-hdd-stack me-1"></i>Equipamentos
                             </a>
-                            <a href="{{ route('integracoes.export') }}" class="btn btn-success">
+                            <a href="{{ route('integracoes.export') }}" class="btn btn-outline-success">
                                 <i class="bi bi-download me-1"></i>Exportar CSV
                             </a>
                         </div>

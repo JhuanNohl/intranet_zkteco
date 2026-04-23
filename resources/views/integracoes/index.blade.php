@@ -16,10 +16,10 @@
                             <p class="mb-0 opacity-75">ZKTeco | Equipamentos</p>
                         </div>
                         <div class="d-flex gap-2">
-                            <a href="{{ route('desenvolvimento') }}" class="btn btn-light">
-                                <i class="bi bi-arrow-left me-2"></i>Voltar ao Desenvolvimento
+                            <a href="{{ route('desenvolvimento') }}" class="btn btn-outline-light">
+                                <i class="bi bi-arrow-left me-2"></i>Voltar
                             </a>
-                            <a href="{{ route('integracoes.create') }}" class="btn btn-light">
+                            <a href="{{ route('integracoes.create') }}" class="btn btn-outline-light">
                                 <i class="bi bi-plus-circle me-1"></i>Novo Equipamento
                             </a>
                         </div>

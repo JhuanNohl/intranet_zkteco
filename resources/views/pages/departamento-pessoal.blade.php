@@ -171,18 +171,11 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="mb-3">
                         <h5 class="mb-0">
                             <i class="bi bi-people me-2 text-success"></i>
                             Lista de Contatos
                         </h5>
-                        <div class="input-group" style="max-width: 300px;">
-                            <span class="input-group-text bg-white border-end-0">
-                                <i class="bi bi-search"></i>
-                            </span>
-                            <input type="text" id="buscaContatos" class="form-control border-start-0"
-                                placeholder="Buscar por nome, função ou email...">
-                        </div>
                     </div>
 
                     <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">

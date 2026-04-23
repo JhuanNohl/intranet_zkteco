@@ -15,13 +15,6 @@
                             </h1>
                             <p class="mb-0 opacity-75">ZKTeco | INTRANET</p>
                         </div>
-                        <div>
-                            <div class="input-group">
-                                <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
-                                <input type="text" id="buscaDocumento" class="form-control"
-                                    placeholder="Pesquisar documentos...">
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
