@@ -19,19 +19,19 @@ class CommercialDocumentPolicy
 
     public function create(User $user): bool
     {
-        // Permite usuários do setor comercial OU admin
-        return $user->setor === 'comercial' || $user->setor === 'admin';
+        // Permite usuários com permissão 'gerenciar_documentos' OU admin
+        return $user->hasPermissionTo('gerenciar_documentos') || $user->hasRole('admin');
     }
 
     public function update(User $user, CommercialDocument $commercialDocument): bool
     {
-        // Permite usuários do setor comercial OU admin
-        return $user->setor === 'comercial' || $user->setor === 'admin';
+        // Permite o criador ou admin do documento
+        return $user->id === $commercialDocument->created_by || $user->hasRole('admin');
     }
 
     public function delete(User $user, CommercialDocument $commercialDocument): bool
     {
-        // Permite usuários do setor comercial OU admin
-        return $user->setor === 'comercial' || $user->setor === 'admin';
+        // Permite o criador ou admin do documento
+        return $user->id === $commercialDocument->created_by || $user->hasRole('admin');
     }
 }

@@ -11,9 +11,9 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
                             <h1 class="display-6 fw-bold mb-2">
-                                <i class="bi bi-grid-3x3-gap-fill me-2"></i>Desenvolvimento
+                                <i class="bi bi-grid-3x3-gap-fill me-2"></i>Matriz de Integrações
                             </h1>
-                            <p class="mb-0 opacity-75">ZKTeco | Matriz de Integrações</p>
+                            <p class="mb-0 opacity-75">Visualização e gestão das integrações entre sistemas. | INTRANET</p>
                         </div>
                         <div class="d-flex gap-2">
                             <a href="{{ route('desenvolvimento') }}" class="btn btn-outline-light">

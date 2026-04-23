@@ -11,9 +11,9 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
                             <h1 class="display-6 fw-bold mb-2">
-                                <i class="bi bi-sliders2 me-2"></i>Suporte Técnico
+                                <i class="bi bi-sliders2 me-2"></i>Parâmetros
                             </h1>
-                            <p class="mb-0 opacity-75">ZKTeco | Parâmetros</p>
+                            <p class="mb-0 opacity-75">Parâmetros Standalone | INTRANET</p>
                         </div>
                         <div>
                             <a href="{{ route('suporte') }}" class="btn btn-outline-light">

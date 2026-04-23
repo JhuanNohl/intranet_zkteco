@@ -11,9 +11,9 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
                             <h1 class="display-6 fw-bold mb-2">
-                                <i class="bi bi-key-fill me-2"></i>Suporte Técnico
+                                <i class="bi bi-key-fill me-2"></i>Licenciamento
                             </h1>
-                            <p class="mb-0 opacity-75">ZKTeco | Licenciamento</p>
+                            <p class="mb-0 opacity-75">Licenciamento de softwares ZKTeco. | INTRANET</p>
                         </div>
                         <div>
                             <a href="{{ route('suporte') }}" class="btn btn-outline-light">
