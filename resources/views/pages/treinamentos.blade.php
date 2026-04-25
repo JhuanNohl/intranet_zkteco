@@ -13,7 +13,6 @@
                         <h1 class="display-6 fw-bold mb-2">
                             <i class="bi bi-mortarboard-fill me-2"></i>Treinamentos
                         </h1>
-                        <p class="mb-0 opacity-75">ZKTeco | INTRANET</p>
                     </div>
                 </div>
             </div>

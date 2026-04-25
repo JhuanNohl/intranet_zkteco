@@ -13,7 +13,6 @@
                             <h1 class="display-6 fw-bold mb-2">
                                 <i class="bi bi-bank me-2"></i>Sindicato
                             </h1>
-                            <p class="mb-0 opacity-75">Convenções e Acordos Coletivos | ZKTeco</p>
                         </div>
                         <a href="{{ route('gestao-pessoas') }}" class="btn btn-outline-light">
                             <i class="bi bi-arrow-left me-2"></i>Voltar

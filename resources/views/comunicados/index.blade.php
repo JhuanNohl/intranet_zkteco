@@ -14,7 +14,6 @@
                                 <h1 class="display-6 fw-bold mb-2">
                                     <i class="bi bi-megaphone-fill me-2"></i>Comunicados
                                 </h1>
-                                <p class="mb-0 opacity-75">Avisos, atualizações e informações para todos os colaboradores. | INTRANET</p>
                             </div>
                             <div class="d-flex gap-2">
                                 <a href="{{ route('gestao-pessoas') }}" class="btn btn-outline-light">

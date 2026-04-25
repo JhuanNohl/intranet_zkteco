@@ -13,7 +13,6 @@
                             <h1 class="display-6 fw-bold mb-2">
                                 <i class="bi bi-sliders2 me-2"></i>Parâmetros
                             </h1>
-                            <p class="mb-0 opacity-75">Parâmetros Standalone | INTRANET</p>
                         </div>
                         <div>
                             <a href="{{ route('suporte') }}" class="btn btn-outline-light">

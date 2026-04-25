@@ -13,7 +13,6 @@
                             <h1 class="display-6 fw-bold mb-2">
                                 <i class="bi bi-shield-check me-2"></i>CIPA
                             </h1>
-                            <p class="mb-0 opacity-75">Comissão Interna de Prevenção de Acidentes | ZKTeco</p>
                         </div>
                         <a href="{{ route('gestao-pessoas') }}" class="btn btn-outline-light">
                             <i class="bi bi-arrow-left me-2"></i>Voltar

@@ -13,7 +13,6 @@
                             <h1 class="display-6 fw-bold mb-2">
                                 <i class="bi bi-code-slash me-2"></i>Desenvolvimento
                             </h1>
-                            <p class="mb-0 opacity-75">ZKTeco | INTRANET</p>
                         </div>
                     </div>
                 </div>
@@ -61,7 +60,7 @@
                 <div class="card-body text-center">
                     <div class="display-4 fw-bold text-success">{{ \App\Models\Sistema::count() }}</div>
                     <div class="text-muted">Sistemas Integrados</div>
-                    <i class="bi bi-building text-primary opacity-50 mt-2"></i>
+                    <i class="bi bi-building text-success opacity-50 mt-2"></i>
                 </div>
             </div>
         </div>
@@ -79,7 +78,7 @@
                 <div class="card-body text-center">
                     <div class="display-4 fw-bold text-success">{{ \App\Models\Compatibilidade::count() }}</div>
                     <div class="text-muted">Compatibilidades Registradas</div>
-                    <i class="bi bi-link text-info opacity-50 mt-2"></i>
+                    <i class="bi bi-link text-success opacity-50 mt-2"></i>
                 </div>
             </div>
         </div>
@@ -143,7 +142,7 @@
                         <div class="text-center py-4">
                             <i class="bi bi-inbox display-1 text-muted"></i>
                             <p class="text-muted mt-2">Nenhum equipamento cadastrado ainda.</p>
-                            <a href="{{ route('integracoes.create') }}" class="btn btn-primary btn-sm">
+                            <a href="{{ route('integracoes.create') }}" class="btn btn-success btn-sm">
                                 <i class="bi bi-plus-circle"></i> Adicionar primeiro equipamento
                             </a>
                         </div>

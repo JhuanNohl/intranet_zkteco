@@ -13,7 +13,6 @@
                             <h1 class="display-6 fw-bold mb-2">
                                 <i class="bi bi-tools me-2"></i>Manutenção
                             </h1>
-                            <p class="mb-0 opacity-75">ZKTeco | INTRANET</p>
                         </div>
                         <div class="gap-2 d-flex">
                             <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"

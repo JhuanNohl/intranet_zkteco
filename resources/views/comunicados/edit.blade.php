@@ -14,7 +14,6 @@
                                 <h1 class="display-6 fw-bold mb-2">
                                     <i class="bi bi-megaphone-fill me-2"></i>Editar Comunicado
                                 </h1>
-                                <p class="mb-0 opacity-75">ZKTeco | INTRANET</p>
                             </div>
                         </div>
                     </div>

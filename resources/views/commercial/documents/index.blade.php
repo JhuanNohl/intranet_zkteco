@@ -14,7 +14,6 @@
                                 <h1 class="display-6 fw-bold mb-2">
                                     <i class="bi bi-file-earmark-text me-2"></i>Documentos Comerciais
                                 </h1>
-                                <p class="mb-0 opacity-75">ZKTeco | INTRANET</p>
                             </div>
                             @can('create', App\Models\CommercialDocument::class)
                                 <a href="{{ route('commercial.documents.create') }}" class="btn btn-light btn-lg">

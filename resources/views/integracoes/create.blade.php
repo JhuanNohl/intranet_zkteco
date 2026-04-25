@@ -13,7 +13,6 @@
                             <h1 class="display-6 fw-bold mb-2">
                                 <i class="bi bi-plus-circle me-2"></i>Novo Equipamento
                             </h1>
-                            <p class="mb-0 opacity-75">Cadastre um novo equipamento no sistema</p>
                         </div>
                         <div>
                             <a href="{{ route('desenvolvimento') }}" class="btn btn-outline-light">
