@@ -80,112 +80,37 @@
         </div>
     </div>
 
-    <!-- Tópicos e Documentação -->
+    <!-- Sankhya ERP -->
     <div class="row mb-4">
         <div class="col-12">
             <div class="card shadow-sm">
                 <div class="card-header bg-white">
-                    <h5 class="mb-0"><i class="bi bi-folder-fill me-2 text-success"></i>Documentação e Tutoriais</h5>
+                    <h5 class="mb-0"><i class="bi bi-browser-chrome me-2 text-success"></i>Sankhya® ERP</h5>
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <!-- Coluna 1 -->
                         <div class="col-md-6">
                             <div class="list-group list-group-flush">
-                                <a href="#"
-                                    class="list-group-item list-group-item-action d-flex align-items-center disabled">
-                                    <i class="bi bi-question-circle-fill text-success me-3 fs-5"></i>
-                                    <div>
-                                        <h6 class="mb-1">Dicas Úteis - Solução de Problemas</h6>
-                                        <small class="text-muted">Guia rápido para resolução de problemas comuns</small>
-                                    </div>
-                                    <span class="badge bg-success ms-auto">Em breve</span>
-                                </a>
-                                <a href="#"
-                                    class="list-group-item list-group-item-action d-flex align-items-center disabled">
-                                    <i class="bi bi-intranet me-3 fs-5 text-success"></i>
-                                    <div>
-                                        <h6 class="mb-1">Introdução a Intranet</h6>
-                                        <small class="text-muted">Como utilizar a nova plataforma</small>
-                                    </div>
-                                    <span class="badge bg-success ms-auto">Em breve</span>
-                                </a>
-                                <a href="#"
-                                    class="list-group-item list-group-item-action d-flex align-items-center disabled">
-                                    <i class="bi bi-file-earmark-arrow-up me-3 fs-5 text-success"></i>
-                                    <div>
-                                        <h6 class="mb-1">Como Adicionar um arquivo na Intranet</h6>
-                                        <small class="text-muted">Tutorial passo a passo</small>
-                                    </div>
-                                    <span class="badge bg-success ms-auto">Em breve</span>
-                                </a>
-                            </div>
-                        </div>
-                        <!-- Coluna 2 -->
-                        <div class="col-md-6">
-                            <div class="list-group list-group-flush">
-                                <a href="#"
-                                    class="list-group-item list-group-item-action d-flex align-items-center disabled">
-                                    <i class="bi bi-download me-3 fs-5 text-success"></i>
-                                    <div>
-                                        <h6 class="mb-1">Link para Baixar o Navegador Sankhya®</h6>
-                                        <small class="text-muted">Download do navegador compatível</small>
-                                    </div>
-                                    <span class="badge bg-success ms-auto">Em breve</span>
-                                </a>
-                                <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+                                <a href="http://zkteco.snk.ativy.com:40049/mge" target="_blank" class="list-group-item list-group-item-action d-flex align-items-center">
                                     <i class="bi bi-link-45deg me-3 fs-5 text-success"></i>
                                     <div>
                                         <h6 class="mb-1">Sankhya® ERP - Produção</h6>
                                         <small class="text-muted">Acesso direto ao sistema</small>
                                     </div>
-                                    <a href="http://zkteco.snk.ativy.com:40049/mge" target="_blank"
-                                        class="btn btn-sm btn-outline-success ms-auto">
-                                        Acessar <i class="bi bi-box-arrow-up-right"></i>
-                                    </a>
+                                    <i class="bi bi-box-arrow-up-right ms-auto text-success"></i>
                                 </a>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Links Úteis -->
-    <div class="row">
-        <div class="col-12">
-            <div class="card shadow-sm border-success">
-                <div class="card-header bg-success text-white">
-                    <h5 class="mb-0"><i class="bi bi-link-45deg me-2"></i>Links Úteis - T.I.</h5>
-                </div>
-                <div class="card-body">
-                    <div class="row g-3">
-                        <div class="col-md-4">
-                            <div class="d-flex align-items-center p-3 bg-light rounded">
-                                <i class="bi bi-shield-lock fs-3 text-success me-3"></i>
-                                <div>
-                                    <h6 class="mb-0">VPN Corporativa</h6>
-                                    <small class="text-muted">Acesso remoto seguro</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="d-flex align-items-center p-3 bg-light rounded">
-                                <i class="bi bi-envelope fs-3 text-success me-3"></i>
-                                <div>
-                                    <h6 class="mb-0">Webmail</h6>
-                                    <small class="text-muted">E-mail corporativo</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="d-flex align-items-center p-3 bg-light rounded">
-                                <i class="bi bi-database fs-3 text-success me-3"></i>
-                                <div>
-                                    <h6 class="mb-0">Central de Serviços</h6>
-                                    <small class="text-muted">Abertura de chamados</small>
-                                </div>
+                        <div class="col-md-6">
+                            <div class="list-group list-group-flush">
+                                <a href="https://login.sankhya.com.br/?redirect_to=http://downloads.sankhya.com.br/auth/callback.php&application_id=28" target="_blank" class="list-group-item list-group-item-action d-flex align-items-center">
+                                    <i class="bi bi-download me-3 fs-5 text-success"></i>
+                                    <div>
+                                        <h6 class="mb-1">Navegador Sankhya®</h6>
+                                        <small class="text-muted">Download e acesso ao portal</small>
+                                    </div>
+                                    <i class="bi bi-box-arrow-up-right ms-auto text-success"></i>
+                                </a>
                             </div>
                         </div>
                     </div>

@@ -20,181 +20,210 @@
     </div>
 </div>
 
-<!-- Categorias -->
-<div class="row mb-4">
-    <div class="col-12">
-        <div class="card shadow-sm">
-            <div class="card-body">
-                <div class="d-flex flex-wrap gap-2 justify-content-between align-items-center">
-                    <div class="d-flex flex-wrap gap-2">
-                        <button class="btn btn-sm btn-outline-success btn-categoria active" data-categoria="todos">
-                            <i class="bi bi-grid-3x3-gap-fill"></i> Todos
-                        </button>
-                        <button class="btn btn-sm btn-outline-success btn-categoria" data-categoria="tecnico">
-                            <i class="bi bi-gear-fill"></i> Técnico
-                        </button>
-                        <button class="btn btn-sm btn-outline-success btn-categoria" data-categoria="comercial">
-                            <i class="bi bi-graph-up"></i> Comercial
-                        </button>
-                        <button class="btn btn-sm btn-outline-success btn-categoria" data-categoria="gestao">
-                            <i class="bi bi-people-fill"></i> Gestão
-                        </button>
-                        <button class="btn btn-sm btn-outline-success btn-categoria" data-categoria="redes">
-                            <i class="bi bi-wifi"></i> Redes
-                        </button>
-                    </div>
-                    <div>
-                        <button id="btnFavoritos" class="btn btn-sm btn-outline-success">
-                            <i class="bi bi-star-fill"></i> Favoritos
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 <!-- Cards de Treinamentos -->
 <div class="row" id="cardsTreinamentos">
-    @foreach($treinamentos as $item)
-    <div class="col-md-6 col-lg-4 mb-4 treinamento-card" 
-         data-categoria="{{ $item->categoria }}"
-         data-titulo="{{ strtolower($item->titulo) }}"
-         data-favorito="{{ $item->favorito ? 'true' : 'false' }}">
+    <!-- ZKBioAccessIVS -->
+    <div class="col-md-6 col-lg-4 mb-4">
         <div class="card h-100 shadow-sm border-0 hover-card">
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-start mb-3">
                     <div class="icone-tipo">
-                        <i class="bi bi-{{ $item->icone }} fs-1 text-success"></i>
+                        <i class="bi bi-play-circle fs-1 text-success"></i>
                     </div>
-                    <button class="btn btn-sm btn-favorito {{ $item->favorito ? 'btn-success' : 'btn-outline-success' }}" 
-                            data-id="{{ $item->id }}">
-                        <i class="bi bi-star{{ $item->favorito ? '-fill' : '' }}"></i>
-                    </button>
                 </div>
                 
-                <h5 class="card-title">{{ $item->titulo }}</h5>
-                <p class="card-text text-muted small">{{ $item->descricao ?? 'Clique para acessar o conteúdo' }}</p>
-                
-                <div class="d-flex justify-content-between align-items-center mt-3">
-                    <span class="text-muted small">
-                        <i class="bi bi-folder"></i> {{ ucfirst($item->categoria) }}
-                    </span>
-                    <label class="cursor-pointer">
-                        <input type="checkbox" class="form-check-input concluido" 
-                               data-id="{{ $item->id }}" 
-                               {{ $item->concluido ? 'checked' : '' }}>
-                        <span class="small ms-1">Concluído</span>
-                    </label>
-                </div>
+                <h5 class="card-title">ZKBioAccessIVS</h5>
+                <p class="card-text text-muted small">Playlist de treinamento completo sobre ZKBioAccessIVS</p>
             </div>
             <div class="card-footer bg-white border-top-0">
-                <a href="{{ $item->url }}" target="{{ $item->abrir_nova_aba ? '_blank' : '_self' }}" 
-                   class="btn btn-success w-100 btn-acessar" data-id="{{ $item->id }}">
-                    <i class="bi bi-box-arrow-up-right me-1"></i>Acessar
+                <a href="https://www.youtube.com/watch?v=Jg4HJZpObfI&list=PLgW0B1kYy7-164-CKBSMJnZ7T8xrLY6Jp" target="_blank" 
+                   class="btn btn-success w-100">
+                    <i class="bi bi-play-fill me-1"></i>Assistir
                 </a>
             </div>
         </div>
     </div>
-    @endforeach
-</div>
 
-<!-- Barra de Progresso -->
-<div class="row mt-4">
-    <div class="col-12">
-        <div class="card shadow-sm">
+    <!-- Licenciamento ZKBioAccessIVS -->
+    <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 shadow-sm border-0 hover-card">
             <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                    <span><i class="bi bi-graph-up"></i> Seu Progresso</span>
-                    <span id="progressoTexto">0%</span>
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                    <div class="icone-tipo">
+                        <i class="bi bi-key-fill fs-1 text-success"></i>
+                    </div>
                 </div>
-                <div class="progress" style="height: 8px;">
-                    <div id="progressoBarra" class="progress-bar bg-success" style="width: 0%"></div>
+                
+                <h5 class="card-title">Licenciamento ZKBioAccessIVS</h5>
+                <p class="card-text text-muted small">Guia de licenciamento do sistema ZKBioAccessIVS</p>
+            </div>
+            <div class="card-footer bg-white border-top-0">
+                <a href="https://www.youtube.com/watch?v=V74fm7RkPDs" target="_blank" 
+                   class="btn btn-success w-100">
+                    <i class="bi bi-play-fill me-1"></i>Assistir
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ZKBioCVSecurity -->
+    <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 shadow-sm border-0 hover-card">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                    <div class="icone-tipo">
+                        <i class="bi bi-shield-lock fs-1 text-success"></i>
+                    </div>
                 </div>
+                
+                <h5 class="card-title">ZKBioCVSecurity</h5>
+                <p class="card-text text-muted small">Treinamento sobre segurança biométrica e controle de acesso</p>
+            </div>
+            <div class="card-footer bg-white border-top-0">
+                <a href="#" target="_blank" 
+                   class="btn btn-success w-100 disabled">
+                    <i class="bi bi-play-fill me-1"></i>Em breve
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Licenciamento ZKBioCVSecurity -->
+    <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 shadow-sm border-0 hover-card">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                    <div class="icone-tipo">
+                        <i class="bi bi-certificate fs-1 text-success"></i>
+                    </div>
+                </div>
+                
+                <h5 class="card-title">Licenciamento ZKBioCVSecurity</h5>
+                <p class="card-text text-muted small">Guia de licenciamento do ZKBioCVSecurity</p>
+            </div>
+            <div class="card-footer bg-white border-top-0">
+                <a href="#" target="_blank" 
+                   class="btn btn-success w-100 disabled">
+                    <i class="bi bi-play-fill me-1"></i>Em breve
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- PDCA -->
+    <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 shadow-sm border-0 hover-card">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                    <div class="icone-tipo">
+                        <i class="bi bi-diagram-2 fs-1 text-success"></i>
+                    </div>
+                </div>
+                
+                <h5 class="card-title">PDCA</h5>
+                <p class="card-text text-muted small">Metodologia de melhoria contínua - Plan, Do, Check, Act</p>
+            </div>
+            <div class="card-footer bg-white border-top-0">
+                <a href="#" target="_blank" 
+                   class="btn btn-success w-100 disabled">
+                    <i class="bi bi-play-fill me-1"></i>Em breve
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fundamentos de Redes - Cisco -->
+    <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 shadow-sm border-0 hover-card">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                    <div class="icone-tipo">
+                        <i class="bi bi-diagram-3 fs-1 text-success"></i>
+                    </div>
+                </div>
+                
+                <h5 class="card-title">Fundamentos de Redes - Cisco</h5>
+                <p class="card-text text-muted small">Conceitos básicos de redes e certificação Cisco</p>
+            </div>
+            <div class="card-footer bg-white border-top-0">
+                <a href="#" target="_blank" 
+                   class="btn btn-success w-100 disabled">
+                    <i class="bi bi-play-fill me-1"></i>Em breve
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Linux - 20 Comandos Básicos -->
+    <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 shadow-sm border-0 hover-card">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                    <div class="icone-tipo">
+                        <i class="bi bi-terminal-fill fs-1 text-success"></i>
+                    </div>
+                </div>
+                
+                <h5 class="card-title">Linux - 20 Comandos Básicos</h5>
+                <p class="card-text text-muted small">Aprenda os comandos essenciais do Linux</p>
+            </div>
+            <div class="card-footer bg-white border-top-0">
+                <a href="https://www.youtube.com/watch?v=uZeMQz89pfw" target="_blank" 
+                   class="btn btn-success w-100">
+                    <i class="bi bi-play-fill me-1"></i>Assistir
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CFTV - 2024 -->
+    <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 shadow-sm border-0 hover-card">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                    <div class="icone-tipo">
+                        <i class="bi bi-camera-video-fill fs-1 text-success"></i>
+                    </div>
+                </div>
+                
+                <h5 class="card-title">CFTV - 2024</h5>
+                <p class="card-text text-muted small">Treinamento sobre sistemas de circuito fechado de TV</p>
+            </div>
+            <div class="card-footer bg-white border-top-0 d-flex gap-2">
+                <a href="https://www.youtube.com/watch?v=8eKkZHjeCns&feature=youtu.be" target="_blank" 
+                   class="btn btn-success flex-grow-1">
+                    <i class="bi bi-play-fill me-1"></i>Parte 1
+                </a>
+                <a href="https://www.youtube.com/watch?v=RI6nOpQlowI" target="_blank" 
+                   class="btn btn-success flex-grow-1">
+                    <i class="bi bi-play-fill me-1"></i>Parte 2
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testes -->
+    <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 shadow-sm border-0 hover-card">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                    <div class="icone-tipo">
+                        <i class="bi bi-bug-fill fs-1 text-success"></i>
+                    </div>
+                </div>
+                
+                <h5 class="card-title">Testes</h5>
+                <p class="card-text text-muted small">Playlist com metodologias e práticas de testes</p>
+            </div>
+            <div class="card-footer bg-white border-top-0">
+                <a href="https://www.youtube.com/playlist?list=PL0eQEHzbcCCqI6i3p8mGJYb_RIN50ACtQ" target="_blank" 
+                   class="btn btn-success w-100">
+                    <i class="bi bi-play-fill me-1"></i>Assistir
+                </a>
             </div>
         </div>
     </div>
 </div>
-
-@push('scripts')
-<script>
-function atualizarProgresso() {
-    const total = document.querySelectorAll('.concluido').length;
-    const concluidos = document.querySelectorAll('.concluido:checked').length;
-    const percentual = total > 0 ? (concluidos / total) * 100 : 0;
-    document.getElementById('progressoBarra').style.width = percentual + '%';
-    document.getElementById('progressoTexto').innerText = Math.round(percentual) + '%';
-}
-
-// Marcar concluído
-document.querySelectorAll('.concluido').forEach(checkbox => {
-    checkbox.addEventListener('change', function() {
-        fetch('/treinamentos/' + this.dataset.id + '/concluir', {
-            method: 'POST',
-            headers: {
-                'X-CSRF-TOKEN': '{{ csrf_token() }}',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ concluido: this.checked })
-        });
-        atualizarProgresso();
-    });
-});
-
-// Filtro por categoria
-document.querySelectorAll('.btn-categoria').forEach(btn => {
-    btn.addEventListener('click', function() {
-        const categoria = this.dataset.categoria;
-        document.querySelectorAll('.btn-categoria').forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-        
-        document.querySelectorAll('.treinamento-card').forEach(card => {
-            if (categoria === 'todos') {
-                card.style.display = '';
-            } else {
-                card.style.display = card.dataset.categoria === categoria ? '' : 'none';
-            }
-        });
-    });
-});
-
-// Busca
-document.getElementById('buscaTreinamento').addEventListener('input', function() {
-    const termo = this.value.toLowerCase();
-    document.querySelectorAll('.treinamento-card').forEach(card => {
-        const titulo = card.dataset.titulo;
-        card.style.display = titulo.includes(termo) ? '' : 'none';
-    });
-});
-
-// Favoritos
-document.querySelectorAll('.btn-favorito').forEach(btn => {
-    btn.addEventListener('click', function() {
-        const id = this.dataset.id;
-        fetch('/treinamentos/' + id + '/favoritar', {
-            method: 'POST',
-            headers: { 'X-CSRF-TOKEN': '{{ csrf_token() }}' }
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.favorito) {
-                this.classList.remove('btn-outline-success');
-                this.classList.add('btn-success');
-                this.querySelector('i').classList.add('bi-star-fill');
-                this.querySelector('i').classList.remove('bi-star');
-            } else {
-                this.classList.remove('btn-success');
-                this.classList.add('btn-outline-success');
-                this.querySelector('i').classList.remove('bi-star-fill');
-                this.querySelector('i').classList.add('bi-star');
-            }
-        });
-    });
-});
-
-atualizarProgresso();
-</script>
-@endpush
 
 @push('styles')
 <style>
@@ -204,14 +233,6 @@ atualizarProgresso();
     .hover-card:hover {
         transform: translateY(-5px);
         box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-    }
-    .cursor-pointer {
-        cursor: pointer;
-    }
-    .btn-categoria.active {
-        background-color: #7AC143 !important;
-        border-color: #7AC143 !important;
-        color: white !important;
     }
 </style>
 @endpush
